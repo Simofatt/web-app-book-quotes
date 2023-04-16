@@ -26,6 +26,7 @@ public class MyQuotes extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
+
 		if (email != null) {
 			Quote quote = new Quote();
 			try {
@@ -45,8 +46,23 @@ public class MyQuotes extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		try {
+
+			String author_name = request.getParameter("author_name");
+			String name_book = request.getParameter("book_name");
+			String idQuote = request.getParameter("id_quote");
+			int id_quote = Integer.parseInt(idQuote);
+			String quote_text = request.getParameter("quote_text");
+			Quote quote2 = new Quote(name_book, quote_text, author_name, id_quote);
+			System.out.println("UPDATE INFOS : name of the author :  " + author_name + "name of the book : " + name_book
+					+ "Id_quote: " + id_quote);
+
+			quote2.updateQuote();
+			response.sendRedirect("myQuotes");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

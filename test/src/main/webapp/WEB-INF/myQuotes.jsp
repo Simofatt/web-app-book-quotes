@@ -15,9 +15,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Book Quotes</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<style> <%@include file="/WEB-INF/ressources/css/myQuotes.css"%></style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+<%@ include file="/WEB-INF/ressources/css/myQuotes.css"%></style>
 </head>
 <%
 ArrayList<Quote> quotes = new ArrayList<>();
@@ -37,6 +40,7 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 		LocalDateTime localDateTime = created_at.toLocalDateTime(); // convert to LocalDateTime
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
 		String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
+		int id_quote = q.getId_quote() ;
 	%>
 
 	<div class="container my-4">
@@ -63,35 +67,21 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 							<small class="text-muted">Added By: <a href="#"><%=user_name%></a></small>
 						</p>
 
-						<a href="#" class="card-link edit-quote" data-toggle="modal"
-							data-target="#editQuoteModal" data-quoteid="1"><i
-							class="fas fa-edit"></i> Edit</a>
 
+						<a href="#" class="card-link edit-quote" data-toggle="modal"
+							data-target="#editQuoteModal" data-quote-text="<%=quote_text%>"
+							data-book-title="<%=book_name%>"
+							data-author-name="<%=author_name%>"
+							data-id-quote="<%=id_quote%>"><i class="fas fa-edit"></i>
+							Edit</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script>
-    document.querySelectorAll('.edit-quote').forEach(function(button) {
-        button.addEventListener('click', function() {
-            // Get the value of the book name, author, and quote text
-            var bookName = '<%=book_name%>';
-            var author  = '<%=author_name%>' ;
-            var quote = '<%=quote_text%>';
-				// Get the ID of the quote
-				var quoteId = button.dataset.quoteid;
-				// Set the values of the input fields
-				document.querySelector('#bookTitle').value = bookName;
-				document.querySelector('#nameOfTheAuthor').value = author;
-				document.querySelector('#quoteText').value = quote;
-				// Set the value of the hidden input field to the ID of the quote
-				document.querySelector('#quoteId').value = quoteId;
-			});
-		});
-	</script>
-
-
+	<%
+	}
+	%>
 
 	<div class="modal fade" id="editQuoteModal" tabindex="-1" role="dialog"
 		aria-labelledby="editQuoteModalLabel" aria-hidden="true">
@@ -104,39 +94,57 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
+				<form method="post" action="myQuotes">
 				<div class="modal-body">
-					<form>
+					
 						<div class="form-group">
 							<label for="quoteText">Quote Text</label>
-							<textarea class="form-control" id="quoteText" rows="3">""</textarea>
+							<textarea class="form-control" id="quoteText" rows="3" name="quote_text">""</textarea>
 						</div>
 						<div class="form-group">
-							<label for="bookTitle">Book Name</label> <input type="text"
-								class="form-control" id="bookTitle" value="">
+							<label for="bookTitle">Book Name </label> 
+							<input type="text" class="form-control" id="bookTitle" value="" name="book_name">
 						</div>
 						<div class="form-group">
-							<label for="publishedYear">Name of the Author</label> <input
-								type="text" class="form-control" id="nameOfTheAuthor" value="">
+							<label for="publishedYear">Name of the Author</label>
+							 <input type="text" class="form-control" id="nameOfTheAuthor" value="" name="author_name">
 						</div>
-					</form>
+						<div class="form-group">
+							 <input type="text" class="form-control" id="idQuote" value="" name="id_quote" hidden>
+						</div>
+					
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="submit" class="btn btn-primary">Save changes</button>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
-	<%
-	}
-	%>
 
 
 
 
 
 
+<script>
+    const editButtons = document.querySelectorAll('.edit-quote');
+    editButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      const quoteText = button.dataset.quoteText;
+      const bookTitle = button.dataset.bookTitle;
+      const authorName = button.dataset.authorName;
+      const idQuote    = button.dataset.idQuote ; 
+
+      document.querySelector('#quoteText').value = quoteText;
+      document.querySelector('#bookTitle').value = bookTitle;
+      document.querySelector('#nameOfTheAuthor').value = authorName;
+      document.querySelector('#idQuote').value = idQuote;
+    });
+  });
+</script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

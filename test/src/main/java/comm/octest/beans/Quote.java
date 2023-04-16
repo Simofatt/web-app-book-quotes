@@ -15,6 +15,8 @@ public class Quote implements I_Quote {
 	private String author_name;
 	private String user_name;
 
+	private int id_quote;
+
 	// private List<Observer> observers;
 	private List<String> likedUsers = new ArrayList<>();
 
@@ -33,12 +35,23 @@ public class Quote implements I_Quote {
 
 	}
 
-	public Quote(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name) {
+	public Quote(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,
+			int id_quote) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
 		this.created_at = created_at;
 		this.user_name = user_name;
+		this.id_quote = id_quote;
+	}
+
+	// UPDATE THE QUOTE
+	public Quote(String name_book, String quoteText, String author_name, int id_quote) {
+		this.name_book = name_book;
+		this.quote_text = quoteText;
+		this.author_name = author_name;
+		this.id_quote = id_quote;
+
 	}
 
 	// FETCH ALL THE QUOTES
@@ -54,6 +67,13 @@ public class Quote implements I_Quote {
 		List<Quote> quotes = dao.fetchMyQuotes(email_user);
 
 		return quotes;
+	}
+
+	// UPDATE A QUOTE
+	public void updateQuote() throws SQLException {
+		DAO pseudo = new DAO();
+		pseudo.updateQuote(this);
+
 	}
 
 	public void save() throws SQLException {
@@ -160,6 +180,14 @@ public class Quote implements I_Quote {
 
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
+	}
+
+	public int getId_quote() {
+		return id_quote;
+	}
+
+	public void setId_quote(int id_quote) {
+		this.id_quote = id_quote;
 	}
 
 }

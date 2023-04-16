@@ -2,11 +2,11 @@ package comm.octest.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +16,7 @@ import comm.octest.beans.Quote;
 import comm.octest.beans.User;
 
 public class DAO {
-	private String email;
+	// private String email;
 	Connection connexion = null;
 	Statement statement = null;
 	ResultSet resultat = null;
@@ -222,8 +222,9 @@ public class DAO {
 			Timestamp created_at = resultat.getTimestamp("created_at");
 			String user_name = resultat.getString("user_name");
 			String author_name = resultat.getString("author_name");
+			int id_quote = resultat.getInt("id_quote");
 
-			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name);
+			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, id_quote);
 			quotes.add(quote);
 		}
 		return quotes;
@@ -245,8 +246,9 @@ public class DAO {
 			Timestamp created_at = resultat.getTimestamp("created_at");
 			String user_name = resultat.getString("user_name");
 			String author_name = resultat.getString("author_name");
+			int id_quote = resultat.getInt("id_quote");
 
-			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name);
+			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, id_quote);
 			quotes.add(quote);
 		}
 		return quotes;
@@ -269,6 +271,52 @@ public class DAO {
 
 			preparedStatement.executeUpdate();
 			System.out.println("Quote bien inserer :" + quote_text);
+		}
+
+	}
+
+	// UPDATE THE QUOTE
+	public void updateQuote(Quote quote) throws SQLException {
+
+		String author_name = quote.getAuthor_name();
+		String book_name = quote.getName_book();
+		String quote_text = quote.getQuoteText();
+		int id_quote = quote.getId_quote();
+
+		driver();
+
+		PreparedStatement preparedStatement5 = connexion
+				.prepareStatement("SELECT id_book FROM quotes WHERE id_quote =? ");
+		preparedStatement5.setInt(1, id_quote);
+		ResultSet resultat5 = preparedStatement5.executeQuery();
+		if (resultat5.next()) {
+			int id_book = resultat5.getInt("id_book");
+
+			PreparedStatement preparedStatement = connexion
+					.prepareStatement("SELECT id_author FROM authors WHERE name =? ");
+			preparedStatement.setString(1, author_name);
+			ResultSet resultat = preparedStatement.executeQuery();
+			if (resultat.next()) {
+				int id_author = resultat.getInt("id_author");
+
+				PreparedStatement preparedStatement2 = connexion
+						.prepareStatement("UPDATE books SET name =? , id_author=? WHERE id_book=? ");
+
+				preparedStatement2.setString(1, book_name);
+				preparedStatement2.setInt(2, id_author);
+				preparedStatement2.setInt(3, id_book);
+				preparedStatement2.executeUpdate();
+
+				PreparedStatement preparedStatement4 = connexion
+						.prepareStatement("UPDATE quotes SET quote_text = ? , id_book = ? WHERE id_quote =?");
+
+				preparedStatement4.setString(1, quote_text);
+				preparedStatement4.setInt(2, id_book);
+				preparedStatement4.setInt(3, id_quote);
+				preparedStatement4.executeUpdate();
+
+			}
+
 		}
 
 	}

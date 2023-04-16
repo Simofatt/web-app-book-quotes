@@ -1,0 +1,53 @@
+@charset "UTF-8";
+  .favorite {
+            color: blue;
+        }
+
+        .favorite.active {
+            color: red;
+        }
+
+        /* center the image */
+        .card-img {
+            display: block;
+            position: relative;
+            top: 45px;
+            left: 100px;
+
+            max-width: 200px;
+        }
+
+        /* style for profile dropdown */
+        .dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .navbar-brand {
+            color: white;
+        }
+
+        .nav-link {
+            color: white;
+            margin-right: 10px;
+        }
+
+        .nav-link:hover {
+            color: yellow;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav>li {
+            margin-right: 10px;
+        }
+
+        .resize-none {
+            resize: none;
+        }

@@ -1,0 +1,45 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class BookFactory {
+	
+	private  static  Map<String,Book> books= new HashMap<>();
+	 
+    public Book addBook(String author_name, String type, String book_name) throws SQLException {
+        //CREATE THE KEY
+        String key =  author_name+type+book_name;
+        fetchAuthors() ;
+        Book book= (Book) books.get(key) ;
+        // IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
+        if (book == null) {
+            book = new Book(author_name,type,book_name);
+            books.put(key, book);
+            book.save();   
+        }
+        return book;
+    }
+
+
+public void fetchAuthors() throws SQLException { 
+    	   Book book =  new Book();
+    	   List<Book>books = book.fetchBook() ;
+    	   
+    	   String book_name = book.getName_book() ; 
+    	   String type_name = book.getType();
+    	   String  author_name= book.getAuthor() ;
+           
+           String key =  author_name+type_name+book_name;
+           books.put(key, book);
+ 
+    }
+    
+  
+
+
+
+
+
+}

@@ -1,0 +1,51 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+
+import comm.octest.db.DAO;
+
+public class AuthorFactory {
+	private  static  Map<String,Author> authors= new HashMap<>();
+	 
+	     public Author addAuthor(int id_author,String author_name) throws SQLException {
+	         //CREATE THE KEY
+	         String key = id_author+"aze";
+	         fetchAuthors() ;
+	         
+	         
+	 
+	         //INSERT THE QUOTE INFORMATIONS IN BD USING THE QUOTES HASHMAP
+	         //INSERT USER_IDS IN DB USING userIDs MAP 
+	         //GET THE QUOTE OBJECT THAT MATCHES THE KEY
+	         
+	         
+	         Author authorObject= (Author) authors.get(key);
+
+	         // IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
+	         if (authorObject == null) {
+	             authorObject = new Author(id_author,author_name);
+	             authors.put(key, authorObject);
+	         }
+	         return authorObject;
+	     }
+
+
+	     public void fetchAuthors() throws SQLException { 
+	     	    DAO dao = new DAO() ;
+	            Author authorObject = dao.fetchAuthors();
+	           
+	            int id_author =authorObject.getId_author() ;
+	            String author_name = authorObject.getAuthor_name() ;
+	            String key = id_author + author_name;
+	            authors.put(key, authorObject);
+	  
+	     }
+	     
+	   
+
+	
+	 }
+
+

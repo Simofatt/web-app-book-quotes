@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="header.jsp" %>
+<body>
+
+	<header id="header" id="home">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-active"><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#fact">Fact</a></li>
+						<li><a href="#price">Sign in </a></li>
+						<li><a href="#course">Sign up</a></li>
+						<li><a href="#about_us">About us</a></li>
+						<li class="menu-has-children"><a href="">Pages</a>
+							<ul>
+								<li><a href="generic.html">Add quotes</a></li>
+								<li><a href="elements.html">See quotes</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+
+
+	<section class="banner-area" id="home">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-start">
+				<div class="banner-content col-lg-7">
+					<h5 class="text-white text-uppercase">Author: Travor James</h5>
+					<h1 class="text-uppercase">
+						New Adventure
+					</h1>
+		
+	
+</body>
+
+</html>

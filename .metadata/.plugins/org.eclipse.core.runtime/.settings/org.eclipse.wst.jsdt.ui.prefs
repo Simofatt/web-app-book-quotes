@@ -1,0 +1,20 @@
+CONTENT_ASSIST_BACKGROUND_COLOR=38,38,38
+CONTENT_ASSIST_FOREGROUND_COLOR=235,235,235
+content_assist_parameters_background=38,38,38
+content_assist_parameters_foreground=235,235,235
+content_assist_proposals_background=38,38,38
+content_assist_proposals_foreground=235,235,235
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.wst.jsdt.ui.editor.tab.width=
+org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
+org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
+org.eclipse.wst.jsdt.ui.text.code_templates_migrated=true
+org.eclipse.wst.jsdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.wst.jsdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.wst.jsdt.ui.text.templates_migrated=true
+overriddenByCSS=,CONTENT_ASSIST_BACKGROUND_COLOR,CONTENT_ASSIST_FOREGROUND_COLOR,content_assist_parameters_background,content_assist_parameters_foreground,content_assist_proposals_background,content_assist_proposals_foreground,
+proposalOrderMigrated=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

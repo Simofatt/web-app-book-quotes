@@ -1,0 +1,16 @@
+package Quotes;
+
+
+public class ApplicationQuotes {
+    QuoteFactory quoteFactory;
+    
+    public ApplicationQuotes() {
+        quoteFactory = new QuoteFactory();
+    }
+
+    public void displaySharedQuotes() {
+        for (Quote sharedQuote : quoteFactory.quotes.values()) {
+            sharedQuote.display("a user");
+        }
+    }
+}

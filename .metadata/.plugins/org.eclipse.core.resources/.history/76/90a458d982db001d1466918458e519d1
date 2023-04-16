@@ -1,0 +1,10 @@
+package comm.octest.beans;
+
+import java.util.List;
+
+public interface I_book {
+	
+	void save();
+	List<Book> fetchBook();
+
+}

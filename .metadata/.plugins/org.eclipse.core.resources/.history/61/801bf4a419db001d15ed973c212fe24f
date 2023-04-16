@@ -1,0 +1,16 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+
+public interface I_author {
+	
+	 void save() throws SQLException  ;
+	 Author fetchAuthor() throws SQLException;
+	 
+	 
+	 
+	 
+	 
+	
+
+}

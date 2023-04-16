@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="comm.octest.beans.ChatRoom"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.Utilisateur"/>
+    <fullyQualifiedTypeName name="comm.octest.db.pseudos"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.User"/>
+    <fullyQualifiedTypeName name="javax.websocket.server.ServerEndpoint"/>
+    <fullyQualifiedTypeName name="java.util.Hashtable"/>
+    <fullyQualifiedTypeName name="javax.websocket.OnOpen"/>
+    <fullyQualifiedTypeName name="javax.websocket.server.HandshakeRequest"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.ChatRoom2"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.io.StringReader"/>
+    <fullyQualifiedTypeName name="javax.json.JsonObject"/>
+    <fullyQualifiedTypeName name="javax.json.Json"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.Session"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="comm.octest.db.DAO"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.AuthorFactory"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.BookFactory"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.Author"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.Quote"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.security.Timestamp"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,17 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+import java.util.List;
+
+
+//QUOTE == OBSERVER
+public interface I_Quote {
+   
+	List<Quote> fetchQuotes() throws SQLException ;
+	void save() throws SQLException ;
+	List<Quote> fetchUserQuotes() throws SQLException;
+	void saveUserQuote() throws SQLException;
+	List<String> getLikedUsers();
+	void addLikedUser(String userId, int id_quote, int id_user);
+	
+}

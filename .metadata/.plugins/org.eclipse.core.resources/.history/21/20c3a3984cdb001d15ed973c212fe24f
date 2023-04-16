@@ -1,0 +1,49 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+
+import comm.octest.db.DAO;
+
+
+
+public class AuthorFactory {
+	private    Map<String,Author> authors= new HashMap<>();
+	 
+	     public Author addAuthor(String author_name) throws SQLException {
+	         //CREATE THE KEY
+	         String key = author_name;
+	         System.out.print(key);
+	         fetchAuthors() ;
+	         Author author= (Author) authors.get(key) ;
+	         System.out.print("AAAA");
+	         // IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
+	         if (author == null) {
+	             author = new Author(author_name);
+	             authors.put(key, author);
+	             author.save();   
+	         }
+	         
+	         return author;
+	     }
+
+
+	public void fetchAuthors() throws SQLException { 
+	     	   
+		 DAO dao = new DAO() ;
+         Author author = dao.fetchAuthors();
+	     	   // Author author = Author.fetchAuthor() ;
+	            String key = author.getAuthor_name() ;
+	          //  String key =  author_name;
+	            System.out.print(key+ " fetch");
+	            authors.put(key, author);
+	  
+	     }
+	     
+	   
+
+	
+	 }
+
+

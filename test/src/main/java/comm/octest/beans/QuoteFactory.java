@@ -21,6 +21,7 @@ public class QuoteFactory {
 			quote = new Quote(name_book, quote_text, userId);
 			quotes.put(key, quote);
 			quote.save();
+
 		}
 
 		Quote quote2 = new Quote(quote_text, userId);

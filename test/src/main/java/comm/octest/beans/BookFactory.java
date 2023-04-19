@@ -13,7 +13,7 @@ public class BookFactory {
 		// CREATE THE KEY
 		String key = author_name + type + book_name;
 
-		fetchAuthors();
+		fetchBooks();
 		Book book = (Book) books.get(key);
 		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
 		if (book == null) {
@@ -25,7 +25,7 @@ public class BookFactory {
 		return book;
 	}
 
-	public void fetchAuthors() throws SQLException {
+	public void fetchBooks() throws SQLException {
 		Book book = new Book();
 		List<Book> booksList = book.fetchBook();
 

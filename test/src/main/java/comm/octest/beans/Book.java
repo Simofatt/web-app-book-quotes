@@ -33,6 +33,8 @@ public class Book implements I_book {
 		System.out.println("Book bien saisie ! " + name_book);
 	}
 
+	// GETTERS AND SETTERS
+
 	public String getId_book() {
 		return id_book;
 	}

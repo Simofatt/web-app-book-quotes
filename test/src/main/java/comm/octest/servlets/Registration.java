@@ -1,15 +1,16 @@
 package comm.octest.servlets;
 
-import comm.octest.beans.User;
-import comm.octest.db.DAO;
+import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.SQLException;
+
+import comm.octest.beans.User;
+import comm.octest.db.DAO;
 
 @WebServlet(name = "Registration", value = "/registration")
 public class Registration extends HttpServlet {
@@ -30,6 +31,7 @@ public class Registration extends HttpServlet {
 
 		String name = request.getParameter("full_name");
 		String email = request.getParameter("email");
+		String city = request.getParameter("city");
 		String password = request.getParameter("password");
 		String passwordc = request.getParameter("passwordc");
 
@@ -37,6 +39,7 @@ public class Registration extends HttpServlet {
 
 		user.setEmail(email);
 		user.setPassword(password);
+		user.setCity(city);
 		user.setName(name);
 
 		DAO pseudo = new DAO();

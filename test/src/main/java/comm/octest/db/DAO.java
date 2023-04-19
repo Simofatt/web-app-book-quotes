@@ -16,7 +16,7 @@ import comm.octest.beans.Quote;
 import comm.octest.beans.User;
 
 public class DAO {
-	// private String email;
+
 	Connection connexion = null;
 	Statement statement = null;
 	ResultSet resultat = null;
@@ -34,20 +34,23 @@ public class DAO {
 		}
 	}
 
+	// REGISTRATION
 	public void registration(User user) {
 
 		String email = user.getEmail();
 		String name = user.getName();
 		String password = user.getPassword();
+		String city = user.getCity();
 		System.out.println(user.getEmail());
 
 		try {
 			driver();
 			PreparedStatement preparedStatement = connexion
-					.prepareStatement("INSERT INTO users(full_name,email, password) VALUES (?,?,?)");
+					.prepareStatement("INSERT INTO users(full_name,email,city, password) VALUES (?,?,?,?)");
 			preparedStatement.setString(1, name);
 			preparedStatement.setString(2, email);
-			preparedStatement.setString(3, password);
+			preparedStatement.setString(3, city);
+			preparedStatement.setString(4, password);
 
 			preparedStatement.executeUpdate();
 
@@ -57,6 +60,7 @@ public class DAO {
 
 	}
 
+//AUTHENTIFICATION 
 	public boolean authentification(User user) {
 		String email = user.getEmail();
 		String password = user.getPassword();
@@ -362,6 +366,75 @@ public class DAO {
 			preparedStatement.executeUpdate();
 
 		}
+	}
+
+	// GET INFORMATION OF A USER
+	public List<User> getUser(String email) throws SQLException {
+		List<User> userInfo = new ArrayList<>();
+
+		driver();
+
+		PreparedStatement preparedStatement3 = connexion.prepareStatement("SELECT * FROM users  WHERE email =?");
+		preparedStatement3.setString(1, email);
+		System.out.println("hahahahaha" + email);
+
+		ResultSet resultat3 = preparedStatement3.executeQuery();
+
+		if (resultat3.next()) {
+			String full_name = resultat3.getString("full_name");
+			String country = resultat3.getString("country");
+			String city = resultat3.getString("city");
+
+			String password = resultat3.getString("password");
+			Timestamp created_at = resultat3.getTimestamp("created_at");
+
+			User user = new User(full_name, country, city, password, created_at);
+			userInfo.add(user);
+		}
+		return userInfo;
+
+	}
+
+	// check if the email exists :
+	public boolean validEmail(String email, String currentEmail) throws SQLException {
+		driver();
+		PreparedStatement preparedStatement = connexion
+				.prepareStatement("SELECT COUNT(*) AS count FROM users WHERE email = ? AND email != ?");
+		preparedStatement.setString(1, email);
+		preparedStatement.setString(2, currentEmail);
+		ResultSet resultSet = preparedStatement.executeQuery();
+		if (resultSet.next()) {
+			int count = resultSet.getInt("count");
+			if (count > 0) {
+				return false; // email already exists for another user
+			} else {
+				return true; // email does not exist for any other user
+			}
+		}
+		return false; // something went wrong
+	}
+
+	// UPDATE USER INFO
+	public void updateUserInfo(User user) throws SQLException {
+		String full_name = user.getName();
+		String email = user.getEmail();
+		String country = user.getCountry();
+		String city = user.getCity();
+		String password = user.getPassword();
+		int id_user = user.getId_user();
+		System.out.print(full_name + email + country + city + password + id_user);
+
+		driver();
+		PreparedStatement preparedStatement = connexion
+				.prepareStatement("UPDATE users SET full_name = ?,email=?,country=?,city=?,password=? WHERE id_user=?");
+		preparedStatement.setString(1, full_name);
+		preparedStatement.setString(2, email);
+		preparedStatement.setString(3, country);
+		preparedStatement.setString(4, city);
+		preparedStatement.setString(5, password);
+		preparedStatement.setInt(6, id_user);
+		preparedStatement.executeUpdate();
+
 	}
 
 }

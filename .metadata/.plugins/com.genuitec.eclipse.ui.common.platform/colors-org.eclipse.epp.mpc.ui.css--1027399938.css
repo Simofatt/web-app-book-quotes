@@ -4,26 +4,26 @@
 .MarketplaceViewer > *,
 .MarketplaceItem,
 .MarketplaceItem * {
-background-color: #32393e;
-color: #d8dcdf;
+background-color: #303030;
+color: #dbdbdb;
 }
 
 .MarketplaceItem Link {
-color: #86939c;
+color: #919191;
 }
 .MarketplaceItem .disabled {
-color: #a0aab1;
+color: #a8a8a8;
 }
 
 .TagsToolTip,
 .TagsToolTip * {
-background-color: #49535a;
-color: #d8dcdf;
+background-color: #454545;
+color: #dbdbdb;
 }
 
 .NotificationItem,
 .NotificationItem * {
-background-color: #4d5c6c;
+background-color: #44505f;
 color: #9ac9d8;
 }
 
@@ -32,8 +32,8 @@ color: #9ac9d8;
 .CatalogSwitcher > ScrolledComposite > *,
 .Catalog,
 .Catalog > * {
-background-color: #32393e;
-color: #d8dcdf;
+background-color: #303030;
+color: #dbdbdb;
 }
 
 .Catalog:checked,
@@ -55,5 +55,5 @@ background-color: '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END';
 background: '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END';
 background-image: '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END';
 background-color: '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END';
-color: #d8dcdf;
+color: #dbdbdb;
 }

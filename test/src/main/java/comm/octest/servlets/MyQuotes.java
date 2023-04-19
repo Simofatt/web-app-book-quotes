@@ -53,11 +53,27 @@ public class MyQuotes extends HttpServlet {
 			String idQuote = request.getParameter("id_quote");
 			int id_quote = Integer.parseInt(idQuote);
 			String quote_text = request.getParameter("quote_text");
+
 			Quote quote2 = new Quote(name_book, quote_text, author_name, id_quote);
+			quote2.updateQuote();
+
+			// GET THE ID OF THE USER
+
+			/*
+			 * HttpSession session = request.getSession(); String email = (String)
+			 * session.getAttribute("email");
+			 * 
+			 * 
+			 * DAO pseudo = new DAO(); int user_id = pseudo.getId(email);
+			 * 
+			 * 
+			 * String type = "policier"; Application app = new Application();
+			 * app.updateQuote(name_book, quote_text, author_name, id_quote, user_id, type);
+			 */
+
 			System.out.println("UPDATE INFOS : name of the author :  " + author_name + "name of the book : " + name_book
 					+ "Id_quote: " + id_quote);
 
-			quote2.updateQuote();
 			response.sendRedirect("myQuotes");
 		} catch (SQLException e) {
 			e.printStackTrace();

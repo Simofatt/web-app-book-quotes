@@ -29,7 +29,7 @@ color: inherit;
 /*
 * Use a darker background for the tables in the Git history page. The default dark theme assigns
 * a slightly lighter background otherwise; we want the default background color as is used for
-* other views (#272c30; decimal 39,44,48).
+* other views (#262626; decimal 38,38,38).
 */
 Table.org-eclipse-egit-ui-GitHistoryPage {
 background-color: inherit;

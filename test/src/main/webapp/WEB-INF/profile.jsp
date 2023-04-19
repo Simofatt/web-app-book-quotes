@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
+<%@ page import="comm.octest.beans.Quote"%>
+<%@ page import="comm.octest.beans.User"%>
+<%@ page import="java.time.LocalDate"%>
+<%@ page import="java.time.format.DateTimeFormatter"%>
+<%@ page import="java.sql.Timestamp"%>
+<%@ page import="java.time.LocalDateTime"%>
+
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +21,28 @@
     <style><%@include file="/WEB-INF/ressources/css/profile.css"%> </style>
 </head>
 
+<%
+ArrayList<Quote> quotes = new ArrayList<>();
+ArrayList<User> userInfo = new ArrayList<>();
+quotes = (ArrayList<Quote>) request.getAttribute("quotes");
+ userInfo = (ArrayList<User>) request.getAttribute("userInfo") ;
+
+
+String email = (String) session.getAttribute("email");
+%>
 
 <body>
    <%@include file="navBar.jsp"%>
     <div class="container emp-profile">
-        <form method="post">
+    <%
+for(User user : userInfo){
+	String name = user.getName() ; 
+	String country = user.getCountry() ; 
+	String city = user.getCity() ;
+    Timestamp created_at = user.getCreated_at() ; 
+
+%>
+        
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
@@ -30,10 +57,10 @@
                 <div class="col-md-6">
                     <div class="profile-head">
                         <h5>
-                            Kshiti Ghelani
+                            <%=name %>
                         </h5>
                         <h6>
-                            Morroco,Casablanca
+                          Morocco, <%=country %>
                         </h6>
                         <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -78,7 +105,7 @@
                                     <label>Full Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Kshiti Ghelani</p>
+                                    <p>    <%=name %></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -86,7 +113,7 @@
                                     <label>Email</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>kshitighelani@gmail.com</p>
+                                    <p>    <%=email%></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -94,7 +121,7 @@
                                     <label>Country</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Morocco</p>
+                                    <p><%=country %></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -102,72 +129,81 @@
                                     <label>City/Region</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Casablanca</p>
+                                    <p>    <%=city %></p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Address Line 1</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>48 Rue mustapha elmanfalouti</p>
-                                </div>
-                            </div>
+                           
+                            
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="card mb-4">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="https://images.pexels.com/photos/156917/pexels-photo-156917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                            class="card-img" alt="The Hobbit">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">The Hobbit</h5>
-                                            <p class="card-text">"In a hole in the ground there lived a hobbit."</p>
-                                            <p class="card-text"><small class="text-muted">Published: 1937</small></p>
-                                            <p class="card-text"><small class="text-muted">Author : Cooleen
-                                                    Hover</small></p>
-                                            <p class="card-text"><small class="text-muted">Added By: <a href="#">Sarah
-                                                        Jones</a></small></p>
-                                            <a href="#" class="card-link favorite"><i class="fas fa-heart"></i> Love</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        	<%
+	}
+	%>
+    
+                        
+           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            
+                                            	<%
+	for (Quote q : quotes) {
+
+		String author_name = q.getAuthor_name();
+		String quote_text = q.getQuoteText();
+		String book_name = q.getName_book();
+		String user_name = q.getUser_name();
+		Timestamp created_at = q.getCreated_at(); // get the Timestamp object
+		LocalDateTime localDateTime = created_at.toLocalDateTime(); // convert to LocalDateTime
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
+		String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
+		int id_quote = q.getId_quote() ;
+	%>    
+            <div class="card mb-4">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img
+						src="https://images.pexels.com/photos/156917/pexels-photo-156917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+						class="card-img" alt="The Hobbit">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title"><%=book_name%></h5>
+						<p class="card-text">
+							"<%=quote_text%>"
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Published: <%=formattedDate%></small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Author : <%=author_name%></small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Added By: <a href="#"><%=user_name%></a></small>
+						</p>
 
 
-                            <div class="card mb-4">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="https://images.pexels.com/photos/156917/pexels-photo-156917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                            class="card-img" alt="The Hobbit">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">The Hobbit</h5>
-                                            <p class="card-text">"In a hole in the ground there lived a hobbit."</p>
-                                            <p class="card-text"><small class="text-muted">Published: 1937</small></p>
-                                            <p class="card-text"><small class="text-muted">Author : Cooleen
-                                                    Hover</small></p>
-                                            <p class="card-text"><small class="text-muted">Added By: <a href="#">Sarah
-                                                        Jones</a></small></p>
-                                            <a href="#" class="card-link favorite"><i class="fas fa-heart"></i> Love</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+					
+					
+				</div>
+			</div>
+		</div>
+	
+	</div>
+		<%
+	}
+	%>
+	
 
-
-
-
-
-
+           
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
+            </div>
+            
+            
+            
+            
+            
+	
+       
     </div>
 
 

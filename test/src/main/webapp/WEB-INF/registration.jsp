@@ -36,6 +36,7 @@ if (error != null) {
                 <span>use your email for registration</span>
                 <input type="text" placeholder="Full name" name="full_name" required />
                 <input type="email" placeholder="Email" name="email" required />
+                 <input type="text" placeholder="City/Region" name="city" required />
                
                 <input type="password" placeholder="Password"  name="password" required/>
                 <input type="password" placeholder="Re-Password"  name="passwordc" required/>

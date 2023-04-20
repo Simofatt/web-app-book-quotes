@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index">Home</a>
+                    <a class="nav-link" href="sharedQuotes">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="myQuotes">My Quotes</a>
@@ -45,7 +45,7 @@
                         <a class="dropdown-item" href="profile">Profile</a>
                         <a class="dropdown-item" href="">Friends</a>
                         <a class="dropdown-item" href="discussion">Discussions</a>
-                        <a class="dropdown-item" href="FavQuotes">Favorite Quotes</a>
+                        <a class="dropdown-item" href="favQuotes">Favorite Quotes</a>
                         <a class="dropdown-item" href="addQuotes">Add Quote</a>
                         <a class="dropdown-item" href="settings">Account Settings</a>
                         <div class="dropdown-divider"></div>

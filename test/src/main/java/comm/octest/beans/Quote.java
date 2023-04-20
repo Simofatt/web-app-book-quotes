@@ -7,6 +7,7 @@ import java.util.List;
 
 import comm.octest.db.DAO;
 
+//QUOTE == STACK GRABBER IMPLEMENTS SUBJECT == REMOVE ADD NOTIFY OBSERVERS 
 public class Quote implements I_Quote {
 	private String name_book;
 	private String quote_text;
@@ -14,6 +15,7 @@ public class Quote implements I_Quote {
 	private Timestamp created_at;
 	private String author_name;
 	private String user_name;
+	private String like_color;
 
 	private int id_quote;
 
@@ -34,7 +36,20 @@ public class Quote implements I_Quote {
 		this.quote_text = quote_text;
 
 	}
+	// FETCH THE QUOTES
 
+	public Quote(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,
+			int id_quote, String like_color) {
+		this.name_book = name_book;
+		this.quote_text = quoteText;
+		this.author_name = author_name;
+		this.created_at = created_at;
+		this.user_name = user_name;
+		this.id_quote = id_quote;
+		this.like_color = like_color;
+	}
+
+	// FETCH MY QUOTES
 	public Quote(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,
 			int id_quote) {
 		this.name_book = name_book;
@@ -43,6 +58,7 @@ public class Quote implements I_Quote {
 		this.created_at = created_at;
 		this.user_name = user_name;
 		this.id_quote = id_quote;
+
 	}
 
 	// UPDATE THE QUOTE
@@ -55,9 +71,9 @@ public class Quote implements I_Quote {
 	}
 
 	// FETCH ALL THE QUOTES
-	public List<Quote> fetchQuotes() throws SQLException {
+	public List<Quote> fetchQuotes(int user_id) throws SQLException {
 		DAO dao = new DAO();
-		List<Quote> quotes = dao.fetchQuotes();
+		List<Quote> quotes = dao.fetchQuotes(user_id);
 		return quotes;
 	}
 
@@ -75,6 +91,7 @@ public class Quote implements I_Quote {
 		pseudo.updateQuote(this);
 
 	}
+	// SAVE A QUOTE
 
 	public void save() throws SQLException {
 		DAO pseudo = new DAO();
@@ -94,6 +111,14 @@ public class Quote implements I_Quote {
 
 	}
 
+	public List<Quote> fetchFavQuotes(int user_id) throws SQLException {
+
+		DAO dao = new DAO();
+		List<Quote> favQuotes = dao.fetchFavQuotes(user_id);
+
+		return favQuotes;
+	}
+
 	public List<String> getLikedUsers() {
 		return likedUsers;
 	}
@@ -107,8 +132,11 @@ public class Quote implements I_Quote {
 	}
 
 	@Override
-	public void removeLikedUser(String userId) {
-		likedUsers.remove(userId);
+	public void removeLikedQuote(Quote quote) throws SQLException {
+		DAO pseudo = new DAO();
+		pseudo.removeLikedQuote(quote);
+
+		// likedUsers.remove(userId);
 	}
 
 	@Override
@@ -129,6 +157,13 @@ public class Quote implements I_Quote {
 	}
 
 	// GETTERS AND SETTERS
+	public String getLike_color() {
+		return like_color;
+	}
+
+	public void setLike_color(String like_color) {
+		this.like_color = like_color;
+	}
 
 	public void setLikedUsers(List<String> likedUsers) {
 		this.likedUsers = likedUsers;
@@ -188,6 +223,12 @@ public class Quote implements I_Quote {
 
 	public void setId_quote(int id_quote) {
 		this.id_quote = id_quote;
+	}
+
+	@Override
+	public void removeLikedUser(String userId) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

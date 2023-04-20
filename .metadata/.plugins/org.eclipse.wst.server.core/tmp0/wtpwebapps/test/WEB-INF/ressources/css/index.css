@@ -1,12 +1,6 @@
 @charset "UTF-8";
 
- .favorite {
-            color: blue;
-        }
 
-        .favorite.active {
-            color: red;
-        }
 
         /* center the image */
         .card-img {

@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="comm.octest.beans.Utilisateur"/>
     <fullyQualifiedTypeName name="comm.octest.db.pseudos"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="comm.octest.beans.User"/>
     <fullyQualifiedTypeName name="javax.websocket.server.ServerEndpoint"/>
     <fullyQualifiedTypeName name="java.util.Hashtable"/>
     <fullyQualifiedTypeName name="javax.websocket.OnOpen"/>
@@ -27,4 +26,5 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.security.Timestamp"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.User"/>
 </qualifiedTypeNameHistroy>

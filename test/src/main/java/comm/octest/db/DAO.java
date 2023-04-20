@@ -212,8 +212,9 @@ public class DAO {
 	}
 
 //FETCH ALL THE QUOTES 
-	public List<Quote> fetchQuotes() throws SQLException {
+	public List<Quote> fetchQuotes(int user_id) throws SQLException {
 		List<Quote> quotes = new ArrayList<>();
+		String color;
 		driver();
 
 		PreparedStatement preparedStatement = connexion.prepareStatement(
@@ -228,10 +229,23 @@ public class DAO {
 			String author_name = resultat.getString("author_name");
 			int id_quote = resultat.getInt("id_quote");
 
-			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, id_quote);
+			PreparedStatement preparedStatement2 = connexion
+					.prepareStatement("SELECT * from like_quote WHERE id_user =? AND id_quote=?");
+			preparedStatement2.setInt(1, user_id);
+			preparedStatement2.setInt(2, id_quote);
+			ResultSet resultat2 = preparedStatement2.executeQuery();
+			if (resultat2.next()) {
+				color = "red";
+
+			} else {
+				color = "blue";
+			}
+
+			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, id_quote, color);
 			quotes.add(quote);
 		}
 		return quotes;
+
 	}
 
 	public List<Quote> fetchMyQuotes(String email) throws SQLException {
@@ -376,7 +390,6 @@ public class DAO {
 
 		PreparedStatement preparedStatement3 = connexion.prepareStatement("SELECT * FROM users  WHERE email =?");
 		preparedStatement3.setString(1, email);
-		System.out.println("hahahahaha" + email);
 
 		ResultSet resultat3 = preparedStatement3.executeQuery();
 
@@ -422,7 +435,6 @@ public class DAO {
 		String city = user.getCity();
 		String password = user.getPassword();
 		int id_user = user.getId_user();
-		System.out.print(full_name + email + country + city + password + id_user);
 
 		driver();
 		PreparedStatement preparedStatement = connexion
@@ -434,6 +446,87 @@ public class DAO {
 		preparedStatement.setString(5, password);
 		preparedStatement.setInt(6, id_user);
 		preparedStatement.executeUpdate();
+
+	}
+
+	// ADD LIKED QUOTE
+	public void addLikedQuote(User user) throws SQLException {
+		int user_id = user.getId_user();
+		int quote_id = user.getId_quote();
+		driver();
+		PreparedStatement preparedStatement2 = connexion
+				.prepareStatement("SELECT * FROM like_quote WHERE id_user=? AND id_quote=?");
+		preparedStatement2.setInt(1, user_id);
+		preparedStatement2.setInt(2, quote_id);
+		ResultSet resultat2 = preparedStatement2.executeQuery();
+		if (resultat2.next()) {
+
+			PreparedStatement preparedStatement3 = connexion
+					.prepareStatement("DELETE FROM like_quote WHERE id_user=? AND id_quote=?");
+			preparedStatement3.setInt(1, user_id);
+			preparedStatement3.setInt(2, quote_id);
+			preparedStatement3.executeUpdate();
+
+		} else {
+
+			PreparedStatement preparedStatement = connexion
+					.prepareStatement("INSERT INTO like_quote(id_user,id_quote) VALUES (?,?)");
+			preparedStatement.setInt(1, user_id);
+			preparedStatement.setInt(2, quote_id);
+			preparedStatement.executeUpdate();
+		}
+
+	}
+
+	// FETCH USER FAVORITE QUOTES
+
+	public List<Quote> fetchFavQuotes(int user_id) throws SQLException {
+
+		List<Quote> favQuotes = new ArrayList<>();
+		driver();
+		PreparedStatement preparedStatement2 = connexion
+				.prepareStatement("SELECT id_quote FROM like_quote WHERE id_user=?");
+		preparedStatement2.setInt(1, user_id);
+
+		ResultSet resultat2 = preparedStatement2.executeQuery();
+		while (resultat2.next()) {
+			int quote_id = resultat2.getInt("id_quote");
+			System.out.print("next1: " + quote_id);
+			PreparedStatement preparedStatement = connexion.prepareStatement(
+					"SELECT q.*, b.name AS book_name,a.name AS author_name,u.full_name AS user_name  FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE q.id_quote=? ");
+			preparedStatement.setInt(1, quote_id);
+			ResultSet resultat = preparedStatement.executeQuery();
+
+			while (resultat.next()) {
+				System.out.println("next 2 ");
+				String quote_text = resultat.getString("quote_text");
+				String book_name = resultat.getString("book_name");
+				Timestamp created_at = resultat.getTimestamp("created_at");
+				String user_name = resultat.getString("user_name");
+				String author_name = resultat.getString("author_name");
+				String color = "red";
+
+				Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, quote_id, color);
+				favQuotes.add(quote);
+
+			}
+
+		}
+
+		return favQuotes;
+
+	}
+
+	// REMOVE LIKED QUOTES
+	public void removeLikedQuote(Quote quote) throws SQLException {
+		int user_id = quote.getUserId();
+		int quote_id = quote.getId_quote();
+		driver();
+		PreparedStatement preparedStatement3 = connexion
+				.prepareStatement("DELETE FROM like_quote WHERE id_user=? AND id_quote=?");
+		preparedStatement3.setInt(1, user_id);
+		preparedStatement3.setInt(2, quote_id);
+		preparedStatement3.executeUpdate();
 
 	}
 

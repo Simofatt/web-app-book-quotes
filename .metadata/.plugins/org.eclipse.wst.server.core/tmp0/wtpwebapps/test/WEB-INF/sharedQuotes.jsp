@@ -35,16 +35,20 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
                 	
                 	String author_name =q.getAuthor_name() ; 
                 	String quote_text =q.getQuoteText() ; 
+                	int quote_id  = q.getId_quote() ; 
                 	String book_name = q.getName_book(); 
                 	String user_name = q.getUser_name() ;
+                	String like_color = q.getLike_color();
                 	Timestamp created_at = q.getCreated_at(); // get the Timestamp object
                 	LocalDateTime localDateTime = created_at.toLocalDateTime(); // convert to LocalDateTime
                 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
                 	String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
-                
+                %>
+                    		  
+                    	  
 
                
-                	%>
+                	
                 
     <div class="container my-4">
     
@@ -57,14 +61,30 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
+                    <form id="form_<%=quote_id%>" action="sharedQuotes" method="post" >
                         <h5 class="card-title"><%=book_name %></h5>
                         <p class="card-text">"<%=quote_text %>"</p>
                         <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
                         <p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name %></a></small></p>
-                        <a href="#" class="card-link favorite"><i class="fas fa-heart"></i> Love</a>
+                          <input type="hidden" name="quoteId" value="<%=quote_id%>">
+                        
+                              
+       
+      
+                        	 
+                          
+                        <a href="#" class="card-link favorite "  style="color:<%= like_color %>;"onclick="submitForm(<%=quote_id%>)"><i class="fas fa-heart"></i> Love</a>
+                        </form>
                     </div>
                 </div>
+               
+  <script>
+    function submitForm(quoteId) {
+        document.getElementById("form_" + quoteId).submit();
+    }
+</script>
+                
             
             </div>
              
@@ -95,6 +115,8 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
         $('.favorite').on('click', function () {
             $(this).toggleClass('active');
         });
+        
+      
     </script>
 </body>
 

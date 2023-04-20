@@ -1,5 +1,0 @@
-package comm.octest.beans;
-
-public class BookFactory {
-
-}

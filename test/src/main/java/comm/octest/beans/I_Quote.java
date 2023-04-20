@@ -7,13 +7,15 @@ import java.util.List;
 //QUOTE == OBSERVER
 public interface I_Quote {
 
-	List<Quote> fetchQuotes() throws SQLException;
+	List<Quote> fetchQuotes(int user_id) throws SQLException;
 
 	void save() throws SQLException;
 
 	List<Quote> fetchUserQuotes() throws SQLException;
 
 	void saveUserQuote() throws SQLException;
+
+	void updateQuote() throws SQLException;
 
 	List<String> getLikedUsers();
 
@@ -44,4 +46,10 @@ public interface I_Quote {
 	Timestamp getCreated_at();
 
 	void setCreated_at(Timestamp created_at);
+
+	void setLike_color(String like_color);
+
+	String getLike_color();
+
+	void removeLikedQuote(Quote quote) throws SQLException;
 }

@@ -12,7 +12,7 @@ public class QuoteFactory {
 	public Quote addQuote(String name_book, String quote_text, int userId) throws SQLException {
 		// CREATE THE KEY
 		String key = name_book + quote_text;
-		fetchQuotes();
+		fetchQuotes(userId);
 
 		Quote quote = (Quote) quotes.get(key);
 
@@ -52,9 +52,9 @@ public class QuoteFactory {
 
 	}
 
-	public void fetchQuotes() throws SQLException {
+	public void fetchQuotes(int user_id) throws SQLException {
 		Quote quote = new Quote();
-		List<Quote> quotesList = quote.fetchQuotes();
+		List<Quote> quotesList = quote.fetchQuotes(user_id);
 		for (Quote q : quotesList) {
 			String name_book = q.getName_book();
 

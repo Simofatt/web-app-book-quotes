@@ -7,6 +7,7 @@ import java.util.List;
 
 import comm.octest.db.DAO;
 
+//STACK OBSERVER IMPLEMENT OBSERVER 
 public class User {
 
 	private String full_name;
@@ -58,6 +59,11 @@ public class User {
 
 		}
 		return valide;
+	}
+
+	public void likedQuote(User user) throws SQLException {
+		DAO pseudo = new DAO();
+		pseudo.addLikedQuote(user);
 	}
 
 	public void popularPeople(int user_id) {

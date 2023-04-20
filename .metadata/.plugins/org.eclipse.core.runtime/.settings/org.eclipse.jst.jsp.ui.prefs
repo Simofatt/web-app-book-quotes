@@ -1,7 +1,7 @@
 SCRIPT_AREA_BORDER=\#fbd153 | null | false | false | false | false
 eclipse.preferences.version=1
 newFileTemplateName=New JSP File (html 5)
-overriddenByCSS=,tagName,SCRIPT_AREA_BORDER,tagAttributeName,tagAttributeEquals,tagAttributeValue,tagBorder,
+overriddenByCSS=,SCRIPT_AREA_BORDER,tagAttributeEquals,tagAttributeName,tagAttributeValue,tagBorder,tagName,
 tagAttributeEquals=\#45ab0e | null | false | false | false | false
 tagAttributeName=\#a7ec21 | null | false | false | false | false
 tagAttributeValue=\#13a87d | null | false | true | false | false

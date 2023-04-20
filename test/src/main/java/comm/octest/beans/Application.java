@@ -40,7 +40,7 @@ public class Application {
 		authorFactory.fetchAuthors();
 
 		String quote_key = name_book + quote_text;
-		quoteFactory.fetchQuotes();
+		// quoteFactory.fetchQuotes();
 
 		Quote quote = (Quote) quotes.get(quote_key);
 

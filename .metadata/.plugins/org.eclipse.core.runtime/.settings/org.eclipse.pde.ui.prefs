@@ -17,4 +17,4 @@ editor.color.string_italic=true
 editor.color.tag=38,139,210
 editor.color.tag_bold=true
 editor.color.xml_comment=82,82,82
-overriddenByCSS=,editor.color.externalized_string_italic,editor.color.header_assignment_bold,editor.color.header_key_bold,editor.color.header_value_italic,editor.color.instr_bold,editor.color.string_italic,editor.color.tag_bold,editor.color.header_assignment,editor.color.header_osgi,editor.color.header_value,editor.color.string,editor.color.tag,editor.color.default,editor.color.externalized_string,editor.color.header_attributes,editor.color.header_key,editor.color.instr,editor.color.xml_comment,
+overriddenByCSS=,editor.color.default,editor.color.externalized_string,editor.color.externalized_string_italic,editor.color.header_assignment,editor.color.header_assignment_bold,editor.color.header_attributes,editor.color.header_key,editor.color.header_key_bold,editor.color.header_osgi,editor.color.header_value,editor.color.header_value_italic,editor.color.instr,editor.color.instr_bold,editor.color.string,editor.color.string_italic,editor.color.tag,editor.color.tag_bold,editor.color.xml_comment,

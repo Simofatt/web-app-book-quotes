@@ -7,4 +7,4 @@ VALUE_NULL=\#949494 | null | false | false | false | false
 VALUE_NUMBER=\#b24538 | null | false | false | false | false
 VALUE_STRING=\#ffc600 | null | true | true | false | false
 eclipse.preferences.version=1
-overriddenByCSS=,COLON,COMMA,CURLY_BRACE,OBJECT_KEY,VALUE_BOOLEAN,VALUE_STRING,VALUE_NULL,VALUE_NUMBER,
+overriddenByCSS=,COLON,COMMA,CURLY_BRACE,OBJECT_KEY,VALUE_BOOLEAN,VALUE_NULL,VALUE_NUMBER,VALUE_STRING,

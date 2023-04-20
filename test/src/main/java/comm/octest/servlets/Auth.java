@@ -1,6 +1,8 @@
 package comm.octest.servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,8 +45,15 @@ public class Auth extends HttpServlet {
 
 		// SESSION :
 		if (auth) {
-			HttpSession session = request.getSession();
-			session.setAttribute("email", email);
+			try {
+
+				HttpSession session = request.getSession();
+				session.setAttribute("email", email);
+				int user_id = dao.getId(email);
+				session.setAttribute("user_id", user_id);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 			this.getServletContext().getRequestDispatcher("/WEB-INF/registration.jsp").forward(request, response);
 
 		} else {

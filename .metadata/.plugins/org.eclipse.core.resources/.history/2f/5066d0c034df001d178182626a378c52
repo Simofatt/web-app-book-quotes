@@ -1,0 +1,10 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+
+//QUOTE == OBSERVABLE
+public interface I_Quote {
+
+	void updateQuote() throws SQLException;
+
+}

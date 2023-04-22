@@ -1,7 +1,6 @@
 package comm.octest.servlets;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,13 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import comm.octest.beans.Author;
 import comm.octest.beans.AuthorFactory;
-import comm.octest.beans.Book;
 import comm.octest.beans.BookFactory;
-import comm.octest.beans.Quote;
 import comm.octest.beans.QuoteFactory;
-import comm.octest.db.DAO;
 
 @WebServlet(name = "AddQuote", value = "/addQuote")
 public class AddQuote extends HttpServlet {
@@ -48,18 +43,18 @@ public class AddQuote extends HttpServlet {
 		String name_author = request.getParameter("name_author");
 		String quote_text = request.getParameter("quote_text");
 		String book_type = request.getParameter("book_type");
-
+		int user_id = (int) session.getAttribute("user_id");
 		try {
+
 			AuthorFactory author = new AuthorFactory();
 			author.addAuthor(name_author);
 
 			BookFactory book = new BookFactory();
 			book.addBook(name_author, book_type, name_book);
 
-			DAO pseudo = new DAO();
-			int user_id = pseudo.getId(email);
-			System.out.print("User :" + user_id);
-			QuoteFactory quote = new QuoteFactory();
+			System.out.println("User :" + user_id);
+			QuoteFactory quote = new QuoteFactory(1);
+
 			if (user_id > 0) {
 				quote.addQuote(name_book, quote_text, user_id);
 			} else {

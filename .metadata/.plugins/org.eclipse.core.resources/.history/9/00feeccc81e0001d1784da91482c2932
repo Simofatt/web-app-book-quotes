@@ -1,0 +1,11 @@
+package comm.octest.beans;
+
+public class QuoteFactorySingleton {
+	public static synchronized I_Quote getInstance() {
+	    if (quoteFactory == null) {
+	        quoteFactory = new QuoteFactory();
+	    }
+	    return quoteFactory;
+	}
+
+}

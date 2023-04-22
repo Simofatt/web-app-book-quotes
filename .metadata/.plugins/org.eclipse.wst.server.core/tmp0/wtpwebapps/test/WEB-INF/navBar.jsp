@@ -58,14 +58,17 @@
                         <i class="far fa-bell"></i>
                         <span class="badge badge-warning">3</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifDropdown">
-                        <a class="dropdown-item" href="#">Notification 1</a>
-                        <a class="dropdown-item" href="#">Notification 2</a>
-                        <a class="dropdown-item" href="#">Notification 3</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">View All Notifications</a>
-                    </div>
-                </li>
+                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifDropdown">
+    <a class="dropdown-item" href="#">Notification 1</a>
+    <a class="dropdown-item" href="#">Notification 2</a>
+    <a class="dropdown-item" href="#">Notification 3</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">View All Notifications</a>
+</div>
+</li>
+
+
+
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">
@@ -79,3 +82,23 @@
     </nav>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        setInterval(function() {
+            $.ajax({
+                url: "/notifications",
+                type: "GET",
+                dataType: "json",
+                success: function(response) {
+                	 var notifications = JSON.parse(json);
+                     var notificationsHtml = '';
+                     for (var i = 0; i < notifications.length; i++) {
+                         notificationsHtml += '<a class="dropdown-item" href="#">' + notifications[i] + '</a>';
+                     }
+                     document.getElementById('notifications').innerHTML = notificationsHtml;
+                }
+            });
+        }, 5000); // Récupérer les notifications toutes les 5 secondes
+    });
+</script>

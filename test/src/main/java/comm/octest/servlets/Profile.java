@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import comm.octest.beans.Quote;
+import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
 
 @WebServlet(name = "Profile", value = "/profile")
@@ -34,9 +34,9 @@ public class Profile extends HttpServlet {
 
 		if (email != null) {
 			User user = new User();
-			Quote quote = new Quote();
+			QuoteManager quote = new QuoteManager();
 			try {
-				List<Quote> quotes = quote.fetchMyQuotes(email);
+				List<QuoteManager> quotes = quote.fetchMyQuotes(email);
 				request.setAttribute("quotes", quotes);
 				List<User> userInfo = user.getInfo(email);
 			

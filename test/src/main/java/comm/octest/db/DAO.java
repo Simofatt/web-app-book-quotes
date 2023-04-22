@@ -12,7 +12,9 @@ import java.util.List;
 
 import comm.octest.beans.Author;
 import comm.octest.beans.Book;
-import comm.octest.beans.Quote;
+import comm.octest.beans.Flyweight;
+import comm.octest.beans.Observer;
+import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
 
 public class DAO {
@@ -61,9 +63,10 @@ public class DAO {
 	}
 
 //AUTHENTIFICATION 
-	public boolean authentification(User user) {
+	public boolean authentification(Observer user) {
 		String email = user.getEmail();
 		String password = user.getPassword();
+		System.out.println("authentification :" + email);
 		boolean auth = false;
 		try {
 			driver();
@@ -212,8 +215,8 @@ public class DAO {
 	}
 
 //FETCH ALL THE QUOTES 
-	public List<Quote> fetchQuotes(int user_id) throws SQLException {
-		List<Quote> quotes = new ArrayList<>();
+	public List<QuoteManager> fetchQuotes(int user_id) throws SQLException {
+		List<QuoteManager> quotes = new ArrayList<>();
 		String color;
 		driver();
 
@@ -241,15 +244,16 @@ public class DAO {
 				color = "blue";
 			}
 
-			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, id_quote, color);
+			QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,
+					color);
 			quotes.add(quote);
 		}
 		return quotes;
 
 	}
 
-	public List<Quote> fetchMyQuotes(String email) throws SQLException {
-		List<Quote> quotes = new ArrayList<>();
+	public List<QuoteManager> fetchMyQuotes(String email) throws SQLException {
+		List<QuoteManager> quotes = new ArrayList<>();
 		driver();
 
 		System.out.println("Affichage des quote de user : " + email);
@@ -266,14 +270,14 @@ public class DAO {
 			String author_name = resultat.getString("author_name");
 			int id_quote = resultat.getInt("id_quote");
 
-			Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, id_quote);
+			QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote);
 			quotes.add(quote);
 		}
 		return quotes;
 	}
 
 //INSERT QUOTE 
-	public void insertQuote(String book_name, String quote_text) throws SQLException {
+	public int insertQuote(String book_name, String quote_text) throws SQLException {
 		driver();
 
 		PreparedStatement preparedStatement3 = connexion.prepareStatement("SELECT id_book FROM books WHERE name =?");
@@ -282,19 +286,28 @@ public class DAO {
 
 		if (resultat3.next()) {
 			int id_book = resultat3.getInt("id_book");
-			PreparedStatement preparedStatement = connexion
-					.prepareStatement("INSERT INTO quotes(id_book,quote_text) VALUES (?,?)");
+			PreparedStatement preparedStatement = connexion.prepareStatement(
+					"INSERT INTO quotes(id_book,quote_text) VALUES (?,?)", Statement.RETURN_GENERATED_KEYS);
 			preparedStatement.setInt(1, id_book);
 			preparedStatement.setString(2, quote_text);
 
 			preparedStatement.executeUpdate();
+
 			System.out.println("Quote bien inserer :" + quote_text);
+			ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+			if (generatedKeys.next()) {
+				int id_quote = generatedKeys.getInt(1);
+				System.out.println("The ID of the inserted quote is: " + id_quote);
+				return id_quote;
+			}
+
 		}
+		return -1;
 
 	}
 
 	// UPDATE THE QUOTE
-	public void updateQuote(Quote quote) throws SQLException {
+	public void updateQuote(Flyweight quote) throws SQLException {
 
 		String author_name = quote.getAuthor_name();
 		String book_name = quote.getName_book();
@@ -340,9 +353,9 @@ public class DAO {
 	}
 
 //FETCH ALL THE USER_QUOTE 
-	public List<Quote> fetchUserQuote() throws SQLException {
+	public List<QuoteManager> fetchUserQuote() throws SQLException {
 		driver();
-		List<Quote> user_quote = new ArrayList<>();
+		List<QuoteManager> user_quote = new ArrayList<>();
 
 		PreparedStatement preparedStatement = connexion.prepareStatement(
 				"SELECT uq.*,quote_text FROM user_quote uq INNER JOIN quotes q ON uq.id_quote = q.id_quote ");
@@ -351,9 +364,8 @@ public class DAO {
 		while (resultat.next()) {
 			String quote_text = resultat.getString("quote_text");
 			int id_user = resultat.getInt("id_user");
-			System.out.println("user_quote_list" + id_user + quote_text);
 
-			Quote quote = new Quote(quote_text, id_user);
+			QuoteManager quote = new QuoteManager(quote_text, id_user);
 			user_quote.add(quote);
 
 		}
@@ -362,8 +374,9 @@ public class DAO {
 	}
 
 //INSERT USER QUOTE 
-	public void insertUserQuote(String quote_text, int user_id) throws SQLException {
+	public int insertUserQuote(String quote_text, int user_id) throws SQLException {
 		driver();
+		System.out.println("user_id : " + user_id + " SQUOTE ID ");
 
 		PreparedStatement preparedStatement3 = connexion
 				.prepareStatement("SELECT id_quote FROM quotes WHERE quote_text =?");
@@ -377,9 +390,11 @@ public class DAO {
 					.prepareStatement("INSERT INTO user_quote(id_user,id_quote) VALUES (?,?)");
 			preparedStatement.setInt(1, user_id);
 			preparedStatement.setInt(2, id_quote);
+			System.out.println("user_id : " + user_id + " SQUOTE ID " + id_quote);
 			preparedStatement.executeUpdate();
-
+			return id_quote;
 		}
+		return -1;
 	}
 
 	// GET INFORMATION OF A USER
@@ -480,9 +495,9 @@ public class DAO {
 
 	// FETCH USER FAVORITE QUOTES
 
-	public List<Quote> fetchFavQuotes(int user_id) throws SQLException {
+	public List<QuoteManager> fetchFavQuotes(int user_id) throws SQLException {
 
-		List<Quote> favQuotes = new ArrayList<>();
+		List<QuoteManager> favQuotes = new ArrayList<>();
 		driver();
 		PreparedStatement preparedStatement2 = connexion
 				.prepareStatement("SELECT id_quote FROM like_quote WHERE id_user=?");
@@ -506,7 +521,8 @@ public class DAO {
 				String author_name = resultat.getString("author_name");
 				String color = "red";
 
-				Quote quote = new Quote(book_name, quote_text, author_name, created_at, user_name, quote_id, color);
+				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name,
+						quote_id, color);
 				favQuotes.add(quote);
 
 			}
@@ -518,7 +534,7 @@ public class DAO {
 	}
 
 	// REMOVE LIKED QUOTES
-	public void removeLikedQuote(Quote quote) throws SQLException {
+	public void removeLikedQuote(QuoteManager quote) throws SQLException {
 		int user_id = quote.getUserId();
 		int quote_id = quote.getId_quote();
 		driver();
@@ -527,6 +543,19 @@ public class DAO {
 		preparedStatement3.setInt(1, user_id);
 		preparedStatement3.setInt(2, quote_id);
 		preparedStatement3.executeUpdate();
+
+	}
+
+	// INSERT NOTIFICATION FOR A NEW QUOTE
+	public void insertNotification(int id_quote, int id_user) throws SQLException {
+		driver();
+		PreparedStatement preparedStatement5 = connexion
+				.prepareStatement("INSERT INTO notification_quotes(id_quote,id_user) VALUES (?,?) ");
+		preparedStatement5.setInt(1, id_quote);
+		preparedStatement5.setInt(2, id_user);
+		System.out.println(id_quote);
+		System.out.println(id_user);
+		preparedStatement5.executeUpdate();
 
 	}
 

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
-<%@ page import="comm.octest.beans.Quote"%>
+<%@ page import="comm.octest.beans.QuoteManager"%>
 <%@ page import="comm.octest.beans.User"%>
 <%@ page import="java.time.LocalDate"%>
 <%@ page import="java.time.format.DateTimeFormatter"%>
@@ -20,17 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style><%@include file="/WEB-INF/ressources/css/profile.css"%> </style>
 </head>
-
 <%
-ArrayList<Quote> quotes = new ArrayList<>();
+ArrayList<QuoteManager> quotes = new ArrayList<>();
 ArrayList<User> userInfo = new ArrayList<>();
-quotes = (ArrayList<Quote>) request.getAttribute("quotes");
+quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
  userInfo = (ArrayList<User>) request.getAttribute("userInfo") ;
-
-
 String email = (String) session.getAttribute("email");
 %>
-
 <body>
    <%@include file="navBar.jsp"%>
     <div class="container emp-profile">
@@ -40,7 +36,6 @@ for(User user : userInfo){
 	String country = user.getCountry() ; 
 	String city = user.getCity() ;
     Timestamp created_at = user.getCreated_at() ; 
-
 %>
         
             <div class="row">
@@ -76,7 +71,6 @@ for(User user : userInfo){
                     </div>
                 </div>
                 <div class="col-md-2">
-
                     <a href="settings" class="profile-edit-btn" style="text-decoration-line: none;"> Edit
                         Profile</a>
                 </div>
@@ -87,13 +81,10 @@ for(User user : userInfo){
                         <p>Highlights</p>
                         <a href="" class=" text-muted small text-truncate"><i
                                 class="fas fa-quote-left fa-fw text-muted"></i> 1,433 quotes</a><br>
-
                         <a href="" class=" text-muted small text-truncate"><i
                                 class="fas fa-user-friends fa-fw text-muted"></i> 1,046 friends</a><br>
-
                         <a class=" text-muted small text-truncate"><i class="fas fa-heart"></i>
                             1,046 Likes</a>
-
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -143,8 +134,7 @@ for(User user : userInfo){
            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             
                                             	<%
-	for (Quote q : quotes) {
-
+	for (QuoteManager q : quotes) {
 		String author_name = q.getAuthor_name();
 		String quote_text = q.getQuoteText();
 		String book_name = q.getName_book();
@@ -177,8 +167,6 @@ for(User user : userInfo){
 						<p class="card-text">
 							<small class="text-muted">Added By: <a href="#"><%=user_name%></a></small>
 						</p>
-
-
 					
 					
 				</div>
@@ -190,7 +178,6 @@ for(User user : userInfo){
 	}
 	%>
 	
-
            
                         </div>
                     </div>
@@ -205,11 +192,6 @@ for(User user : userInfo){
 	
        
     </div>
-
-
-
-
-
     <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -218,10 +200,4 @@ for(User user : userInfo){
             $(this).toggleClass('active');
         });
     </script>
-
-
-
-
-
-
 </body>

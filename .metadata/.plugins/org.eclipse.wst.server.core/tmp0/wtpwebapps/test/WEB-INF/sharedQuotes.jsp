@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="comm.octest.beans.Quote" %>
+<%@ page import="comm.octest.beans.QuoteManager" %>
 <%@ page import ="java.time.LocalDate" %> 
 <%@ page import ="java.time.format.DateTimeFormatter" %>
 
@@ -22,28 +22,29 @@
 </head>
 
 <%
-ArrayList<Quote> quotes = new ArrayList<>() ;
-quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 
-
+ArrayList<QuoteManager> quotes = new ArrayList<>() ;
+quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 %>
 
 <body>
 
 <%@include file="navBar.jsp"%>
- <% for (Quote q : quotes ) { 
-                	
-                	String author_name =q.getAuthor_name() ; 
-                	String quote_text =q.getQuoteText() ; 
-                	int quote_id  = q.getId_quote() ; 
-                	String book_name = q.getName_book(); 
-                	String user_name = q.getUser_name() ;
-                	String like_color = q.getLike_color();
-                	Timestamp created_at = q.getCreated_at(); // get the Timestamp object
-                	LocalDateTime localDateTime = created_at.toLocalDateTime(); // convert to LocalDateTime
-                	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
-                	String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
-                %>
+ <%
+ 
+   for (QuoteManager q : quotes ) { 
+                  	
+                  	String author_name =q.getAuthor_name() ; 
+                  	String quote_text =q.getQuoteText() ; 
+                  	int quote_id  = q.getId_quote() ; 
+                  	String book_name = q.getName_book(); 
+                  	String user_name = q.getUser_name() ;
+                  	String like_color = q.getLike_color();
+                  	Timestamp created_at = q.getCreated_at(); // get the Timestamp object
+                  	LocalDateTime localDateTime = created_at.toLocalDateTime(); // convert to LocalDateTime
+                  	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
+                  	String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
+ %>
                     		  
                     	  
 

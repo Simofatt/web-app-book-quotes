@@ -11,7 +11,7 @@ public class Application {
 	private String author_name;
 	private int id_quote;
 	private static Map<String, Author> authors = new HashMap<>();
-	private Map<String, Quote> quotes = new HashMap<>();
+	private Map<String, QuoteManager> quotes = new HashMap<>();
 	private Map<String, Book> books = new HashMap<>();
 
 	public Application(String name_book, String quote_text, String author_name, int id_quote) {
@@ -28,8 +28,8 @@ public class Application {
 	public void updateQuote(String name_book, String quote_text, String author_name, int id_quote, int user_id,
 			String type) throws SQLException {
 
-		QuoteFactory quoteFactory = new QuoteFactory();
-		quoteFactory.addQuote(name_book, quote_text, user_id);
+		// QuoteFactory quoteFactory = new QuoteFactory();
+		// quoteFactory.addQuote(name_book, quote_text, user_id);
 
 		BookFactory bookFactory = new BookFactory();
 		bookFactory.addBook(author_name, type, name_book);
@@ -42,10 +42,10 @@ public class Application {
 		String quote_key = name_book + quote_text;
 		// quoteFactory.fetchQuotes();
 
-		Quote quote = (Quote) quotes.get(quote_key);
+		QuoteManager quote = (QuoteManager) quotes.get(quote_key);
 
 		if (quote == null) {
-			quote = new Quote(name_book, quote_text, user_id);
+			quote = new QuoteManager(name_book, quote_text, user_id);
 			quotes.put(quote_key, quote);
 			// quote.update();
 

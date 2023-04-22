@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
-<%@ page import="comm.octest.beans.Quote"%>
+<%@ page import="comm.octest.beans.QuoteManager"%>
 <%@ page import="java.time.LocalDate"%>
 <%@ page import="java.time.format.DateTimeFormatter"%>
 <%@ page import="java.sql.Timestamp"%>
@@ -23,15 +23,13 @@
 <%@ include file="/WEB-INF/ressources/css/myQuotes.css"%></style>
 </head>
 <%
-ArrayList<Quote> quotes = new ArrayList<>();
-quotes = (ArrayList<Quote>) request.getAttribute("quotes");
+ArrayList<QuoteManager> quotes = new ArrayList<>();
+quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 %>
-
 <body>
 	<%@include file="navBar.jsp"%>
 	<%
-	for (Quote q : quotes) {
-
+	for (QuoteManager q : quotes) {
 		String author_name = q.getAuthor_name();
 		String quote_text = q.getQuoteText();
 		String book_name = q.getName_book();
@@ -42,7 +40,6 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 		String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
 		int id_quote = q.getId_quote() ;
 	%>
-
 	<div class="container my-4">
 		<div class="card mb-4">
 			<div class="row no-gutters">
@@ -66,8 +63,6 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 						<p class="card-text">
 							<small class="text-muted">Added By: <a href="#"><%=user_name%></a></small>
 						</p>
-
-
 						<a href="#" class="card-link edit-quote" data-toggle="modal"
 							data-target="#editQuoteModal" data-quote-text="<%=quote_text%>"
 							data-book-title="<%=book_name%>"
@@ -82,7 +77,6 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 	<%
 	}
 	%>
-
 	<div class="modal fade" id="editQuoteModal" tabindex="-1" role="dialog"
 		aria-labelledby="editQuoteModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -123,12 +117,6 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
 <script>
     const editButtons = document.querySelectorAll('.edit-quote');
     editButtons.forEach(button => {
@@ -137,7 +125,6 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
       const bookTitle = button.dataset.bookTitle;
       const authorName = button.dataset.authorName;
       const idQuote    = button.dataset.idQuote ; 
-
       document.querySelector('#quoteText').value = quoteText;
       document.querySelector('#bookTitle').value = bookTitle;
       document.querySelector('#nameOfTheAuthor').value = authorName;
@@ -158,5 +145,4 @@ quotes = (ArrayList<Quote>) request.getAttribute("quotes");
 		// Add a click event listener to the "Edit" button
 	</script>
 </body>
-
 </html>

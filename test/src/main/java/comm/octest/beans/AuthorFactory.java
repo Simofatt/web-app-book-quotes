@@ -14,7 +14,7 @@ public class AuthorFactory {
 		System.out.print(key);
 		fetchAuthors();
 		Author author = (Author) authors.get(key);
-		System.out.print("AAAA");
+
 		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
 		if (author == null) {
 			author = new Author(author_name);

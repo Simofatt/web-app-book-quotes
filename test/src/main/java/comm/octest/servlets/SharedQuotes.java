@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import comm.octest.beans.Quote;
+import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
 
 @WebServlet(name = "SharedQuotes", value = "/sharedQuotes")
@@ -28,11 +28,12 @@ public class SharedQuotes extends HttpServlet {
 		try {
 			HttpSession session = request.getSession();
 			String email = (String) session.getAttribute("email");
-			int user_id = (int) session.getAttribute("user_id");
-			if (email != null) {
 
-				Quote quote = new Quote();
-				List<Quote> quotes = quote.fetchQuotes(user_id);
+			if (email != null) {
+				int user_id = (int) session.getAttribute("user_id");
+
+				QuoteManager quote = new QuoteManager();
+				List<QuoteManager> quotes = quote.fetchQuotes(user_id);
 				request.setAttribute("quotes", quotes);
 
 				this.getServletContext().getRequestDispatcher("/WEB-INF/sharedQuotes.jsp").forward(request, response);
@@ -52,6 +53,7 @@ public class SharedQuotes extends HttpServlet {
 			int quote_id = Integer.parseInt(quoteId);
 			HttpSession session = request.getSession();
 			int user_id = (int) session.getAttribute("user_id");
+
 			User user = new User();
 			user.setId_quote(quote_id);
 			user.setId_user(user_id);

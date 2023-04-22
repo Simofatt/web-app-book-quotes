@@ -1,0 +1,28 @@
+package comm.octest.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+
+public class notification extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Récupérer les notifications à partir de la base de données
+        ArrayList<String> notifications = NotificationManager.getNotifications();
+
+        // Convertir les notifications en JSON
+        Gson gson = new Gson();
+        String json = gson.toJson(notifications);
+
+        // Retourner les notifications au format JSON
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        out.print(json);
+        out.flush();
+    }
+}

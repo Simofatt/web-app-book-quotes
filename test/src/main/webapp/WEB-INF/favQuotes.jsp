@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="comm.octest.beans.Quote" %>
+<%@ page import="comm.octest.beans.QuoteManager" %>
 <%@ page import ="java.time.LocalDate" %> 
 <%@ page import ="java.time.format.DateTimeFormatter" %>
 <%@ page import="java.sql.Timestamp" %>
@@ -18,8 +18,8 @@
        <style>   <%@include file="/WEB-INF/ressources/css/addQuote.css"%> </style>
 </head>
 <%
-ArrayList<Quote> favQuotes = new ArrayList<>() ;
-favQuotes = (ArrayList<Quote>) request.getAttribute("favQuotes");
+ArrayList<QuoteManager> favQuotes = new ArrayList<>() ;
+favQuotes = (ArrayList<QuoteManager>) request.getAttribute("favQuotes");
 %>
 <body>
   <%@include file="navBar.jsp"%>
@@ -28,7 +28,7 @@ favQuotes = (ArrayList<Quote>) request.getAttribute("favQuotes");
     <div class="container my-4">
    	<h5 style="margin-left: 50px;">Favorite Quotes</h5> 
    	<% 
-	for (Quote q : favQuotes) {
+	for (QuoteManager q : favQuotes) {
 		String author_name = q.getAuthor_name();
 		String quote_text = q.getQuoteText();
 		String book_name = q.getName_book();
@@ -40,7 +40,6 @@ favQuotes = (ArrayList<Quote>) request.getAttribute("favQuotes");
 		int quote_id = q.getId_quote() ;
     	String like_color = q.getLike_color();
 	%>
-
 	
 		<div class="card mb-4">
 			<div class="row no-gutters">
@@ -83,13 +82,8 @@ favQuotes = (ArrayList<Quote>) request.getAttribute("favQuotes");
        <%} %> 
 	
         
-
        
-
-
-
       
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -99,5 +93,4 @@ favQuotes = (ArrayList<Quote>) request.getAttribute("favQuotes");
         });
     </script>
 </body>
-
 </html>

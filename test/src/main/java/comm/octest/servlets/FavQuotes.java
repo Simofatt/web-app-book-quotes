@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import comm.octest.beans.Quote;
+import comm.octest.beans.QuoteManager;
 
 @WebServlet(name = "FavQuotes", value = "/favQuotes")
 public class FavQuotes extends HttpServlet {
@@ -31,8 +31,8 @@ public class FavQuotes extends HttpServlet {
 			if (email != null) {
 				int user_id = (int) session.getAttribute("user_id");
 
-				Quote quote = new Quote();
-				List<Quote> favQuotes = quote.fetchFavQuotes(user_id);
+				QuoteManager quote = new QuoteManager();
+				List<QuoteManager> favQuotes = quote.fetchFavQuotes(user_id);
 				request.setAttribute("favQuotes", favQuotes);
 
 				this.getServletContext().getRequestDispatcher("/WEB-INF/favQuotes.jsp").forward(request, response);
@@ -53,7 +53,7 @@ public class FavQuotes extends HttpServlet {
 			HttpSession session = request.getSession();
 			int user_id = (int) session.getAttribute("user_id");
 
-			Quote quote = new Quote();
+			QuoteManager quote = new QuoteManager();
 			quote.setId_quote(quote_id);
 			quote.setUserId(user_id);
 

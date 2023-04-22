@@ -1,0 +1,17 @@
+package comm.octest.beans;
+
+import java.util.List;
+
+public interface Flyweight {
+
+	String getAuthor_name();
+
+	String getName_book();
+
+	String getQuoteText();
+
+	int getId_quote();
+
+	List<Quote> fetchQuoteAuthorship();
+
+}

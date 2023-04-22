@@ -10,12 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import comm.octest.beans.I_Quote;
+import comm.octest.beans.Observer;
+import comm.octest.beans.QuoteFactorySingleton;
 import comm.octest.beans.User;
 import comm.octest.db.DAO;
 
 @WebServlet(name = "Auth", value = "/auth")
 public class Auth extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private I_Quote quoteFactory = QuoteFactorySingleton.getInstance();
 
 	public Auth() {
 		super();
@@ -34,7 +38,8 @@ public class Auth extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-		User user = new User();
+		// INITIALISE THE ARRAY LIST , AND CREATE A USER TO ADD HIM INTO THAT ARRAYLIST
+		Observer user = new User();
 		user.setEmail(email);
 		user.setPassword(password);
 
@@ -51,6 +56,9 @@ public class Auth extends HttpServlet {
 				session.setAttribute("email", email);
 				int user_id = dao.getId(email);
 				session.setAttribute("user_id", user_id);
+				Observer user2 = new User(email, password, quoteFactory); // use the object to add this user to the //
+																			// arrayList of
+				quoteFactory.getObservers();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

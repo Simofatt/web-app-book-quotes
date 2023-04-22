@@ -1,0 +1,10 @@
+package comm.octest.beans;
+
+public static synchronized I_Quote getInstance() {
+    if (quoteFactory == null) {
+        quoteFactory = new QuoteFactory();
+    }
+    return quoteFactory;
+}
+
+}

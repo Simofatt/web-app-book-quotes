@@ -7,8 +7,8 @@ import java.util.List;
 
 import comm.octest.db.DAO;
 
-//STACK OBSERVER IMPLEMENT OBSERVER 
-public class User {
+// OBSERVER 
+public class User implements Observer {
 
 	private String full_name;
 	private String email;
@@ -20,15 +20,17 @@ public class User {
 	private int id_type;
 	private int id_quote;
 	private String city;
+	private I_Quote quoteFactory;
 
 	public User() {
-
 	}
 
-	public User(String name, String email) {
-		this.full_name = name;
-		this.email = email;
+	// CONTRUCTOR TO ADD A OBSERVER
+	public User(String email, String password, I_Quote quoteFactory) {
 
+		this.email = email;
+		this.password = password;
+		quoteFactory.addObservers(this);
 	}
 
 	// CONSTRUCTOR TO GET THE USER INFO
@@ -56,7 +58,6 @@ public class User {
 		if (valide) {
 			pseudo.updateUserInfo(user);
 			return valide;
-
 		}
 		return valide;
 	}
@@ -66,11 +67,21 @@ public class User {
 		pseudo.addLikedQuote(user);
 	}
 
+	// SEND NOTIFICATION TO USER
+	public void sendNotification(int id_quote) throws SQLException {
+
+		DAO userDAO = new DAO();
+		int id_user = userDAO.getId(this.email);
+		System.out.print("ID DE LUSER EST : " + id_user + "ET SON EMAIL EST :" + this.email);
+		userDAO.insertNotification(id_quote, id_user);
+	}
+
 	public void popularPeople(int user_id) {
 		// SQL REQUEST TO ADD IN THE MOSTPOPULARPEOPLE TABLE
 	}
 
-	// GETTERS AND SETTERS
+	// ************************** GETTERS AND
+	// SETTERS****************************************
 	public String getCity() {
 		return city;
 	}

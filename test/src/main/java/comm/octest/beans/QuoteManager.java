@@ -18,6 +18,7 @@ public class QuoteManager implements Flyweight {
 	private String like_color;
 	private DAO quoteDAO;
 	private int id_quote;
+	private String email; 
 	private List<String> likedUsers = new ArrayList<>();
 
 	public QuoteManager() {
@@ -41,7 +42,7 @@ public class QuoteManager implements Flyweight {
 	// FETCH THE QUOTES
 
 	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,
-			int id_quote, String like_color) {
+			int id_quote, String like_color,String email) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
@@ -49,17 +50,19 @@ public class QuoteManager implements Flyweight {
 		this.user_name = user_name;
 		this.id_quote = id_quote;
 		this.like_color = like_color;
+		this.email = email ;
 	}
 
 	// FETCH MY QUOTES
 	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,
-			int id_quote) {
+			int id_quote,String email) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
 		this.created_at = created_at;
 		this.user_name = user_name;
 		this.id_quote = id_quote;
+		this.email = email; 
 
 	}
 
@@ -69,7 +72,8 @@ public class QuoteManager implements Flyweight {
 		this.quote_text = quoteText;
 		this.author_name = author_name;
 		this.id_quote = id_quote;
-
+		quoteDAO = new DAO();
+	
 	}
 
 	// FETCH ALL THE QUOTES
@@ -77,7 +81,11 @@ public class QuoteManager implements Flyweight {
 		List<QuoteManager> quotes = quoteDAO.fetchQuotes(user_id);
 		return quotes;
 	}
-
+	// FETCH ALL THE QUOTES
+	public List<QuoteManager> fetchUserQuotes(int user_id,int id_user_session) throws SQLException {
+		List<QuoteManager> quotes = quoteDAO.fetchUserQuotes(user_id,id_user_session);
+		return quotes;
+	}
 	// FETCH MY QUOTES
 	public List<QuoteManager> fetchMyQuotes(String email_user) throws SQLException {
 		List<QuoteManager> quotes = quoteDAO.fetchMyQuotes(email_user);
@@ -147,6 +155,10 @@ public class QuoteManager implements Flyweight {
 		pseudo.removeLikedQuote(quote);
 
 		// likedUsers.remove(userId);
+	}
+	public int getIdUser(String email) throws SQLException { 
+		int userId = quoteDAO.getId(email) ; 
+		return userId ; 
 	}
 
 	public void notifyLikedUsers(int id_quote, int id_user) {
@@ -230,6 +242,14 @@ public class QuoteManager implements Flyweight {
 	public void removeLikedUser(String userId) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

@@ -5,3 +5,7 @@
 1682190791456	Delete element
 1682200573403	Delete element
 1682200597634	Delete element
+1682262655438	Encapsulate field 'friends'
+1682264334802	Encapsulate field 'nbreFriends'
+1682271248474	Encapsulate field 'nbreLikes'
+1682280275608	Encapsulate field 'email'

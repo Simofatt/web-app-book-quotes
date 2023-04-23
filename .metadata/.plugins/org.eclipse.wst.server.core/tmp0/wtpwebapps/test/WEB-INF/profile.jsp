@@ -36,6 +36,12 @@ for(User user : userInfo){
 	String country = user.getCountry() ; 
 	String city = user.getCity() ;
     Timestamp created_at = user.getCreated_at() ; 
+    String emailProfile = user.getEmail() ;
+    int nbreQuotes = user.getNbreQuoteAdded()  ;
+    int id_user = user.getId_user();
+    int nbre_friends = user.getNbreFriends() ; 
+    int nbre_likes = user.getNbreLikes() ; 
+    boolean isFriends = user.isFriends() ;
 %>
         
             <div class="row">
@@ -55,7 +61,7 @@ for(User user : userInfo){
                             <%=name %>
                         </h5>
                         <h6>
-                          Morocco, <%=country %>
+                           <%=country %>, <%=city %>
                         </h6>
                         <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -71,8 +77,23 @@ for(User user : userInfo){
                     </div>
                 </div>
                 <div class="col-md-2">
+               <% if(emailProfile.equals(email)) { %> 
                     <a href="settings" class="profile-edit-btn" style="text-decoration-line: none;"> Edit
                         Profile</a>
+                        <%} else {  %>
+                        	<form action="profile" method="post"  class="mt-3 ml-auto">
+                                <% if(isFriends == false) {%> 
+                                <input type="hidden" name="emailFriend" value="<%=emailProfile%>"> 
+                                    <button type="submit" class="btn btn-primary add-friend-btn"  name ="addFriend" value="<%=id_user%>">Add as a
+                                        Friend</button>
+                                       
+                                       <% }  else { %> 
+                                       <button  class="btn btn-primary send-message">Send a message</button>
+                                    <%} %>
+                                       
+                                    
+                                </form>
+                                <%} %>
                 </div>
             </div>
             <div class="row">
@@ -80,11 +101,11 @@ for(User user : userInfo){
                     <div class="profile-work">
                         <p>Highlights</p>
                         <a href="" class=" text-muted small text-truncate"><i
-                                class="fas fa-quote-left fa-fw text-muted"></i> 1,433 quotes</a><br>
+                                class="fas fa-quote-left fa-fw text-muted"></i> <%=nbreQuotes %> quotes</a><br>
                         <a href="" class=" text-muted small text-truncate"><i
-                                class="fas fa-user-friends fa-fw text-muted"></i> 1,046 friends</a><br>
+                                class="fas fa-user-friends fa-fw text-muted"></i>  <%=nbre_friends %> friends</a><br>
                         <a class=" text-muted small text-truncate"><i class="fas fa-heart"></i>
-                            1,046 Likes</a>
+                             <%=nbre_likes %> Likes</a>
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -104,7 +125,7 @@ for(User user : userInfo){
                                     <label>Email</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>    <%=email%></p>
+                                    <p>    <%=emailProfile%></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -144,6 +165,9 @@ for(User user : userInfo){
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
 		String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
 		int id_quote = q.getId_quote() ;
+		String like_color = q.getLike_color();
+		String emailOwnerOfTheQuote = q.getEmail() ;
+		
 	%>    
             <div class="card mb-4">
 			<div class="row no-gutters">
@@ -154,44 +178,49 @@ for(User user : userInfo){
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
+					<% if(emailOwnerOfTheQuote.equals(email)) { %> 
 						<h5 class="card-title"><%=book_name%></h5>
-						<p class="card-text">
-							"<%=quote_text%>"
-						</p>
-						<p class="card-text">
-							<small class="text-muted">Published: <%=formattedDate%></small>
-						</p>
-						<p class="card-text">
-							<small class="text-muted">Author : <%=author_name%></small>
-						</p>
-						<p class="card-text">
-							<small class="text-muted">Added By: <a href="#"><%=user_name%></a></small>
-						</p>
+						<p class="card-text">"<%=quote_text%>"</p>
+						<p class="card-text"><small class="text-muted">Published: <%=formattedDate%></small></p>
+						<p class="card-text"><small class="text-muted">Author : <%=author_name%></small></p>
+						<p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name%></a></small></p>
+						<%} else{  %>
 					
-					
+					     <form id="form_<%=id_quote%>" action="profile" method="post" >
+                        <h5 class="card-title"><%=book_name %></h5>
+                        <p class="card-text">"<%=quote_text %>"</p>
+                        <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
+                        <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
+                        <p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name %></a></small></p>
+                          <input type="hidden" name="quoteId" value="<%=id_quote%>"/>
+                          <input type="hidden" name="emailFriend" value="<%=emailOwnerOfTheQuote%>"/>
+                        <a href="#" class="card-link favorite "  style="color:<%= like_color %>;"onclick="submitForm(<%=id_quote%>)"><i class="fas fa-heart"></i> Love</a>
+                        </form>
+                        <%} %>
+                    </div>  
 				</div>
 			</div>
 		</div>
+		 <script>
+    function submitForm(quoteId) {
+        document.getElementById("form_" + quoteId).submit();
+       
+    }
+</script>
 	
-	</div>
+	
 		<%
 	}
 	%>
 	
-           
+           </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
-            
-            
-            
-            
-            
-	
-       
-    </div>
+        
+      
+   
     <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

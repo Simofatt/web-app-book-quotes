@@ -22,6 +22,9 @@ public class User implements Observer {
 	private int id_quote;
 	private String city;
 	private int nbreQuoteAdded;
+	private boolean isFriends; // check is two users are friends
+	private int nbreFriends; // check nbre Of friends that the user have
+	private int nbreLikes;
 
 	// private I_Quote quoteFactory = QuoteFactorySingleton.getInstance();
 	private DAO userDAO;
@@ -41,12 +44,19 @@ public class User implements Observer {
 	}
 
 	// CONSTRUCTOR TO GET THE USER INFO
-	public User(String name, String country, String city, String password, Timestamp created_at) {
+	public User(String name, String country, String city, String password, Timestamp created_at, String email,
+			int nbreQuotes, int id_user, int nbreFriends, int nbre_likes, boolean isFriends) {
 		this.full_name = name;
 		this.country = country;
 		this.city = city;
 		this.created_at = created_at;
 		this.password = password;
+		this.email = email;
+		this.nbreQuoteAdded = nbreQuotes;
+		this.id_user = id_user;
+		this.nbreFriends = nbreFriends;
+		this.nbreLikes = nbre_likes;
+		this.isFriends = isFriends;
 		userDAO = new DAO();
 
 	}
@@ -57,10 +67,10 @@ public class User implements Observer {
 		return auth;
 	}
 
-	public List<User> getInfo(String email) throws SQLException {
+	public List<User> getInfo(String email, int idUserConnected) throws SQLException {
 		List<User> userInfo = new ArrayList<>();
 
-		userInfo = userDAO.getUser(email);
+		userInfo = userDAO.getUser(email, idUserConnected);
 		return userInfo;
 
 	}
@@ -89,9 +99,9 @@ public class User implements Observer {
 	}
 
 	// FETCH POPULAR PEOPLE :
-	public List<Observer> getUsers() throws SQLException {
+	public List<Observer> getUsers(int idUserConnected) throws SQLException {
 		List<Observer> users = new ArrayList<>();
-		users = userDAO.getUsers();
+		users = userDAO.getUsers(idUserConnected);
 		return users;
 
 	}
@@ -207,6 +217,30 @@ public class User implements Observer {
 
 	public void setNbreQuoteAdded(int nbreQuoteAdded) {
 		this.nbreQuoteAdded = nbreQuoteAdded;
+	}
+
+	public boolean isFriends() {
+		return isFriends;
+	}
+
+	public void setFriends(boolean isFriends) {
+		this.isFriends = isFriends;
+	}
+
+	public int getNbreFriends() {
+		return nbreFriends;
+	}
+
+	public void setNbreFriends(int nbreFriends) {
+		this.nbreFriends = nbreFriends;
+	}
+
+	public int getNbreLikes() {
+		return nbreLikes;
+	}
+
+	public void setNbreLikes(int nbreLikes) {
+		this.nbreLikes = nbreLikes;
 	}
 
 }

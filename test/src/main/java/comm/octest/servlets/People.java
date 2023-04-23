@@ -25,25 +25,26 @@ public class People extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		HttpSession session = request.getSession();
-		String email = (String) session.getAttribute("email");
-
-		if (email != null) {
-			Observer user = new User();
-
-			try {
-
-				List<Observer> users = user.getUsers();
-				request.setAttribute("users", users);
-
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-			this.getServletContext().getRequestDispatcher("/WEB-INF/people.jsp").forward(request, response);
-		} else {
-			response.sendRedirect("registration");
+		try {
+			HttpSession session = request.getSession();
+			String email = (String) session.getAttribute("email");
+				if (email != null) {
+						Observer user = new User();
+						
+						//WE GET THE IdUserConnected TO KNOW IF HIM AND THE PEOPLE THAT WE FETCH ARE FRIENDS OR NOT 
+						int idUserConnected = (Integer) session.getAttribute("user_id");
+						List<Observer> users = user.getUsers(idUserConnected);
+						request.setAttribute("users", users);
+					    this.getServletContext().getRequestDispatcher("/WEB-INF/people.jsp").forward(request, response);
+							        
+				} else {
+					response.sendRedirect("registration");
+				}
+				
+		
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -51,11 +52,8 @@ public class People extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			HttpSession session = request.getSession();
-
 			int idUser1 = Integer.parseInt(request.getParameter("addFriend"));
 			int idUser2 = (Integer) session.getAttribute("user_id");
-			System.out.println(idUser1);
-
 			Observer user = new User();
 			user.addFriend(idUser1, idUser2);
 			response.sendRedirect("people");

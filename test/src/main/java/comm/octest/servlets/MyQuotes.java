@@ -48,26 +48,24 @@ public class MyQuotes extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		try {
 		String author_name = request.getParameter("author_name");
 		String name_book = request.getParameter("book_name");
-		String idQuote = request.getParameter("id_quote");
-		int id_quote = Integer.parseInt(idQuote);
+		int id_quote = Integer.parseInt(request.getParameter("id_quote"));
 		String quote_text = request.getParameter("quote_text");
 
 		Flyweight quoteManager2 = new QuoteManager(name_book, quote_text, author_name, id_quote);
-		updateQuote(quoteManager2);
+	    quoteManager2.updateQuote(quoteManager2);
+		
 
-		System.out.println("UPDATE INFOS : name of the author :  " + author_name + "name of the book : " + name_book
-				+ "Id_quote: " + id_quote);
+		System.out.println("UPDATE INFOS => name of the author :  " + author_name + " name of the book : " + name_book
+				+ "Id of the quote: " + id_quote +" QUOTE : " +quote_text);
 
 		response.sendRedirect("myQuotes");
-
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
-	private void updateQuote(Flyweight quote2) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

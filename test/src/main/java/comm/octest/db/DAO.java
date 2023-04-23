@@ -214,14 +214,15 @@ public class DAO {
 		}
 	}
 
-//FETCH ALL THE QUOTES 
+//FETCH ALL THE QUOTES && CHECK IF THE USER LIKED THE QUOTE OR NOT 
 	public List<QuoteManager> fetchQuotes(int user_id) throws SQLException {
 		List<QuoteManager> quotes = new ArrayList<>();
 		String color;
 		driver();
 
 		PreparedStatement preparedStatement = connexion.prepareStatement(
-				"SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user ");
+				"SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user  WHERE u.id_user !=? ");
+		preparedStatement.setInt(1, user_id);
 		ResultSet resultat = preparedStatement.executeQuery();
 
 		while (resultat.next()) {
@@ -231,6 +232,9 @@ public class DAO {
 			String user_name = resultat.getString("user_name");
 			String author_name = resultat.getString("author_name");
 			int id_quote = resultat.getInt("id_quote");
+			String emailOfTheProfile = resultat.getString("email") ;
+			System.out.println("email of the owner of the quote is " +emailOfTheProfile) ;
+			System.out.println("email of the owner of the quote is ") ;
 
 			PreparedStatement preparedStatement2 = connexion
 					.prepareStatement("SELECT * from like_quote WHERE id_user =? AND id_quote=?");
@@ -245,7 +249,46 @@ public class DAO {
 			}
 
 			QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,
-					color);
+					color,emailOfTheProfile);
+			quotes.add(quote);
+		}
+		return quotes;
+
+	}
+	public List<QuoteManager> fetchUserQuotes(int user_id,int id_user_session) throws SQLException {
+		List<QuoteManager> quotes = new ArrayList<>();
+		String color;
+		driver();
+
+		PreparedStatement preparedStatement = connexion.prepareStatement(
+				"SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user  WHERE u.id_user =? ");
+		preparedStatement.setInt(1, user_id);
+		ResultSet resultat = preparedStatement.executeQuery();
+
+		while (resultat.next()) {
+			String quote_text = resultat.getString("quote_text");
+			String book_name = resultat.getString("book_name");
+			Timestamp created_at = resultat.getTimestamp("created_at");
+			String user_name = resultat.getString("user_name");
+			String author_name = resultat.getString("author_name");
+			int id_quote = resultat.getInt("id_quote");
+			String emailOfTheProfile = resultat.getString("email") ;
+		
+
+			PreparedStatement preparedStatement2 = connexion
+					.prepareStatement("SELECT * from like_quote WHERE id_user =? AND id_quote=?");
+			preparedStatement2.setInt(1, id_user_session);
+			preparedStatement2.setInt(2, id_quote);
+			ResultSet resultat2 = preparedStatement2.executeQuery();
+			if (resultat2.next()) {
+				color = "red";
+
+			} else {
+				color = "blue";
+			}
+
+			QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,
+					color,emailOfTheProfile);
 			quotes.add(quote);
 		}
 		return quotes;
@@ -269,8 +312,9 @@ public class DAO {
 			String user_name = resultat.getString("user_name");
 			String author_name = resultat.getString("author_name");
 			int id_quote = resultat.getInt("id_quote");
+	
 
-			QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote);
+			QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,email);
 			quotes.add(quote);
 		}
 		return quotes;
@@ -313,9 +357,8 @@ public class DAO {
 		String book_name = quote.getName_book();
 		String quote_text = quote.getQuoteText();
 		int id_quote = quote.getId_quote();
-
+	
 		driver();
-
 		PreparedStatement preparedStatement5 = connexion
 				.prepareStatement("SELECT id_book FROM quotes WHERE id_quote =? ");
 		preparedStatement5.setInt(1, id_quote);
@@ -398,12 +441,14 @@ public class DAO {
 	}
 
 	// GET INFORMATION OF A USER
-	public List<User> getUser(String email) throws SQLException {
+	public List<User> getUser(String email, int idUserConnected) throws SQLException {
 		List<User> userInfo = new ArrayList<>();
+		boolean isFriends;
+		int nbreFriends;
 
 		driver();
-
-		PreparedStatement preparedStatement3 = connexion.prepareStatement("SELECT * FROM users  WHERE email =?");
+		PreparedStatement preparedStatement3 = connexion.prepareStatement(
+				"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes, COUNT(CASE WHEN lk.id_quote IS NOT NULL THEN 1 ELSE 0 END)  as nbreOfLikes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user LEFT JOIN like_quote lk ON uq.id_quote = lk.id_quote  WHERE email =? GROUP BY u.id_user   ");
 		preparedStatement3.setString(1, email);
 
 		ResultSet resultat3 = preparedStatement3.executeQuery();
@@ -412,11 +457,48 @@ public class DAO {
 			String full_name = resultat3.getString("full_name");
 			String country = resultat3.getString("country");
 			String city = resultat3.getString("city");
-
+			String emailProfile = resultat3.getString("email");
 			String password = resultat3.getString("password");
 			Timestamp created_at = resultat3.getTimestamp("created_at");
+			int nbreQuotes = resultat3.getInt("nbreQuotes");
+			int id_user = resultat3.getInt("id_user");
+			int nbre_likes = resultat3.getInt("nbreOfLikes");
 
-			User user = new User(full_name, country, city, password, created_at);
+			PreparedStatement preparedStatement4 = connexion.prepareStatement(
+					"SELECT COUNT(*) as nbreOfFriends FROM friendships WHERE id_user1 =? or id_user2=? ");
+
+			preparedStatement4.setInt(1, id_user);
+			preparedStatement4.setInt(2, id_user);
+
+			ResultSet resultat4 = preparedStatement4.executeQuery();
+
+			PreparedStatement preparedStatement5 = connexion.prepareStatement(
+					"SELECT * FROM friendships WHERE id_user1 =?  AND id_user2 =? or id_user2=? AND id_user1=?");
+			preparedStatement5.setInt(1, idUserConnected);
+			preparedStatement5.setInt(2, id_user);
+			preparedStatement5.setInt(3, idUserConnected);
+			preparedStatement5.setInt(4, id_user);
+
+			ResultSet resultat5 = preparedStatement5.executeQuery();
+
+			if (resultat4.next()) {
+				nbreFriends = resultat4.getInt("nbreOfFriends");
+
+			} else {
+
+				nbreFriends = 0;
+
+			}
+
+			if (resultat5.next()) {
+				isFriends = true;
+
+			} else {
+				isFriends = false;
+
+			}
+			User user = new User(full_name, country, city, password, created_at, emailProfile, nbreQuotes, id_user,
+					nbreFriends, nbre_likes, isFriends);
 			userInfo.add(user);
 		}
 		return userInfo;
@@ -508,7 +590,7 @@ public class DAO {
 			int quote_id = resultat2.getInt("id_quote");
 			System.out.print("next1: " + quote_id);
 			PreparedStatement preparedStatement = connexion.prepareStatement(
-					"SELECT q.*, b.name AS book_name,a.name AS author_name,u.full_name AS user_name  FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE q.id_quote=? ");
+					"SELECT q.*, b.name AS book_name,a.name AS author_name,u.full_name AS user_name ,u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE q.id_quote=? ");
 			preparedStatement.setInt(1, quote_id);
 			ResultSet resultat = preparedStatement.executeQuery();
 
@@ -519,10 +601,11 @@ public class DAO {
 				Timestamp created_at = resultat.getTimestamp("created_at");
 				String user_name = resultat.getString("user_name");
 				String author_name = resultat.getString("author_name");
+				String email = resultat.getString("email") ;
 				String color = "red";
 
 				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name,
-						quote_id, color);
+						quote_id, color,email);
 				favQuotes.add(quote);
 
 			}
@@ -605,11 +688,11 @@ public class DAO {
 	}
 
 	// FETCH USERS TO DISPLAY THEM :
-	public List<Observer> getUsers() throws SQLException {
+	public List<Observer> getUsers(int idUserConnected) throws SQLException {
 		List<Observer> users = new ArrayList<>();
 		driver();
 		PreparedStatement preparedStatement2 = connexion.prepareStatement(
-				"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user GROUP BY u.id_user");
+				"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user GROUP BY u.id_user ");
 
 		ResultSet resultat2 = preparedStatement2.executeQuery();
 		while (resultat2.next()) {
@@ -620,6 +703,14 @@ public class DAO {
 			int nbreQuotes = resultat2.getInt("nbreQuotes");
 			int id_user = resultat2.getInt("id_user");
 
+			PreparedStatement preparedStatement3 = connexion.prepareStatement(
+					"SELECT * FROM friendships WHERE id_user1 =?  AND id_user2 =? or id_user2=? AND id_user1=?");
+			preparedStatement3.setInt(1, idUserConnected);
+			preparedStatement3.setInt(2, id_user);
+			preparedStatement3.setInt(3, idUserConnected);
+			preparedStatement3.setInt(4, id_user);
+
+			ResultSet resultat3 = preparedStatement3.executeQuery();
 			Observer user = new User();
 
 			user.setCity(city);
@@ -628,6 +719,29 @@ public class DAO {
 			user.setName(full_name);
 			user.setId_user(id_user);
 			user.setNbreQuoteAdded(nbreQuotes);
+			if (resultat3.next()) {
+
+				boolean isFriends = true;
+				user.setFriends(isFriends);
+
+			} else {
+				boolean isFriends = false;
+				user.setFriends(isFriends);
+			}
+			PreparedStatement preparedStatement4 = connexion.prepareStatement(
+					"SELECT COUNT(*) as nbreOfFriends FROM friendships WHERE id_user1 =? or id_user2=? ");
+
+			preparedStatement4.setInt(1, id_user);
+			preparedStatement4.setInt(2, idUserConnected);
+			ResultSet resultat4 = preparedStatement4.executeQuery();
+			if (resultat4.next()) {
+				int nbreFriends = resultat4.getInt("nbreOfFriends");
+				user.setNbreFriends(nbreFriends);
+
+			} else {
+				int nbreFriends = 0;
+				user.setNbreFriends(nbreFriends);
+			}
 			users.add(user);
 
 		}
@@ -635,17 +749,16 @@ public class DAO {
 		return users;
 	}
 
-	// ADD A FRIENDSHIP
+	// ADD A FRIENDSHIP && CHECK IF THEY ARE FRIENDS :
 	public void addFriend(int idUser1, int idUser2) throws SQLException {
 		driver();
 		PreparedStatement preparedStatement5 = connexion
-				.prepareStatement("INSERT INTO friendships(id_user1,id_user2) VALUES (?,?) ");
+				.prepareStatement("INSERT INTO friendships(id_user1,id_user2) VALUES (?,?)");
 		preparedStatement5.setInt(1, idUser1);
 		preparedStatement5.setInt(2, idUser2);
 
 		preparedStatement5.executeUpdate();
-	}
 
-	// CHECK IF THEY ARE FRIENDS :
+	}
 
 }

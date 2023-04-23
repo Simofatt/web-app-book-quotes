@@ -16,7 +16,7 @@ public interface Observer {
 
 	boolean authentification();
 
-	List<User> getInfo(String email) throws SQLException;
+	List<User> getInfo(String email, int idUserConnected) throws SQLException;
 
 	void setCity(String city);
 
@@ -50,8 +50,19 @@ public interface Observer {
 
 	int getNbreQuoteAdded();
 
-	List<Observer> getUsers() throws SQLException;
+	List<Observer> getUsers(int idUserConnected) throws SQLException;
 
 	void addFriend(int idUser1, int idUser2) throws SQLException;
 
+	void setFriends(boolean isFriends);
+
+	boolean isFriends();
+
+	void setNbreFriends(int nbreFriends);
+
+	int getNbreFriends();
+
+	void setNbreLikes(int nbreLikes);
+
+	int getNbreLikes();
 }

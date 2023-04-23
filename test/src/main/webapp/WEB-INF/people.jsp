@@ -50,6 +50,9 @@ for(Observer user : users){
 	String email = user.getEmail() ;
     int nbreQuotes = user.getNbreQuoteAdded()  ;
     int id_user = user.getId_user();
+    boolean isFriends = user.isFriends() ;
+    int nbreFriends = user.getNbreFriends() ; 
+    
     if(id_user != id_user_session ){ 
     
 %>
@@ -66,7 +69,7 @@ for(Observer user : users){
                                 <span class=" text-success float-right pulse" title="online now">#1</span>
 
 
-                                <label class="name lead"><%=name %></label>
+                               <a style = "color: blue; cursor: pointer;" href ="profile?email=<%=email %>"><label  style = "color: blue; cursor: pointer;" class="name lead"><%=name %></label></a> 
                                 <br>
                                 <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title=""
                                     data-original-title="5842 Hillcrest Rd"></span>
@@ -77,7 +80,7 @@ for(Observer user : users){
                                             class="fas fa-quote-left fa-fw text-muted"></i> <%=nbreQuotes %> quotes</a>
                                 </div>
                                 <div class="links"><a  class=" text-muted small text-truncate"><i
-                                            class="fas fa-user-friends fa-fw text-muted"></i> 1,046 friends</a>
+                                            class="fas fa-user-friends fa-fw text-muted"></i> <%=nbreFriends %>  friends</a>
                                 </div>
 
 
@@ -85,9 +88,14 @@ for(Observer user : users){
                                     data-original-title="" title=""></span>
                                 <span class="text-muted small text-truncate"><%=email %></span>
                                 <form action="people" method="post" class="mt-3 ml-auto">
+                                <% if(isFriends == false) {%> 
                                     <button type="submit" class="btn btn-primary add-friend-btn"  name ="addFriend" value="<%=id_user%>">Add as a
                                         Friend</button>
-                                    <button  class="btn btn-primary send-message">Send a message</button>
+                                       <% }  else { %> 
+                                       <button  class="btn btn-primary send-message">Send a message</button>
+                                    <%} %>
+                                       
+                                    
                                 </form>
                             </div>
                         </div>

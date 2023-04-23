@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 <%@ page import="comm.octest.beans.QuoteManager"%>
@@ -15,10 +14,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Book Quotes</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
 <%@ include file="/WEB-INF/ressources/css/myQuotes.css"%></style>
 </head>
@@ -104,7 +101,7 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 							 <input type="text" class="form-control" id="nameOfTheAuthor" value="" name="author_name">
 						</div>
 						<div class="form-group">
-							 <input type="text" class="form-control" id="idQuote" value="" name="id_quote" hidden>
+							 <input type="hidden" class="form-control" id="idQuote" value="" name="id_quote">
 						</div>
 					
 				</div>

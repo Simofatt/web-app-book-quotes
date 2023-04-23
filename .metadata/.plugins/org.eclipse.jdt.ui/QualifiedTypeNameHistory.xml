@@ -27,7 +27,9 @@
     <fullyQualifiedTypeName name="java.security.Timestamp"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="comm.octest.beans.User"/>
-    <fullyQualifiedTypeName name="comm.octest.beans.Observer"/>
     <fullyQualifiedTypeName name="comm.octest.beans.I_Quote"/>
     <fullyQualifiedTypeName name="comm.octest.beans.QuoteFactorySingleton"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.Observer"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.QuoteManager"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.Flyweight"/>
 </qualifiedTypeNameHistroy>

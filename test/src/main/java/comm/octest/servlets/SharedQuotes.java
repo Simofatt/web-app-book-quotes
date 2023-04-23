@@ -42,6 +42,7 @@ public class SharedQuotes extends HttpServlet {
 					Flyweight quoteManager = new QuoteManager();
 					List<QuoteManager> quotes = quoteManager.fetchQuotes(user_id);
 					request.setAttribute("quotes", quotes);
+					
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/sharedQuotes.jsp");
 					dispatcher.forward(request, response);
 					response.getWriter().append("#form_" + idQuote);

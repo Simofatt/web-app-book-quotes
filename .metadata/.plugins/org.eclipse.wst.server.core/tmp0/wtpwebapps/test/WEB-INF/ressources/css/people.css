@@ -82,7 +82,7 @@
 
         .send-message {
             position: absolute;
-            top: 80%;
+            top: 50%;
             right: 0px;
             transform: translateY(-50%);
         }

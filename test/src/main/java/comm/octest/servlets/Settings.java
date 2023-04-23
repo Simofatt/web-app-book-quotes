@@ -29,13 +29,14 @@ public class Settings extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
+		int id_user = (Integer) session.getAttribute("user_id");
 
 		if (email != null) {
 			Observer user = new User();
 
 			try {
 
-				List<User> userInfo = user.getInfo(email);
+				List<User> userInfo = user.getInfo(email, id_user);
 				request.setAttribute("userInfo", userInfo);
 
 			} catch (SQLException e) {
@@ -58,11 +59,12 @@ public class Settings extends HttpServlet {
 		String city = request.getParameter("city");
 		String country = request.getParameter("country");
 		String password = request.getParameter("password");
+		int idUserConnected = (Integer) session.getAttribute("user_id");
 
 		try {
 
 			Observer user = new User();
-			List<User> userInfo = user.getInfo(email_session);
+			List<User> userInfo = user.getInfo(email_session, idUserConnected);
 			int id_user = pseudo.getId(email_session);
 
 			user.setId_user(id_user);

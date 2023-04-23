@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="comm.octest.beans.Flyweight" %>
+<%@ page import="comm.octest.beans.QuoteManager" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +11,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+int user_id = (int) session.getAttribute("user_id");
+Flyweight quoteNotification = new QuoteManager();
+List<Flyweight> notifications = quoteNotification.getNotification(user_id);  
+int countNotif = notifications.size() ;
+%>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">Book Quotes</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -52,21 +63,35 @@
                         <a class="dropdown-item" href="#">Sign Out</a>
                     </div>
                 </li>
+                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning">3</span>
+                        <span class="badge badge-warning"><%=countNotif %></span>
                     </a>
+                  
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifDropdown">
-    <a class="dropdown-item" href="#">Notification 1</a>
-    <a class="dropdown-item" href="#">Notification 2</a>
-    <a class="dropdown-item" href="#">Notification 3</a>
+                   
+                    <%for (Flyweight notifs : notifications ) { 
+                    	int id_quote = notifs.getId_quote() ;
+                    	 
+                     %>
+                
+               
+                 <a class="dropdown-item" href="sharedQuotes?id_quote=<%=id_quote%>">New Quote added!</a>
+                 
+
+                   
+    <%} %>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="#">View All Notifications</a>
-</div>
-</li>
+    
+   </div>
 
+    
+
+</li>
 
 
 

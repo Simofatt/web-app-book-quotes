@@ -11,4 +11,6 @@ public interface I_Quote {
 
 	void notifyObservers(int id_quote) throws SQLException;
 
+	Flyweight addQuote(String name_book, String quote_text, int user_id) throws SQLException;
+
 }

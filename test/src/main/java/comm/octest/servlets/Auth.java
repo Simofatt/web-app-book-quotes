@@ -44,20 +44,20 @@ public class Auth extends HttpServlet {
 		user.setPassword(password);
 
 		// AUTHENTIFICATION
-		DAO dao = new DAO();
-		boolean auth = dao.authentification(user);
+
+		boolean auth = user.authentification();
 		request.setAttribute("auth", auth);
 
 		// SESSION :
 		if (auth) {
 			try {
-
+				DAO userDao = new DAO();
 				HttpSession session = request.getSession();
 				session.setAttribute("email", email);
-				int user_id = dao.getId(email);
+				int user_id = userDao.getId(email);
 				session.setAttribute("user_id", user_id);
 				Observer user2 = new User(email, password, quoteFactory); // use the object to add this user to the //
-																			// arrayList of
+																			// // arrayList of
 				quoteFactory.getObservers();
 			} catch (SQLException e) {
 				e.printStackTrace();

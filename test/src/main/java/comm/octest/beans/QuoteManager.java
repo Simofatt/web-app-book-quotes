@@ -118,6 +118,18 @@ public class QuoteManager implements Flyweight {
 		quoteDAO.updateQuote(quote);
 
 	}
+	// GET NOTIFICATIONS :
+
+	public List<Flyweight> getNotification(int id_user) throws SQLException {
+		List<Flyweight> notifications = new ArrayList<>();
+		notifications = quoteDAO.getNotification(id_user);
+		return notifications;
+	}
+
+	// DELETE THE NOTIFICATION :
+	public void removeNotification(int id_quote, int id_user) throws SQLException {
+		quoteDAO.removeNotification(id_quote, id_user);
+	}
 
 	public List<String> getLikedUsers() {
 		return likedUsers;
@@ -130,7 +142,7 @@ public class QuoteManager implements Flyweight {
 		notifyLikedUsers(id_quote, id_user);
 	}
 
-	public void removeLikedQuote(QuoteManager quote) throws SQLException {
+	public void removeLikedQuote(Flyweight quote) throws SQLException {
 		DAO pseudo = new DAO();
 		pseudo.removeLikedQuote(quote);
 

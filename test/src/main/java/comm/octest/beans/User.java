@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import comm.octest.db.DAO;
 
@@ -20,9 +21,13 @@ public class User implements Observer {
 	private int id_type;
 	private int id_quote;
 	private String city;
-	private I_Quote quoteFactory;
+	private int nbreQuoteAdded;
+
+	// private I_Quote quoteFactory = QuoteFactorySingleton.getInstance();
+	private DAO userDAO;
 
 	public User() {
+		userDAO = new DAO();
 	}
 
 	// CONTRUCTOR TO ADD A OBSERVER
@@ -31,6 +36,8 @@ public class User implements Observer {
 		this.email = email;
 		this.password = password;
 		quoteFactory.addObservers(this);
+		userDAO = new DAO();
+
 	}
 
 	// CONSTRUCTOR TO GET THE USER INFO
@@ -40,44 +47,76 @@ public class User implements Observer {
 		this.city = city;
 		this.created_at = created_at;
 		this.password = password;
+		userDAO = new DAO();
 
+	}
+
+	// AUTHENTIFICATION
+	public boolean authentification() {
+		boolean auth = userDAO.authentification(this);
+		return auth;
 	}
 
 	public List<User> getInfo(String email) throws SQLException {
 		List<User> userInfo = new ArrayList<>();
-		DAO pseudo = new DAO();
-		userInfo = pseudo.getUser(email);
+
+		userInfo = userDAO.getUser(email);
 		return userInfo;
 
 	}
 
-	public boolean updateUserInfo(User user, String email_session) throws SQLException {
+	public boolean updateUserInfo(Observer user, String email_session) throws SQLException {
 
-		DAO pseudo = new DAO();
-		boolean valide = pseudo.validEmail(user.getEmail(), email_session);
+		boolean valide = userDAO.validEmail(user.getEmail(), email_session);
 		if (valide) {
-			pseudo.updateUserInfo(user);
+			userDAO.updateUserInfo(user);
 			return valide;
 		}
 		return valide;
 	}
 
-	public void likedQuote(User user) throws SQLException {
-		DAO pseudo = new DAO();
-		pseudo.addLikedQuote(user);
+	public void likedQuote(Observer user) throws SQLException {
+
+		userDAO.addLikedQuote(user);
 	}
 
 	// SEND NOTIFICATION TO USER
-	public void sendNotification(int id_quote) throws SQLException {
+	public void update(int id_quote) throws SQLException {
 
-		DAO userDAO = new DAO();
 		int id_user = userDAO.getId(this.email);
 		System.out.print("ID DE LUSER EST : " + id_user + "ET SON EMAIL EST :" + this.email);
 		userDAO.insertNotification(id_quote, id_user);
 	}
 
-	public void popularPeople(int user_id) {
-		// SQL REQUEST TO ADD IN THE MOSTPOPULARPEOPLE TABLE
+	// FETCH POPULAR PEOPLE :
+	public List<Observer> getUsers() throws SQLException {
+		List<Observer> users = new ArrayList<>();
+		users = userDAO.getUsers();
+		return users;
+
+	}
+
+	// ADD A FRIENDSHIP
+	public void addFriend(int idUser1, int idUser2) throws SQLException {
+		userDAO.addFriend(idUser1, idUser2);
+	}
+
+	// MEHTODES TO KNOW IF THERE IS AN INSTANCE OF THE USER IN THE LIST OF OBSERVERS
+	@Override
+	public boolean equals(Object o) {
+		if (o == this) {
+			return true;
+		}
+		if (!(o instanceof Observer)) {
+			return false;
+		}
+		Observer other = (Observer) o;
+		return Objects.equals(email, other.getEmail());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(email);
 	}
 
 	// ************************** GETTERS AND
@@ -160,6 +199,14 @@ public class User implements Observer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public int getNbreQuoteAdded() {
+		return nbreQuoteAdded;
+	}
+
+	public void setNbreQuoteAdded(int nbreQuoteAdded) {
+		this.nbreQuoteAdded = nbreQuoteAdded;
 	}
 
 }

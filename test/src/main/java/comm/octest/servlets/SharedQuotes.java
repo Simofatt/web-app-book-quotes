@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import comm.octest.beans.Flyweight;
+import comm.octest.beans.Observer;
 import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
 
@@ -31,12 +34,29 @@ public class SharedQuotes extends HttpServlet {
 
 			if (email != null) {
 				int user_id = (int) session.getAttribute("user_id");
+				String id_quote = request.getParameter("id_quote");
 
-				QuoteManager quote = new QuoteManager();
-				List<QuoteManager> quotes = quote.fetchQuotes(user_id);
-				request.setAttribute("quotes", quotes);
+				if (id_quote != null) {
 
-				this.getServletContext().getRequestDispatcher("/WEB-INF/sharedQuotes.jsp").forward(request, response);
+					int idQuote = Integer.parseInt(id_quote);
+					Flyweight quoteManager = new QuoteManager();
+					List<QuoteManager> quotes = quoteManager.fetchQuotes(user_id);
+					request.setAttribute("quotes", quotes);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/sharedQuotes.jsp");
+					dispatcher.forward(request, response);
+					response.getWriter().append("#form_" + idQuote);
+
+					quoteManager.removeNotification(idQuote, user_id);
+
+				} else {
+
+					Flyweight quoteManager = new QuoteManager();
+					List<QuoteManager> quotes = quoteManager.fetchQuotes(user_id);
+					request.setAttribute("quotes", quotes);
+
+					this.getServletContext().getRequestDispatcher("/WEB-INF/sharedQuotes.jsp").forward(request,
+							response);
+				}
 			} else {
 				response.sendRedirect("registration");
 			}
@@ -54,7 +74,7 @@ public class SharedQuotes extends HttpServlet {
 			HttpSession session = request.getSession();
 			int user_id = (int) session.getAttribute("user_id");
 
-			User user = new User();
+			Observer user = new User();
 			user.setId_quote(quote_id);
 			user.setId_user(user_id);
 			user.likedQuote(user);

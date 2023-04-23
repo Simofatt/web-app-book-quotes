@@ -95,10 +95,10 @@ public class QuoteFactory implements I_Quote {
 
 	// ADD OBSERVERS
 	public void addObservers(Observer user) {
-		if (observers != null) {
+
+		if (!observers.contains(user)) {
+
 			observers.add(user);
-		} else {
-			System.out.println("user == null ");
 		}
 
 	}
@@ -120,7 +120,7 @@ public class QuoteFactory implements I_Quote {
 
 		for (Observer ob : observers) {
 			System.out.println("observers please : " + ob.getEmail());
-			ob.sendNotification(id_quote);
+			ob.update(id_quote);
 		}
 	}
 }

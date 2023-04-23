@@ -1,5 +1,0 @@
-package comm.octest.beans;
-
-public interface I_author {
-
-}

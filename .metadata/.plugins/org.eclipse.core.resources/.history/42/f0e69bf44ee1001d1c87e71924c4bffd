@@ -1,0 +1,52 @@
+package comm.octest.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet(name = "Notification", value = "/notification")
+public class notification extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public notification() {
+		super();
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String email = (String) session.getAttribute("email");
+		if (email != null) {
+
+			this.getServletContext().getRequestDispatcher("/WEB-INF/addQuote.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("registration");
+		}
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		HttpSession session = request.getSession();
+
+		int user_id = (int) session.getAttribute("user_id");
+		int id_quote = (int) session.getAttribute("id_quote");
+		try {
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		this.getServletContext().getRequestDispatcher("/WEB-INF/notification.jsp?success=1").forward(request, response);
+
+	}
+
+}

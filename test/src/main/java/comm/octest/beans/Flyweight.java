@@ -27,4 +27,22 @@ public interface Flyweight {
 
 	void setQuoteText(String quote_text);
 
+	List<QuoteManager> fetchFavQuotes(int user_id) throws SQLException;
+
+	List<Flyweight> getNotification(int id_user) throws SQLException;
+
+	void setId_quote(int quote_id);
+
+	void setUserId(int user_id);
+
+	void removeLikedQuote(Flyweight quoteManager) throws SQLException;
+
+	List<QuoteManager> fetchMyQuotes(String email) throws SQLException;
+
+	int getUserId();
+
+	int getId_user();
+
+	void removeNotification(int id_quote, int id_user) throws SQLException;
+
 }

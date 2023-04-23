@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import comm.octest.beans.Observer;
 import comm.octest.beans.User;
 import comm.octest.db.DAO;
 
@@ -30,7 +31,7 @@ public class Settings extends HttpServlet {
 		String email = (String) session.getAttribute("email");
 
 		if (email != null) {
-			User user = new User();
+			Observer user = new User();
 
 			try {
 
@@ -60,7 +61,7 @@ public class Settings extends HttpServlet {
 
 		try {
 
-			User user = new User();
+			Observer user = new User();
 			List<User> userInfo = user.getInfo(email_session);
 			int id_user = pseudo.getId(email_session);
 

@@ -29,9 +29,10 @@ public class MyQuotes extends HttpServlet {
 		String email = (String) session.getAttribute("email");
 
 		if (email != null) {
-			QuoteManager quote = new QuoteManager();
+
+			Flyweight quoteManager = new QuoteManager();
 			try {
-				List<QuoteManager> quotes = quote.fetchMyQuotes(email);
+				List<QuoteManager> quotes = quoteManager.fetchMyQuotes(email);
 				request.setAttribute("quotes", quotes);
 
 			} catch (SQLException e) {
@@ -54,22 +55,8 @@ public class MyQuotes extends HttpServlet {
 		int id_quote = Integer.parseInt(idQuote);
 		String quote_text = request.getParameter("quote_text");
 
-		Flyweight quote2 = new QuoteManager(name_book, quote_text, author_name, id_quote);
-		updateQuote(quote2);
-
-		// GET THE ID OF THE USER
-
-		/*
-		 * HttpSession session = request.getSession(); String email = (String)
-		 * session.getAttribute("email");
-		 * 
-		 * 
-		 * DAO pseudo = new DAO(); int user_id = pseudo.getId(email);
-		 * 
-		 * 
-		 * String type = "policier"; Application app = new Application();
-		 * app.updateQuote(name_book, quote_text, author_name, id_quote, user_id, type);
-		 */
+		Flyweight quoteManager2 = new QuoteManager(name_book, quote_text, author_name, id_quote);
+		updateQuote(quoteManager2);
 
 		System.out.println("UPDATE INFOS : name of the author :  " + author_name + "name of the book : " + name_book
 				+ "Id_quote: " + id_quote);

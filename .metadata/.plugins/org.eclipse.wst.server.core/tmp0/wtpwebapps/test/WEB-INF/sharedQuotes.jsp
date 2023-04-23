@@ -4,7 +4,6 @@
 <%@ page import="comm.octest.beans.QuoteManager" %>
 <%@ page import ="java.time.LocalDate" %> 
 <%@ page import ="java.time.format.DateTimeFormatter" %>
-
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.time.LocalDateTime" %>
 
@@ -106,6 +105,18 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
       
       
       
+      <% if (request.getParameter("id_quote") != null) { %>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var div = document.getElementById("form_<%=request.getParameter("id_quote")%>");
+      if (div) {
+        div.scrollIntoView();
+      }
+    });
+  </script>
+<% } %>
+
+<!-- Display all the quotes normally -->
       
       
 

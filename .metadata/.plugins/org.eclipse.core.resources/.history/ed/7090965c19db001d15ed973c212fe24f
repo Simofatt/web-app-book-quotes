@@ -1,8 +1,0 @@
-package comm.octest.beans;
-
-public interface I_author {
-	
-	public Author (String author_name)  ;
-	
-
-}

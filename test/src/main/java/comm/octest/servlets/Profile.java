@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import comm.octest.beans.Flyweight;
+import comm.octest.beans.Observer;
 import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
 
@@ -26,22 +28,17 @@ public class Profile extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
-
-		
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
 
 		if (email != null) {
-			User user = new User();
-			QuoteManager quote = new QuoteManager();
+			Observer user = new User();
+			Flyweight quoteManager = new QuoteManager();
 			try {
-				List<QuoteManager> quotes = quote.fetchMyQuotes(email);
+				List<QuoteManager> quotes = quoteManager.fetchMyQuotes(email);
 				request.setAttribute("quotes", quotes);
 				List<User> userInfo = user.getInfo(email);
-			
 				request.setAttribute("userInfo", userInfo);
-				
 
 			} catch (SQLException e) {
 
@@ -52,8 +49,6 @@ public class Profile extends HttpServlet {
 			response.sendRedirect("registration");
 		}
 	}
-	
-	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

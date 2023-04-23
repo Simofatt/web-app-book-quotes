@@ -37,7 +37,7 @@ public class DAO {
 	}
 
 	// REGISTRATION
-	public void registration(User user) {
+	public void registration(Observer user) {
 
 		String email = user.getEmail();
 		String name = user.getName();
@@ -443,7 +443,7 @@ public class DAO {
 	}
 
 	// UPDATE USER INFO
-	public void updateUserInfo(User user) throws SQLException {
+	public void updateUserInfo(Observer user) throws SQLException {
 		String full_name = user.getName();
 		String email = user.getEmail();
 		String country = user.getCountry();
@@ -465,7 +465,7 @@ public class DAO {
 	}
 
 	// ADD LIKED QUOTE
-	public void addLikedQuote(User user) throws SQLException {
+	public void addLikedQuote(Observer user) throws SQLException {
 		int user_id = user.getId_user();
 		int quote_id = user.getId_quote();
 		driver();
@@ -534,7 +534,7 @@ public class DAO {
 	}
 
 	// REMOVE LIKED QUOTES
-	public void removeLikedQuote(QuoteManager quote) throws SQLException {
+	public void removeLikedQuote(Flyweight quote) throws SQLException {
 		int user_id = quote.getUserId();
 		int quote_id = quote.getId_quote();
 		driver();
@@ -549,14 +549,103 @@ public class DAO {
 	// INSERT NOTIFICATION FOR A NEW QUOTE
 	public void insertNotification(int id_quote, int id_user) throws SQLException {
 		driver();
+
+		PreparedStatement preparedStatement2 = connexion
+				.prepareStatement("SELECT id_user FROM user_quote WHERE id_quote=?");
+		preparedStatement2.setInt(1, id_quote);
+
+		ResultSet resultat2 = preparedStatement2.executeQuery();
+		while (resultat2.next()) {
+			int idOwnerOfTheQuote = resultat2.getInt("id_user");
+
+			if (idOwnerOfTheQuote != id_user) {
+
+				PreparedStatement preparedStatement5 = connexion
+						.prepareStatement("INSERT INTO notification_quotes(id_quote,id_user) VALUES (?,?) ");
+				preparedStatement5.setInt(1, id_quote);
+				preparedStatement5.setInt(2, id_user);
+				System.out.println(id_quote);
+				System.out.println(id_user);
+				preparedStatement5.executeUpdate();
+			}
+		}
+	}
+
+	// TO GET NOTIFICATIONS:
+	public List<Flyweight> getNotification(int id_user) throws SQLException {
+		List<Flyweight> notifications = new ArrayList<>();
+		driver();
+
+		PreparedStatement preparedStatement2 = connexion
+				.prepareStatement("SELECT nq.id_quote FROM notification_quotes nq WHERE nq.id_user=?");
+		preparedStatement2.setInt(1, id_user);
+		ResultSet resultat2 = preparedStatement2.executeQuery();
+		while (resultat2.next()) {
+
+			int id_quote = resultat2.getInt("id_quote");
+			Flyweight quoteNotification = new QuoteManager();
+			quoteNotification.setId_quote(id_quote);
+			System.out.print(id_quote);
+			notifications.add(quoteNotification);
+
+		}
+		return notifications;
+
+	}
+
+	// DELETE THE NOTIFS
+	public void removeNotification(int id_quote, int id_user) throws SQLException {
+		driver();
 		PreparedStatement preparedStatement5 = connexion
-				.prepareStatement("INSERT INTO notification_quotes(id_quote,id_user) VALUES (?,?) ");
+				.prepareStatement("DELETE FROM notification_quotes WHERE id_quote =? AND id_user=?");
 		preparedStatement5.setInt(1, id_quote);
 		preparedStatement5.setInt(2, id_user);
-		System.out.println(id_quote);
-		System.out.println(id_user);
 		preparedStatement5.executeUpdate();
 
 	}
+
+	// FETCH USERS TO DISPLAY THEM :
+	public List<Observer> getUsers() throws SQLException {
+		List<Observer> users = new ArrayList<>();
+		driver();
+		PreparedStatement preparedStatement2 = connexion.prepareStatement(
+				"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user GROUP BY u.id_user");
+
+		ResultSet resultat2 = preparedStatement2.executeQuery();
+		while (resultat2.next()) {
+			String full_name = resultat2.getString("full_name");
+			String email = resultat2.getString("email");
+			String country = resultat2.getString("country");
+			String city = resultat2.getString("city");
+			int nbreQuotes = resultat2.getInt("nbreQuotes");
+			int id_user = resultat2.getInt("id_user");
+
+			Observer user = new User();
+
+			user.setCity(city);
+			user.setCountry(country);
+			user.setEmail(email);
+			user.setName(full_name);
+			user.setId_user(id_user);
+			user.setNbreQuoteAdded(nbreQuotes);
+			users.add(user);
+
+		}
+
+		return users;
+	}
+
+	// ADD A FRIENDSHIP
+	public void addFriend(int idUser1, int idUser2) throws SQLException {
+		driver();
+		PreparedStatement preparedStatement5 = connexion
+				.prepareStatement("INSERT INTO friendships(id_user1,id_user2) VALUES (?,?) ");
+		preparedStatement5.setInt(1, idUser1);
+		preparedStatement5.setInt(2, idUser2);
+
+		preparedStatement5.executeUpdate();
+	}
+
+	// CHECK IF THEY ARE FRIENDS :
 
 }

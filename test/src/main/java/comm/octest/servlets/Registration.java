@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import comm.octest.beans.Observer;
 import comm.octest.beans.User;
 import comm.octest.db.DAO;
 
@@ -35,7 +36,7 @@ public class Registration extends HttpServlet {
 		String password = request.getParameter("password");
 		String passwordc = request.getParameter("passwordc");
 
-		User user = new User();
+		Observer user = new User();
 
 		user.setEmail(email);
 		user.setPassword(password);

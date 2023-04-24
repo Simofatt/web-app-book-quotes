@@ -1,9 +1,0 @@
-package comm.octest.beans;
-
-import java.sql.SQLException;
-
-public interface Observer {
-
-	void update(Flyweight quote) throws SQLException;
-
-}

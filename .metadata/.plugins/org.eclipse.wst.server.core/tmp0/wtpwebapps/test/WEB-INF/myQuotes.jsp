@@ -113,7 +113,20 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 				</form>
 			</div>
 		</div>
+		
 	</div>
+	<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="text-center">
+        <% if(quotes.isEmpty() ){ %>
+            <div class="alert alert-primary center" role="alert">
+                <p> You don't have any quotes! </p>
+                <a href="addQuote">add a quote</a>
+            </div>    
+        <%} %>
+    </div>
+</div>
+
+	
 <script>
     const editButtons = document.querySelectorAll('.edit-quote');
     editButtons.forEach(button => {

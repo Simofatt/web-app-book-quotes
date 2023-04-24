@@ -26,6 +26,7 @@ ArrayList<User> userInfo = new ArrayList<>();
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
  userInfo = (ArrayList<User>) request.getAttribute("userInfo") ;
 String email = (String) session.getAttribute("email");
+String emailVistitedProfil = (String) request.getParameter("email");
 %>
 <body>
    <%@include file="navBar.jsp"%>
@@ -153,6 +154,25 @@ for(User user : userInfo){
     
                         
            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+           
+                     <%if(emailVistitedProfil != null) {
+                     if(!emailVistitedProfil.equals(email)) {
+        if(quotes.isEmpty() ){ %>
+        	<div class="alert alert-primary" role="alert">
+        	  <p> the user didnt't add quotes! </p>
+        	 
+        	</div>	
+       <%}}} %> 
+         <%
+        if(emailVistitedProfil == null ) {
+        if(quotes.isEmpty() ){ %>
+        	<div class="alert alert-primary" role="alert">
+        	  <p> You didn't add any quote! </p>
+        	  <a href="addQuote">Add a quote</a>
+        	</div>	
+       <%} }%> 
+	
+	      
                             
                                             	<%
 	for (QuoteManager q : quotes) {
@@ -185,6 +205,7 @@ for(User user : userInfo){
 						<p class="card-text"><small class="text-muted">Author : <%=author_name%></small></p>
 						<p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name%></a></small></p>
 						<%} else{  %>
+						
 					
 					     <form id="form_<%=id_quote%>" action="profile" method="post" >
                         <h5 class="card-title"><%=book_name %></h5>
@@ -197,10 +218,13 @@ for(User user : userInfo){
                         <a href="#" class="card-link favorite "  style="color:<%= like_color %>;"onclick="submitForm(<%=id_quote%>)"><i class="fas fa-heart"></i> Love</a>
                         </form>
                         <%} %>
+               
                     </div>  
 				</div>
 			</div>
+			 
 		</div>
+		
 		 <script>
     function submitForm(quoteId) {
         document.getElementById("form_" + quoteId).submit();
@@ -213,12 +237,16 @@ for(User user : userInfo){
 	}
 	%>
 	
+	
            </div>
+             
                         </div>
                     </div>
+          
                 </div>
             </div>
-        
+      
+	
       
    
     <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

@@ -29,10 +29,11 @@ public class Settings extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
-		int id_user = (Integer) session.getAttribute("user_id");
+		
 
 		if (email != null) {
 			Observer user = new User();
+			int id_user = (Integer) session.getAttribute("user_id");
 
 			try {
 

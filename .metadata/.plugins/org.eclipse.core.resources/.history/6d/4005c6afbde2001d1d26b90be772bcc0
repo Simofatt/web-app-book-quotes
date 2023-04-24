@@ -1,0 +1,11 @@
+package comm.octest.db;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public interface DAO<T> {
+	List<T> fetch() throws SQLException ;
+	void insert(String author_name) throws SQLException;
+
+	
+}

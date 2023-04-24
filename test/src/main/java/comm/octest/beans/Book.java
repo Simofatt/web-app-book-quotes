@@ -3,7 +3,8 @@ package comm.octest.beans;
 import java.sql.SQLException;
 import java.util.List;
 
-import comm.octest.db.DAO;
+import comm.octest.dao.BookAuthorDAO;
+import comm.octest.dao.BookAuthor.BookDAO;
 
 public class Book implements I_book {
 	private String id_book;
@@ -11,30 +12,51 @@ public class Book implements I_book {
 	private String book_img;
 	private String author;
 	private String type;
+	private BookAuthorDAO<I_book>  bookDAO;
 
+	
 	public Book(String name_book, String type, String author) {
 		this.name_book = name_book;
 		this.type = type;
 		this.author = author;
+		bookDAO = new BookDAO() ;
 	}
 
 	public Book() {
+		bookDAO = new BookDAO() ;
 	}
 
-	public List<Book> fetchBook() throws SQLException {
-		DAO dao = new DAO();
-		List<Book> books = dao.fetchBooks();
+	
+	//GET BOOKS
+	public List<I_book> fetchBooks() throws SQLException {
+		
+		List<I_book> books = bookDAO.fetch();
 		return books;
 	}
 
-	public void save() throws SQLException {
-		DAO pseudo = new DAO();
-		pseudo.insertBook(name_book, type, author);
+	//INSERT BOOK
+	public void save(I_book book) throws SQLException {
+	
+		bookDAO.insert(book);
 		System.out.println("Book bien saisie ! " + name_book);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// GETTERS AND SETTERS
-
 	public String getId_book() {
 		return id_book;
 	}

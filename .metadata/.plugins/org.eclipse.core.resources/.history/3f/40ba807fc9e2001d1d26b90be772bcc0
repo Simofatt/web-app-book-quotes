@@ -1,0 +1,4 @@
+package comm.octest.dao;
+
+public interface BookAuthorDAO {
+}

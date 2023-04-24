@@ -3,7 +3,8 @@ package comm.octest.beans;
 import java.sql.SQLException;
 import java.util.List;
 
-import comm.octest.db.DAO;
+import comm.octest.dao.BookAuthorDAO;
+import comm.octest.dao.BookAuthor.AuthorDAO;
 
 public class Author implements I_author {
 
@@ -11,29 +12,30 @@ public class Author implements I_author {
 	private int id_book;
 	private int id_author;
 	private int id_type;
+	private BookAuthorDAO<I_author> authorDAO;
 
 	public Author(String author_name) {
 		this.author_name = author_name;
+		authorDAO= new AuthorDAO() ; 
 	}
 
 	public Author() {
+		authorDAO= new AuthorDAO() ; 
 	}
 
-	public void save() throws SQLException {
-		DAO pseudo = new DAO();
-		pseudo.insertAuthor(author_name);
+	public void save(I_author author) throws SQLException {
+	
+		authorDAO.insert(author);
 		System.out.println("Author bien saisie ! " + author_name);
 	}
 
-	public List<Author> fetchAuthor() throws SQLException {
-		DAO dao = new DAO();
-		List<Author> authorsList = dao.fetchAuthors();
+	public List<I_author> fetchAuthors() throws SQLException {
+		
+		List<I_author> authorsList = authorDAO.fetch();
 		return authorsList;
 	}
 
-	public void followAuthor(int user_id, int id_author) {
-		// SQL REQUEST OT ADD IN THE FOLLOW AUTHOR TABLE
-	}
+	
 
 	public String getAuthor_name() {
 		return author_name;
@@ -66,5 +68,7 @@ public class Author implements I_author {
 	public void setId_type(int id_type) {
 		this.id_type = id_type;
 	}
+
+
 
 }

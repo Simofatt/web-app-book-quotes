@@ -1,0 +1,31 @@
+1682349178523	Delete element
+1682352312442	Rename type 'bookDAO'
+1682352322271	Rename type 'authorDAO'
+1682353674188	Rename type 'DAO'
+1682357264486	Delete element
+1682358148426	Rename package 'comm.octest.db'
+1682358189313	Copy package
+1682358193409	Delete element
+1682358250603	Move compilation unit
+1682358275550	Copy package
+1682358279310	Delete element
+1682358555769	Move compilation unit
+1682358902097	Delete element
+1682358907761	Delete element
+1682358912665	Delete element
+1682359005800	Move compilation unit
+1682359038183	Move compilation unit
+1682359222306	Move compilation unit
+1682359227756	Move compilation unit
+1682359230915	Delete element
+1682359234142	Delete element
+1682359383543	Delete element
+1682359503259	Move compilation unit
+1682359524149	Delete element
+1682359537409	Move compilation unit
+1682361242809	Delete element
+1682361333794	Move compilation unit
+1682361338597	Move compilation unit
+1682361342693	Delete element
+1682361509932	Rename type 'QuoteDAO'
+1682361520132	Rename type 'UserDAO'

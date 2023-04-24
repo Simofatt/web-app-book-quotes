@@ -73,11 +73,13 @@ public class QuoteFactory implements I_Quote {
 	public void fetchQuotes(int user_id) throws SQLException {
 
 		List<QuoteManager> fetchedQuotes = quoteManager.fetchQuotes(user_id);
+	
 		for (QuoteManager q : fetchedQuotes) {
 			String name_book = q.getName_book();
 			String quote_text = q.getQuoteText();
 			String key = name_book + quote_text;
 			putQuote(key, quoteManager);
+			System.out.println("THE KEY :" +key +" THE OBJECT :"+quoteManager);
 
 		}
 	}

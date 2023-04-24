@@ -63,6 +63,11 @@ public interface Observer {
 	int getNbreFriends();
 
 	void setNbreLikes(int nbreLikes);
+	 int getIdUser(String email) throws SQLException;
 
 	int getNbreLikes();
+	void removeLikedQuote(Observer user) throws SQLException;
+	void registration(Observer user) throws SQLException ;
+	boolean validEmail(String email, String currentEmail) throws SQLException;
+	boolean validerInput(String name, String email, String password, String passwordc) throws SQLException, ClassNotFoundException;
 }

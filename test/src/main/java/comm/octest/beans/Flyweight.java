@@ -35,14 +35,14 @@ public interface Flyweight {
 
 	void setUserId(int user_id);
 
-	void removeLikedQuote(Flyweight quoteManager) throws SQLException;
+	
 
 	List<QuoteManager> fetchMyQuotes(String email) throws SQLException;
 
 	int getUserId();
 
 	void removeNotification(int id_quote, int id_user) throws SQLException;
-	 int getIdUser(String email) throws SQLException;
+	
 	 String getEmail() ;
 	 void setEmail(String email);
 	 List<QuoteManager> fetchUserQuotes(int user_id , int id_user_session) throws SQLException ;

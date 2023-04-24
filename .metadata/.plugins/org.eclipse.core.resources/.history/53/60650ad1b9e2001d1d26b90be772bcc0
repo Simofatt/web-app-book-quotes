@@ -1,0 +1,61 @@
+package comm.octest.db;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import comm.octest.beans.Author;
+
+public class authorDAO {
+	Connection connexion = null;
+	Statement statement = null;
+	ResultSet resultat = null;
+
+	public authorDAO() {}
+
+	public void driver() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/goodQuotes", "root", "");
+			System.out.println("Connexion reussite ");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//FETCH ALL THE AUTHORS : 
+		public List<Author> fetchAuthors() throws SQLException {
+
+			driver();
+			List<Author> authors = new ArrayList<>();
+
+			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT name FROM authors");
+			ResultSet resultat = preparedStatement.executeQuery();
+
+			while (resultat.next()) {
+				String author_name = resultat.getString("name");
+				Author author = new Author(author_name);
+				authors.add(author);
+			}
+
+			return authors;
+		}
+
+	//INSERT THE AUTHOR (FLYWEIGHT) 
+		public void insertAuthor(String author_name) throws SQLException {
+
+			driver();
+			PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO authors(name) VALUES (?)");
+			preparedStatement.setString(1, author_name);
+			preparedStatement.executeUpdate();
+
+		}
+	
+
+
+}

@@ -24,6 +24,7 @@
 
 ArrayList<QuoteManager> quotes = new ArrayList<>() ;
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
+String email_session = (String) session.getAttribute("email");
 %>
 
 <body>
@@ -43,6 +44,8 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
                   	LocalDateTime localDateTime = created_at.toLocalDateTime(); // convert to LocalDateTime
                   	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
                   	String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
+                  	String email = q.getEmail() ;
+                  	if(!email_session.equals(email)) {
  %>
                     		  
                     	  
@@ -92,7 +95,7 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 
 </div>
   <%
-                }%>
+                  	}  }%>
       
       
       

@@ -1,6 +1,0 @@
-package comm.octest.beans;
-
-public interface Observer {
-
-	void notify();
-}

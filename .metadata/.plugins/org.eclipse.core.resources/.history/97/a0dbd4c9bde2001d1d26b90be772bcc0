@@ -1,0 +1,13 @@
+package comm.octest.db;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import comm.octest.beans.I_book;
+
+public interface DAO<T> {
+	List<T> fetch() throws SQLException ;
+	public void insert(<T> book) throws SQLException;
+
+	
+}

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import comm.octest.db.DAO;
+import comm.octest.dao.user.UserDAOImp;
 
 // OBSERVER 
 public class User implements Observer {
@@ -27,10 +27,10 @@ public class User implements Observer {
 	private int nbreLikes;
 
 	// private I_Quote quoteFactory = QuoteFactorySingleton.getInstance();
-	private DAO userDAO;
+	private UserDAOImp userDAO;
 
 	public User() {
-		userDAO = new DAO();
+		userDAO = new UserDAOImp();
 	}
 
 	// CONTRUCTOR TO ADD A OBSERVER
@@ -39,7 +39,7 @@ public class User implements Observer {
 		this.email = email;
 		this.password = password;
 		quoteFactory.addObservers(this);
-		userDAO = new DAO();
+		userDAO = new UserDAOImp();
 
 	}
 
@@ -57,26 +57,42 @@ public class User implements Observer {
 		this.nbreFriends = nbreFriends;
 		this.nbreLikes = nbre_likes;
 		this.isFriends = isFriends;
-		userDAO = new DAO();
+		userDAO = new UserDAOImp();
 
 	}
-
+	
+	
+	//REGISTRATION : 
+	
+	public boolean validEmail(String email, String currentEmail) throws SQLException {
+		boolean valide = userDAO.validEmail(email,currentEmail);
+		return valide;
+	}
+	
+	public boolean validerInput(String name, String email,String password,String passwordc) throws SQLException, ClassNotFoundException { 
+		boolean uniq = userDAO.validerInput(name, email, password, passwordc);
+		return uniq ;
+	}
+	
+	public void registration(Observer user) throws SQLException { 
+		userDAO.registration(user);
+		
+	}
 	// AUTHENTIFICATION
 	public boolean authentification() {
 		boolean auth = userDAO.authentification(this);
 		return auth;
 	}
 
+	//GET USER DATA
 	public List<User> getInfo(String email, int idUserConnected) throws SQLException {
 		List<User> userInfo = new ArrayList<>();
-
 		userInfo = userDAO.getUser(email, idUserConnected);
 		return userInfo;
-
 	}
 
+	//UPDATE USER INFOS
 	public boolean updateUserInfo(Observer user, String email_session) throws SQLException {
-
 		boolean valide = userDAO.validEmail(user.getEmail(), email_session);
 		if (valide) {
 			userDAO.updateUserInfo(user);
@@ -85,25 +101,32 @@ public class User implements Observer {
 		return valide;
 	}
 
+	
+	//ADD A LIKE TO A QUOTE
 	public void likedQuote(Observer user) throws SQLException {
-
 		userDAO.addLikedQuote(user);
+	}
+	
+	//REMOVE LIKE quote
+	public void removeLikedQuote(Observer user) throws SQLException {
+		userDAO.removeLikedQuote(user);
+
+		// likedUsers.remove(userId);
 	}
 
 	// SEND NOTIFICATION TO USER
 	public void update(int id_quote) throws SQLException {
-
 		int id_user = userDAO.getId(this.email);
 		System.out.print("ID DE LUSER EST : " + id_user + "ET SON EMAIL EST :" + this.email);
 		userDAO.insertNotification(id_quote, id_user);
 	}
 
+	
 	// FETCH POPULAR PEOPLE :
 	public List<Observer> getUsers(int idUserConnected) throws SQLException {
 		List<Observer> users = new ArrayList<>();
 		users = userDAO.getUsers(idUserConnected);
 		return users;
-
 	}
 
 	// ADD A FRIENDSHIP
@@ -111,6 +134,14 @@ public class User implements Observer {
 		userDAO.addFriend(idUser1, idUser2);
 	}
 
+	//GET THE ID OF A USER BASED ON HIS EMAIL
+	public int getIdUser(String email) throws SQLException { 
+		int userId = userDAO.getId(email) ; 
+		return userId ; 
+	}
+	
+	
+	
 	// MEHTODES TO KNOW IF THERE IS AN INSTANCE OF THE USER IN THE LIST OF OBSERVERS
 	@Override
 	public boolean equals(Object o) {
@@ -128,9 +159,17 @@ public class User implements Observer {
 	public int hashCode() {
 		return Objects.hash(email);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-	// ************************** GETTERS AND
-	// SETTERS****************************************
+	// ************************** GETTERS AND SETTERS****************************************
 	public String getCity() {
 		return city;
 	}

@@ -1,0 +1,5 @@
+package comm.octest.db;
+
+public class QuoteDAO {
+
+}

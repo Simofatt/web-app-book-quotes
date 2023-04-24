@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import comm.octest.db.DAO;
+import comm.octest.dao.quote.QuoteDAOImp;
 
 //QUOTE == STACK GRABBER IMPLEMENTS SUBJECT == REMOVE ADD NOTIFY OBSERVERS 
 public class QuoteManager implements Flyweight {
@@ -16,13 +16,13 @@ public class QuoteManager implements Flyweight {
 	private String author_name;
 	private String user_name;
 	private String like_color;
-	private DAO quoteDAO;
+	private QuoteDAOImp quoteDAO;
 	private int id_quote;
 	private String email; 
 	private List<String> likedUsers = new ArrayList<>();
 
 	public QuoteManager() {
-		quoteDAO = new DAO();
+		quoteDAO = new QuoteDAOImp();
 
 	};
 
@@ -31,7 +31,7 @@ public class QuoteManager implements Flyweight {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.user_id = userId;
-		quoteDAO = new DAO();
+		quoteDAO = new QuoteDAOImp();
 	}
 
 	public QuoteManager(String quote_text, int user_id) {
@@ -39,10 +39,10 @@ public class QuoteManager implements Flyweight {
 		this.quote_text = quote_text;
 
 	}
+	
+	
 	// FETCH THE QUOTES
-
-	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,
-			int id_quote, String like_color,String email) {
+	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote, String like_color,String email) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
@@ -54,8 +54,7 @@ public class QuoteManager implements Flyweight {
 	}
 
 	// FETCH MY QUOTES
-	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,
-			int id_quote,String email) {
+	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote,String email) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
@@ -72,7 +71,7 @@ public class QuoteManager implements Flyweight {
 		this.quote_text = quoteText;
 		this.author_name = author_name;
 		this.id_quote = id_quote;
-		quoteDAO = new DAO();
+		quoteDAO = new QuoteDAOImp();
 	
 	}
 
@@ -94,15 +93,13 @@ public class QuoteManager implements Flyweight {
 
 	// FETCH FAV QUOTES
 	public List<QuoteManager> fetchFavQuotes(int user_id) throws SQLException {
-		DAO dao = new DAO();
-		List<QuoteManager> favQuotes = dao.fetchFavQuotes(user_id);
+		List<QuoteManager> favQuotes = quoteDAO.fetchFavQuotes(user_id);
 		return favQuotes;
 	}
 
 	// FETCH Quote_AUTHORSHIP
 	public List<QuoteManager> fetchQuoteAuthorship() throws SQLException {
-
-		List<QuoteManager> user_quote = quoteDAO.fetchUserQuote();
+		List<QuoteManager> user_quote = quoteDAO.fetchQuoteAuthorship();
 		return user_quote;
 	}
 
@@ -115,7 +112,7 @@ public class QuoteManager implements Flyweight {
 
 	// INSERT QUOTE AUTHORSHIP
 	public int insertQuoteAuthorship() throws SQLException {
-		int id_quote = quoteDAO.insertUserQuote(quote_text, user_id);
+		int id_quote = quoteDAO.insertQuoteAuthorship(quote_text, user_id);
 		System.out.println("user_id : " + user_id + " SQUOTE ID " + quote_text);
 
 		return id_quote;
@@ -126,8 +123,9 @@ public class QuoteManager implements Flyweight {
 		quoteDAO.updateQuote(quote);
 
 	}
+	
+	
 	// GET NOTIFICATIONS :
-
 	public List<Flyweight> getNotification(int id_user) throws SQLException {
 		List<Flyweight> notifications = new ArrayList<>();
 		notifications = quoteDAO.getNotification(id_user);
@@ -150,16 +148,8 @@ public class QuoteManager implements Flyweight {
 		notifyLikedUsers(id_quote, id_user);
 	}
 
-	public void removeLikedQuote(Flyweight quote) throws SQLException {
-		DAO pseudo = new DAO();
-		pseudo.removeLikedQuote(quote);
-
-		// likedUsers.remove(userId);
-	}
-	public int getIdUser(String email) throws SQLException { 
-		int userId = quoteDAO.getId(email) ; 
-		return userId ; 
-	}
+	
+	
 
 	public void notifyLikedUsers(int id_quote, int id_user) {
 		// SQL SEQUEST TO ADD IN TH NOTIICATION TABLE

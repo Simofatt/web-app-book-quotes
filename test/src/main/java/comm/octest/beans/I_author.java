@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface I_author {
 
-	void save() throws SQLException;
+	void save(I_author author) throws SQLException;
 
-	List<Author> fetchAuthor() throws SQLException;
+	List<I_author> fetchAuthors() throws SQLException;
 
 	String getAuthor_name();
 

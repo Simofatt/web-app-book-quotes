@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface I_book {
 
-	void save() throws SQLException;
+	void save(I_book book) throws SQLException;
 
-	List<Book> fetchBook() throws SQLException;
+	List<I_book> fetchBooks() throws SQLException;
 
 	String getId_book();
 

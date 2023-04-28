@@ -34,4 +34,5 @@
     <fullyQualifiedTypeName name="comm.octest.beans.Observer"/>
     <fullyQualifiedTypeName name="comm.octest.beans.I_book"/>
     <fullyQualifiedTypeName name="comm.octest.beans.I_author"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

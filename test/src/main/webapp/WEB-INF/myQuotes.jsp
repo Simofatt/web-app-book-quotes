@@ -24,7 +24,15 @@ ArrayList<QuoteManager> quotes = new ArrayList<>();
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 %>
 <body>
+
+
 	<%@include file="navBar.jsp"%>
+	
+
+ 
+
+
+
 	<%
 	for (QuoteManager q : quotes) {
 		String author_name = q.getAuthor_name();
@@ -36,6 +44,9 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
 		String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
 		int id_quote = q.getId_quote() ;
+		String type = q.getType();
+		int id_author = q.getAuthor_id(); 
+		int id_book = q.getBook_id() ;
 	%>
 	<div class="container my-4">
 		<div class="card mb-4">
@@ -64,7 +75,10 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 							data-target="#editQuoteModal" data-quote-text="<%=quote_text%>"
 							data-book-title="<%=book_name%>"
 							data-author-name="<%=author_name%>"
-							data-id-quote="<%=id_quote%>"><i class="fas fa-edit"></i>
+							data-id-quote="<%=id_quote%>"
+							data-id-author="<%=id_author%>"
+							data-id-book="<%=id_book%>"
+							data-type="<%=type%>"><i class="fas fa-edit"></i>
 							Edit</a>
 					</div>
 				</div>
@@ -90,18 +104,21 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 					
 						<div class="form-group">
 							<label for="quoteText">Quote Text</label>
-							<textarea class="form-control" id="quoteText" rows="3" name="quote_text">""</textarea>
+							<textarea class="form-control" id="quoteText" rows="3" placeholder ="" name="quote_text"></textarea>
 						</div>
 						<div class="form-group">
 							<label for="bookTitle">Book Name </label> 
-							<input type="text" class="form-control" id="bookTitle" value="" name="book_name">
+							<input type="text" class="form-control" id="bookTitle" placeholder ="" name="book_name">
 						</div>
 						<div class="form-group">
 							<label for="publishedYear">Name of the Author</label>
-							 <input type="text" class="form-control" id="nameOfTheAuthor" value="" name="author_name">
+							 <input type="text" class="form-control" id="nameOfTheAuthor" placeholder ="" name="author_name">
 						</div>
 						<div class="form-group">
 							 <input type="hidden" class="form-control" id="idQuote" value="" name="id_quote">
+							 <input type="hidden" class="form-control" id="idAuthor" placeholder ="" name="id_author">
+							  <input type="hidden" class="form-control" id="idBook" placeholder ="" name="id_book">
+							  <input type="hidden" class="form-control" id="type" placeholder ="" name="type">
 						</div>
 					
 				</div>
@@ -128,19 +145,26 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 
 	
 <script>
-    const editButtons = document.querySelectorAll('.edit-quote');
-    editButtons.forEach(button => {
-    button.addEventListener('click', event => {
-      const quoteText = button.dataset.quoteText;
-      const bookTitle = button.dataset.bookTitle;
-      const authorName = button.dataset.authorName;
-      const idQuote    = button.dataset.idQuote ; 
-      document.querySelector('#quoteText').value = quoteText;
-      document.querySelector('#bookTitle').value = bookTitle;
-      document.querySelector('#nameOfTheAuthor').value = authorName;
-      document.querySelector('#idQuote').value = idQuote;
-    });
+const editButtons = document.querySelectorAll('.edit-quote');
+editButtons.forEach(button => {
+  button.addEventListener('click', event => {
+    const quoteText = button.dataset.quoteText;
+    const bookTitle = button.dataset.bookTitle;
+    const authorName = button.dataset.authorName;
+    const idQuote    = button.dataset.idQuote ; 
+    const idAuthor    = button.dataset.idAuthor ; 
+    const idBook    = button.dataset.idBook ; 
+    const type   = button.dataset.type;
+    document.querySelector('#quoteText').placeholder = quoteText;
+    document.querySelector('#bookTitle').placeholder = bookTitle;
+    document.querySelector('#nameOfTheAuthor').placeholder = authorName;
+    document.querySelector('#idQuote').value = idQuote;
+    document.querySelector('#idAuthor').value = idAuthor;
+    document.querySelector('#idBook').value = idBook;
+    document.querySelector('#type').value = type;
   });
+});
+
 </script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script

@@ -46,5 +46,14 @@ public interface Flyweight {
 	 String getEmail() ;
 	 void setEmail(String email);
 	 List<QuoteManager> fetchUserQuotes(int user_id , int id_user_session) throws SQLException ;
-	
+	 void removeQuote(int id_quote) throws SQLException;
+	 void removeQuoteAuthorship (int id_quote,int user_id) throws SQLException ;
+	 int getAuthor_id();
+	 void setAuthor_id(int author_id);
+	 public int getBook_id() ;
+
+		public void setBook_id(int book_id) ;
+		public String getType();
+
+		public void setType(String type) ;
 }

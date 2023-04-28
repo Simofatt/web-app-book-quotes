@@ -66,8 +66,9 @@ public class Settings extends HttpServlet {
 			Observer user = new User();
 			List<User> userInfo = user.getInfo(email_session, idUserConnected);
 			int id_user = user.getIdUser(email_session);
-
 			user.setId_user(id_user);
+			
+			
 			if (full_name != null && !full_name.isEmpty()) {
 				user.setName(full_name);
 			} else {

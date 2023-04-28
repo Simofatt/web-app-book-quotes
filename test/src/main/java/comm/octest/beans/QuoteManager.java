@@ -10,15 +10,18 @@ import comm.octest.dao.quote.QuoteDAOImp;
 //QUOTE == STACK GRABBER IMPLEMENTS SUBJECT == REMOVE ADD NOTIFY OBSERVERS 
 public class QuoteManager implements Flyweight {
 	private String name_book;
-	private String quote_text;
-	private int user_id;
-	private Timestamp created_at;
-	private String author_name;
-	private String user_name;
-	private String like_color;
-	private QuoteDAOImp quoteDAO;
-	private int id_quote;
-	private String email; 
+	private String quote_text;  
+	private int user_id;  //
+	private Timestamp created_at;  
+	private String author_name; 
+	private String user_name;   //
+	private String like_color;  //
+	private QuoteDAOImp quoteDAO;  
+	private int id_quote;     
+	private String email;   //
+	private int author_id ; 
+	private int book_id ; 
+	private String type ;
 	private List<String> likedUsers = new ArrayList<>();
 
 	public QuoteManager() {
@@ -53,27 +56,38 @@ public class QuoteManager implements Flyweight {
 		this.email = email ;
 	}
 
+	
+
 	// FETCH MY QUOTES
-	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote,String email) {
+	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote,String email,int author_id,int book_id,String type) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
 		this.created_at = created_at;
 		this.user_name = user_name;
 		this.id_quote = id_quote;
+		this.author_id = author_id; 
+		this.book_id = book_id;
 		this.email = email; 
+		this.type = type ;
 
 	}
 
 	// UPDATE THE QUOTE
-	public QuoteManager(String name_book, String quoteText, String author_name, int id_quote) {
+	public QuoteManager(String name_book, String quoteText, String author_name, int id_quote,int id_user,int id_author,int book_id,String type) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
 		this.id_quote = id_quote;
+		this.user_id = id_user;
+		this.author_id = id_author;
+		this.book_id = book_id;
+		this.type = type;
 		quoteDAO = new QuoteDAOImp();
 	
 	}
+
+	
 
 	// FETCH ALL THE QUOTES
 	public List<QuoteManager> fetchQuotes(int user_id) throws SQLException {
@@ -137,6 +151,14 @@ public class QuoteManager implements Flyweight {
 		quoteDAO.removeNotification(id_quote, id_user);
 	}
 
+	
+	//REMOVE QUOTE 
+	public void removeQuote(int id_quote) throws SQLException { 
+		quoteDAO.removeQuote(id_quote);
+	}
+	public void removeQuoteAuthorship (int id_quote,int user_id) throws SQLException { 
+		quoteDAO.removeQuoteAuthorship(id_quote, user_id);
+	}
 	public List<String> getLikedUsers() {
 		return likedUsers;
 	}
@@ -242,4 +264,26 @@ public class QuoteManager implements Flyweight {
 		this.email = email;
 	}
 
+	public int getAuthor_id() {
+		return author_id;
+	}
+
+	public void setAuthor_id(int author_id) {
+		this.author_id = author_id;
+	}
+	public int getBook_id() {
+		return book_id;
+	}
+
+	public void setBook_id(int book_id) {
+		this.book_id = book_id;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 }

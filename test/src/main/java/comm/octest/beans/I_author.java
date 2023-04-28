@@ -3,11 +3,11 @@ package comm.octest.beans;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface I_author {
+public interface I_Author {
 
-	void save(I_author author) throws SQLException;
+	void save(I_Author author) throws SQLException;
 
-	List<I_author> fetchAuthors() throws SQLException;
+	List<I_Author> fetchAuthors() throws SQLException;
 
 	String getAuthor_name();
 
@@ -24,5 +24,13 @@ public interface I_author {
 	int getId_type();
 
 	void setId_type(int id_type);
+
+	void updateAuthor(I_Author author) throws SQLException;
+	void removeAuthor(I_Author author) throws SQLException ;
+	public int getId_quote() ;
+
+	public void setId_quote(int id_quote) ;
+	void updateId(I_Author author) throws SQLException;
+
 
 }

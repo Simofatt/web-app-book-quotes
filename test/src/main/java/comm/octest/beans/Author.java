@@ -6,13 +6,14 @@ import java.util.List;
 import comm.octest.dao.BookAuthorDAO;
 import comm.octest.dao.BookAuthor.AuthorDAO;
 
-public class Author implements I_author {
+public class Author implements I_Author {
 
 	private String author_name;
 	private int id_book;
 	private int id_author;
 	private int id_type;
-	private BookAuthorDAO<I_author> authorDAO;
+	private int id_quote ;
+	private BookAuthorDAO<I_Author> authorDAO;
 
 	public Author(String author_name) {
 		this.author_name = author_name;
@@ -23,20 +24,35 @@ public class Author implements I_author {
 		authorDAO= new AuthorDAO() ; 
 	}
 
-	public void save(I_author author) throws SQLException {
+	public void save(I_Author author) throws SQLException {
 	
 		authorDAO.insert(author);
 		System.out.println("Author bien saisie ! " + author_name);
 	}
 
-	public List<I_author> fetchAuthors() throws SQLException {
+	public List<I_Author> fetchAuthors() throws SQLException {
 		
-		List<I_author> authorsList = authorDAO.fetch();
+		List<I_Author> authorsList = authorDAO.fetch();
 		return authorsList;
 	}
-
 	
+	//UPDATE THE AUTHOR
 
+	public void updateAuthor(I_Author author) throws SQLException 
+	{ 
+		authorDAO.update(author) ; 
+	}
+	
+	//REMOVE AUTHOR 
+	public void removeAuthor(I_Author author) throws SQLException 
+	{ 
+		authorDAO.remove(author) ; 
+	}
+	//UPDATE ID AUTHOR IN BOOK TABLE 
+	public void updateId(I_Author author) throws SQLException { 
+		authorDAO.updateId(author);
+	}
+	
 	public String getAuthor_name() {
 		return author_name;
 	}
@@ -67,6 +83,14 @@ public class Author implements I_author {
 
 	public void setId_type(int id_type) {
 		this.id_type = id_type;
+	}
+
+	public int getId_quote() {
+		return id_quote;
+	}
+
+	public void setId_quote(int id_quote) {
+		this.id_quote = id_quote;
 	}
 
 

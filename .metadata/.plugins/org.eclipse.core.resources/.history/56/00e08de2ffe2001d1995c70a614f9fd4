@@ -1,0 +1,38 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class AuthorFactory {
+	private static Map<String, I_Author> authors = new HashMap<>();
+
+	public I_Author addAuthor(String author_name) throws SQLException {
+		// CREATE THE KEY
+		String key = author_name;
+		System.out.print(key);
+		fetchAuthors();
+		I_Author author = (I_Author) authors.get(key);
+
+		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
+		if (author == null) {
+			author = new Author(author_name);
+			authors.put(key, author);
+			author.save(author);
+		}
+
+		return author;
+	}
+
+	public void fetchAuthors() throws SQLException {
+		I_Author author = new Author();
+		List<I_Author> authorsList = author.fetchAuthors();
+		for (I_Author a : authorsList) {
+			String key = a.getAuthor_name();
+			authors.put(key, a);
+
+		}
+	}
+
+}

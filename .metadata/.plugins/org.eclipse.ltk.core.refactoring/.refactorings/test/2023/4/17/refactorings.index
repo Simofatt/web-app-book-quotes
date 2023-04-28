@@ -29,3 +29,7 @@
 1682361342693	Delete element
 1682361509932	Rename type 'QuoteDAO'
 1682361520132	Rename type 'UserDAO'
+1682362342768	Rename type 'I_author'
+1682362355930	Rename type 'I_book'
+1682386488894	Encapsulate field 'id_quote'
+1682387966189	Encapsulate field 'type'

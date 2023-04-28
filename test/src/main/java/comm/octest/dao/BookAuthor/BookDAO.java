@@ -1,4 +1,4 @@
-package comm.octest.dao.BookAuthor;
+ 	package comm.octest.dao.BookAuthor;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import comm.octest.beans.Book;
-import comm.octest.beans.I_book;
+import comm.octest.beans.I_Book;
 import comm.octest.dao.BookAuthorDAO;
 
-public class BookDAO implements BookAuthorDAO<I_book>{
+public class BookDAO implements BookAuthorDAO<I_Book>{
 
 	Connection connexion = null;
 	Statement statement = null;
@@ -32,8 +32,8 @@ public class BookDAO implements BookAuthorDAO<I_book>{
 		}
 	}
 	//FETCH BOOKS
-		public List<I_book> fetch() throws SQLException {
-			List<I_book> books = new ArrayList<>();
+		public List<I_Book> fetch() throws SQLException {
+			List<I_Book> books = new ArrayList<>();
 
 			driver();
 			PreparedStatement preparedStatement = connexion.prepareStatement(
@@ -56,7 +56,7 @@ public class BookDAO implements BookAuthorDAO<I_book>{
 
 	//INSERT BOOK (FLYWEIGHT) 
 
-		public void insert(I_book book) throws SQLException {
+		public void insert(I_Book book) throws SQLException {
 			
 			String book_name = book.getName_book() ; 
 			String type_name = book.getType();
@@ -90,4 +90,69 @@ public class BookDAO implements BookAuthorDAO<I_book>{
 			}
 		}
 
+		
+	//UPDATE AUTHOR(FLYWEIGHT)
+		
+		public void update(I_Book book) throws SQLException { 
+			String book_name = book.getName_book();
+			
+			
+			driver();
+			
+				int id_book = book.getId_book() ;
+			
+				PreparedStatement preparedStatement2 = connexion.prepareStatement("UPDATE books SET name =?  WHERE id_book=? ");
+
+				preparedStatement2.setString(1, book_name);
+				preparedStatement2.setInt(2, id_book);
+				preparedStatement2.executeUpdate();		
+				
+			}
+				
+		
+		
+		//REMOVE BOOK 
+		public void remove(I_Book book) throws SQLException {
+			int id_book = book.getId_book();
+			driver();
+			System.out.println("DELETE BOOK") ;
+			PreparedStatement preparedStatement5 = connexion.prepareStatement("DELETE FROM books WHERE id_book=? ");
+			
+			preparedStatement5.setInt(1, id_book);
+			 preparedStatement5.executeUpdate();
+		}
+		
+		public void updateId(I_Book book) throws SQLException {
+
+			 int id_quote = book.getId_quote();
+			 int id_book = book.getId_book() ;
+			 driver();
+			PreparedStatement preparedStatement4 = connexion.prepareStatement("UPDATE quotes SET id_book = ?  WHERE id_quote=?");
+			preparedStatement4.setInt(1, id_book);
+			preparedStatement4.setInt(2, id_quote);
+			preparedStatement4.executeUpdate();
+	
+		}
+		
+		
+		public boolean checkIfBookExists(String book_name) throws SQLException {
+			
+			System.out.print("***************** Book Name : "+book_name);
+			driver() ; 
+			PreparedStatement preparedStatement2 = connexion.prepareStatement("SELECT * FROM books WHERE name =?");
+			preparedStatement2.setString(1, book_name);
+			ResultSet resultat2 = preparedStatement2.executeQuery();
+			if (resultat2.next()) {
+				return true ;
+				
+			}else { 
+				return false ;
+			}		
+		}
+
+	
+	
+
+
+	
 }

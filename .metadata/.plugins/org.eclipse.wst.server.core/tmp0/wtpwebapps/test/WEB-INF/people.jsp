@@ -43,6 +43,7 @@ ArrayList<Observer> users = new ArrayList<>();
             <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
                 <ul class="list-group pull-down" id="contact-list">
                     <%
+                    int i =1;
 for(Observer user : users){
 	String name = user.getName() ; 
 	String country = user.getCountry() ; 
@@ -52,8 +53,9 @@ for(Observer user : users){
     int id_user = user.getId_user();
     boolean isFriends = user.isFriends() ;
     int nbreFriends = user.getNbreFriends() ; 
+  
+      if(id_user != id_user_session ){ 
     
-    if(id_user != id_user_session ){ 
     
 %>
                     <li class="list-group-item">
@@ -66,7 +68,8 @@ for(Observer user : users){
                                     alt="Mike Anamendolla" class="rounded-circle mx-auto d-block img-fluid">
                             </div>
                             <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-                                <span class=" text-success float-right pulse" title="online now">#1</span>
+                            
+                                <span class=" text-success float-right pulse" title="online now">  #<%=i %></span>  
 
 
                                <a style = "color: blue; cursor: pointer;" href ="profile?email=<%=email %>"><label  style = "color: blue; cursor: pointer;" class="name lead"><%=name %></label></a> 
@@ -87,20 +90,21 @@ for(Observer user : users){
                                 <span class="fa fa-envelope fa-fw text-muted" data-toggle="tooltip"
                                     data-original-title="" title=""></span>
                                 <span class="text-muted small text-truncate"><%=email %></span>
-                                <form action="people" method="post" class="mt-3 ml-auto">
-                                <% if(isFriends == false) {%> 
-                                    <button type="submit" class="btn btn-primary add-friend-btn"  name ="addFriend" value="<%=id_user%>">Add as a
-                                        Friend</button>
-                                       <% }  else { %> 
-                                       <button  class="btn btn-primary send-message">Send a message</button>
-                                    <%} %>
-                                       
+                             <form action="people" method="post" class="mt-3 ml-auto">
+    <% if(isFriends == false) {%> 
+        <button type="submit" class="btn btn-primary add-friend-btn" name="addFriend" value="<%=id_user%>">Add as a Friend</button>
+    </form>
+    <% } else { %>
+      <a href="chat?withClientId=<%=email%>" class="btn btn-primary send-message">Send a message</a>
+    <% } %>
+
                                     
-                                </form>
+                               
                             </div>
                         </div>
                     </li>
-                   <%}} %>
+                    
+                   <%  i++;}} %>
                   
                 </ul>
 

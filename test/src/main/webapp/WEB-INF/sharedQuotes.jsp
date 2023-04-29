@@ -69,14 +69,8 @@ String email_session = (String) session.getAttribute("email");
                         <p class="card-text">"<%=quote_text %>"</p>
                         <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
-                        <p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name %></a></small></p>
-                          <input type="hidden" name="quoteId" value="<%=quote_id%>">
-                        
-                              
-       
-      
-                        	 
-                          
+                        <p class="card-text"><small class="text-muted">Added By: <a href="profile?email=<%=email %>"><%=user_name %></a></small></p>
+                          <input type="hidden" name="quoteId" value="<%=quote_id%>">      
                         <a href="#" class="card-link favorite "  style="color:<%= like_color %>;"onclick="submitForm(<%=quote_id%>)"><i class="fas fa-heart"></i> Love</a>
                         </form>
                     </div>

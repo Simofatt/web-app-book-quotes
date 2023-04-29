@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/chat")
+@WebServlet(name = "chat", value = "/chat")
 public class chat extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,11 +25,7 @@ public class chat extends HttpServlet {
 		//pseudo pseudo = new pseudo();
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
-		// User user = new User() ;
-		// user.setEmail(email);
-
-		// friendsList = pseudo.recupererUtilisateurs(user);
-		// ChatRoom2.getInstance().updateFriendsList(email, friendsList);
+	
 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/chat.jsp").forward(request, response);
 	}

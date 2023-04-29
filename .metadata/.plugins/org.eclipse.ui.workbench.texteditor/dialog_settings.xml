@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="valid"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="remove"/>
+			<item value="fetchM"/>
+			<item value="fetcg"/>
+			<item value="fetchQuote"/>
+			<item value="updta"/>
 			<item value="valid"/>
 			<item value="valider"/>
 			<item value="insertAuthor"/>
-			<item value="get"/>
-			<item value=" getNotification"/>
-			<item value=" getNotification getNotification"/>
-			<item value="updateQuote(Flyweight quote)"/>
-			<item value="insertQuoteAuthorship()"/>
 		</list>
 		<list key="replacehistory">
 		</list>

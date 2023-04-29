@@ -303,7 +303,7 @@ public void updateUserInfo(Observer user) throws SQLException {
 			List<Observer> users = new ArrayList<>();
 			driver();
 			PreparedStatement preparedStatement2 = connexion.prepareStatement(
-					"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user GROUP BY u.id_user ");
+					"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user GROUP BY u.id_user ORDER BY nbreQuotes DESC");
 
 			ResultSet resultat2 = preparedStatement2.executeQuery();
 			while (resultat2.next()) {

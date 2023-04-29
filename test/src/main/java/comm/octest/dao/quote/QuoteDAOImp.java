@@ -53,7 +53,8 @@ public class QuoteDAOImp implements QuoteDAO {
 				int id_quote = resultat.getInt("id_quote");
 				String emailOfTheProfile = resultat.getString("email") ;
 				System.out.println("email of the owner of the quote is " +emailOfTheProfile) ;
-				System.out.println("email of the owner of the quote is ") ;
+				
+	
 
 				PreparedStatement preparedStatement2 = connexion
 						.prepareStatement("SELECT * from like_quote WHERE id_user =? AND id_quote=?");
@@ -124,7 +125,7 @@ public class QuoteDAOImp implements QuoteDAO {
 			driver();
 
 			System.out.println("Affichage des quote de user : " + email);
-			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE u.email =? ");
+			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name, b.id_book as id_book ,a.name AS author_name, a.id_author as id_author ,t.name as type ,uq.id_user,u.full_name AS user_name FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN types t ON b.id_type = t.id_type  INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE u.email =? ");
 			preparedStatement.setString(1, email);
 			ResultSet resultat = preparedStatement.executeQuery();
 
@@ -135,8 +136,11 @@ public class QuoteDAOImp implements QuoteDAO {
 				String user_name = resultat.getString("user_name");
 				String author_name = resultat.getString("author_name");
 				int id_quote = resultat.getInt("id_quote");
+				int id_author =  resultat.getInt("id_author");
+				int id_book = resultat.getInt("id_book");
+				String type = resultat.getString("type");
 
-				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,email);
+				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,email,id_author,id_book,type);
 				quotes.add(quote);
 			}
 			return quotes;
@@ -155,8 +159,7 @@ public class QuoteDAOImp implements QuoteDAO {
 			while (resultat2.next()) {
 				int quote_id = resultat2.getInt("id_quote");
 				System.out.print("next1: " + quote_id);
-				PreparedStatement preparedStatement = connexion.prepareStatement(
-						"SELECT q.*, b.name AS book_name,a.name AS author_name,u.full_name AS user_name ,u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE q.id_quote=? ");
+				PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name, a.name AS author_name, u.full_name AS user_name ,u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE q.id_quote=? LIMIT 1 ");
 				preparedStatement.setInt(1, quote_id);
 				ResultSet resultat = preparedStatement.executeQuery();
 
@@ -199,7 +202,7 @@ public class QuoteDAOImp implements QuoteDAO {
 		//INSERT QUOTE AUTHORSHIP
 		public int insertQuoteAuthorship(String quote_text, int user_id) throws SQLException {
 			driver();
-			System.out.println("user_id : " + user_id + " SQUOTE ID ");
+			
 
 			PreparedStatement preparedStatement3 = connexion.prepareStatement("SELECT id_quote FROM quotes WHERE quote_text =?");
 			preparedStatement3.setString(1, quote_text);
@@ -244,59 +247,48 @@ public class QuoteDAOImp implements QuoteDAO {
 			}
 			return -1;
 		}
+	
 		
 		
-		// UPDATE THE QUOTE
+	
+		
 		public void updateQuote(Flyweight quote) throws SQLException {
-
-			String author_name = quote.getAuthor_name();
-			String book_name = quote.getName_book();
 			String quote_text = quote.getQuoteText();
 			int id_quote = quote.getId_quote();
 		
 			driver();
-			PreparedStatement preparedStatement5 = connexion
-					.prepareStatement("SELECT id_book FROM quotes WHERE id_quote =? ");
-			preparedStatement5.setInt(1, id_quote);
-			ResultSet resultat5 = preparedStatement5.executeQuery();
-			if (resultat5.next()) {
-				int id_book = resultat5.getInt("id_book");
+			PreparedStatement preparedStatement4 = connexion.prepareStatement("UPDATE quotes SET quote_text = ?  WHERE id_quote =?");
+			preparedStatement4.setString(1, quote_text);
+			preparedStatement4.setInt(2, id_quote);
+			preparedStatement4.executeUpdate();
 
-				PreparedStatement preparedStatement = connexion
-						.prepareStatement("SELECT id_author FROM authors WHERE name =? ");
-				preparedStatement.setString(1, author_name);
-				ResultSet resultat = preparedStatement.executeQuery();
-				if (resultat.next()) {
-					int id_author = resultat.getInt("id_author");
-
-					PreparedStatement preparedStatement2 = connexion
-							.prepareStatement("UPDATE books SET name =? , id_author=? WHERE id_book=? ");
-
-					preparedStatement2.setString(1, book_name);
-					preparedStatement2.setInt(2, id_author);
-					preparedStatement2.setInt(3, id_book);
-					preparedStatement2.executeUpdate();
-
-					PreparedStatement preparedStatement4 = connexion
-							.prepareStatement("UPDATE quotes SET quote_text = ? , id_book = ? WHERE id_quote =?");
-
-					preparedStatement4.setString(1, quote_text);
-					preparedStatement4.setInt(2, id_book);
-					preparedStatement4.setInt(3, id_quote);
-					preparedStatement4.executeUpdate();
-
-				}
-
-			}
-
+			
+		}
+		//REMOVE QUOTE AUTHORSHIP
+		
+		public void removeQuoteAuthorship(int id_quote,int user_id) throws SQLException {
+			driver();
+			PreparedStatement preparedStatement5 = connexion.prepareStatement("DELETE FROM user_quote WHERE id_user =? AND id_quote=? ");
+			preparedStatement5.setInt(1, user_id);
+			preparedStatement5.setInt(2, id_quote);
+			 preparedStatement5.executeUpdate();
 		}
 		
+		//REMOVE A QUOTE
+		public void removeQuote(int id_quote) throws SQLException {
+			 driver();
+			 PreparedStatement preparedStatement5 = connexion.prepareStatement("DELETE FROM quotes WHERE id_quote=? ");
+			 preparedStatement5.setInt(1, id_quote);
+			 preparedStatement5.executeUpdate();
+		}
+		
+	
 		
 		// TO GET NOTIFICATIONS:
 		public List<Flyweight> getNotification(int id_user) throws SQLException {
 			List<Flyweight> notifications = new ArrayList<>();
+			
 			driver();
-
 			PreparedStatement preparedStatement2 = connexion.prepareStatement("SELECT nq.id_quote FROM notification_quotes nq WHERE nq.id_user=?");
 			preparedStatement2.setInt(1, id_user);
 			ResultSet resultat2 = preparedStatement2.executeQuery();
@@ -314,12 +306,12 @@ public class QuoteDAOImp implements QuoteDAO {
 		// DELETE THE NOTIFS
 		public void removeNotification(int id_quote, int id_user) throws SQLException {
 			driver();
-			PreparedStatement preparedStatement5 = connexion
-					.prepareStatement("DELETE FROM notification_quotes WHERE id_quote =? AND id_user=?");
+			
+			PreparedStatement preparedStatement5 = connexion.prepareStatement("DELETE FROM notification_quotes WHERE id_quote =? AND id_user=?");
 			preparedStatement5.setInt(1, id_quote);
 			preparedStatement5.setInt(2, id_user);
 			preparedStatement5.executeUpdate();
-
+		
 		}
 
 }

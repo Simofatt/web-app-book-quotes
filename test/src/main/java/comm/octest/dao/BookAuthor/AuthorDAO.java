@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import comm.octest.beans.Author;
-import comm.octest.beans.I_author;
+import comm.octest.beans.I_Author;
 import comm.octest.dao.BookAuthorDAO;
 
-public class AuthorDAO implements BookAuthorDAO<I_author> {
+public class AuthorDAO implements BookAuthorDAO<I_Author> {
 	Connection connexion = null;
 	Statement statement = null;
 	ResultSet resultat = null;
@@ -31,25 +31,22 @@ public class AuthorDAO implements BookAuthorDAO<I_author> {
 	}
 	
 	//FETCH ALL THE AUTHORS : 
-		public List<I_author> fetch() throws SQLException {
-
+		public List<I_Author> fetch() throws SQLException {
+			List<I_Author> authors = new ArrayList<>();
+			
 			driver();
-			List<I_author> authors = new ArrayList<>();
-
 			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT name FROM authors");
 			ResultSet resultat = preparedStatement.executeQuery();
-
 			while (resultat.next()) {
 				String author_name = resultat.getString("name");
 				Author author = new Author(author_name);
 				authors.add(author);
 			}
-
 			return authors;
 		}
 
 	//INSERT THE AUTHOR (FLYWEIGHT) 
-		public void insert(I_author author) throws SQLException {
+		public void insert(I_Author author) throws SQLException {
 			
 			String author_name = author.getAuthor_name();
 			driver();
@@ -58,8 +55,42 @@ public class AuthorDAO implements BookAuthorDAO<I_author> {
 			preparedStatement.executeUpdate();
 
 		}
-
+		
+		//UPDATE AUTHOR(FLYWEIGHT)
+		
+		public void update(I_Author author) throws SQLException { 
+				String author_name = author.getAuthor_name();
+				int id_author = author.getId_author() ;
+				
+				driver();
+				PreparedStatement preparedStatement2 = connexion.prepareStatement("UPDATE authors SET name =?  WHERE id_author=? ");
+				preparedStatement2.setString(1, author_name);
+				preparedStatement2.setInt(2, id_author);
+				preparedStatement2.executeUpdate();			
+			}
+				
 	
-
+		//REMOVE A AUTHOR WHEN UPDATE (FLYWEIGHT)
+		public void remove(I_Author author) throws SQLException {
+			int id_author = author.getId_author();
+			
+			 driver();
+			 PreparedStatement preparedStatement5 = connexion.prepareStatement("DELETE FROM authors WHERE id_author=? ");
+			 preparedStatement5.setInt(1, id_author);
+			 preparedStatement5.executeUpdate();
+		}
+		
+		// TO UPDATE THE ID AUTHOR IN BOOKS TABLE 
+		public void updateId(I_Author author) throws SQLException {
+			 int id_author = author.getId_author(); 
+			 int id_book = author.getId_book() ;
+			 driver();
+			 
+			PreparedStatement preparedStatement4 = connexion.prepareStatement("UPDATE books SET id_author = ?  WHERE id_book=?");
+			preparedStatement4.setInt(1, id_author);
+			preparedStatement4.setInt(2, id_book);
+			preparedStatement4.executeUpdate();
+	
+		}
 
 }

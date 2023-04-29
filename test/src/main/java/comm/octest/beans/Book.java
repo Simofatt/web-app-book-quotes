@@ -6,13 +6,16 @@ import java.util.List;
 import comm.octest.dao.BookAuthorDAO;
 import comm.octest.dao.BookAuthor.BookDAO;
 
-public class Book implements I_book {
-	private String id_book;
+public class Book implements I_Book {
+	private int id_book;
 	private String name_book;
 	private String book_img;
+
+
 	private String author;
 	private String type;
-	private BookAuthorDAO<I_book>  bookDAO;
+	private int id_quote;
+	private BookAuthorDAO<I_Book>  bookDAO;
 
 	
 	public Book(String name_book, String type, String author) {
@@ -28,20 +31,34 @@ public class Book implements I_book {
 
 	
 	//GET BOOKS
-	public List<I_book> fetchBooks() throws SQLException {
+	public List<I_Book> fetchBooks() throws SQLException {
 		
-		List<I_book> books = bookDAO.fetch();
+		List<I_Book> books = bookDAO.fetch();
 		return books;
 	}
 
 	//INSERT BOOK
-	public void save(I_book book) throws SQLException {
+	public void save(I_Book book) throws SQLException {
 	
 		bookDAO.insert(book);
 		System.out.println("Book bien saisie ! " + name_book);
 	}
+	
+	//UPDATE BOOK 
+	public void updateBook(I_Book book2) throws SQLException { 
+		bookDAO.update(book2);
+	}
 
 	
+	//REMOVE BOOK 
+	public void removeBook(I_Book book) throws SQLException { 
+		bookDAO.remove(book);
+	}
+	
+	//UPDATE ID_BOOK IN THE QUOTE TABLE
+	public void updateId(I_Book book) throws SQLException { 
+		bookDAO.updateId(book);
+	}
 	
 	
 	
@@ -57,11 +74,11 @@ public class Book implements I_book {
 	
 	
 	// GETTERS AND SETTERS
-	public String getId_book() {
+	public int getId_book() {
 		return id_book;
 	}
 
-	public void setId_book(String id_book) {
+	public void setId_book(int id_book) {
 		this.id_book = id_book;
 	}
 
@@ -96,5 +113,15 @@ public class Book implements I_book {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public int getId_quote() {
+		return id_quote;
+	}
+
+	public void setId_quote(int id_quote) {
+		this.id_quote = id_quote;
+	}
+
+
+	
 
 }

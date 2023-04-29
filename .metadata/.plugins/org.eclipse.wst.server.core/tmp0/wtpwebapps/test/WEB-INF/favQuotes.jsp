@@ -18,8 +18,8 @@
        <style>   <%@include file="/WEB-INF/ressources/css/addQuote.css"%> </style>
 </head>
 <%
-ArrayList<QuoteManager> favQuotes = new ArrayList<>() ;
-favQuotes = (ArrayList<QuoteManager>) request.getAttribute("favQuotes");
+
+ArrayList<QuoteManager>  favQuotes = (ArrayList<QuoteManager>) request.getAttribute("favQuotes");
 %>
 <body>
   <%@include file="navBar.jsp"%>

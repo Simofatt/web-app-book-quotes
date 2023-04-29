@@ -73,7 +73,6 @@ public class Book implements I_Book {
 	
 	
 	
-	
 	// GETTERS AND SETTERS
 	public int getId_book() {
 		return id_book;

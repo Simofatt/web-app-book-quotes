@@ -6,19 +6,17 @@ import java.util.List;
 import java.util.Map;
 
 public class AuthorFactory {
-	private static Map<String, I_Author> authors = new HashMap<>();
+	private static  Map<String, I_Author> authors = new HashMap<>();
 
 	public I_Author addAuthor(String author_name) throws SQLException {
 		// CREATE THE KEY
 		String key = author_name;
-		System.out.print(key);
 		fetchAuthors();
 		I_Author author = (I_Author) authors.get(key);
-
 		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
 		if (author == null) {
 			author = new Author(author_name);
-			authors.put(key, author);
+			putAuthor(key, author);
 			author.save(author);
 		}
 
@@ -36,8 +34,7 @@ public class AuthorFactory {
 		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
 		if (author == null) {
 			author = new Author(author_name);
-			authors.put(key, author);
-			
+			putAuthor(key, author);
 			I_Author author2 = new Author() ; 
 			author2.setAuthor_name(author_name);
 			author2.setId_author(id_author);
@@ -45,19 +42,14 @@ public class AuthorFactory {
 			author2.updateAuthor(author2);
 			
 		}else { 
-			System.out.println("AUTHOR FOUND !!!!!!!!!!!!!!!");
+			
 			I_Author author2 = new Author() ; 
 			author2.setId_author(id_author);
 			author2.setId_book(id_book);
 			
-			
-			
-			author.removeAuthor(author2) ;
 			author.updateId(author2) ;
-			
-		}
-
-		
+			author.removeAuthor(author2) ;	
+		}	
 	}
 	
 
@@ -66,11 +58,24 @@ public class AuthorFactory {
 		List<I_Author> authorsList = author.fetchAuthors();
 		for (I_Author a : authorsList) {
 			String key = a.getAuthor_name();
-			authors.put(key, a);
-			
+			if (!authors.containsKey(key)) {
+				authors.put(key, a);
+				}
 			System.out.println("AUTHOR KEY => "+key +"  NAME => "+a.getAuthor_name()) ;
 
 		}
 	}
 
+	// ADD A AUTHOR FROM THE MAP
+		public void putAuthor(String key, I_Author author) {
+			if (!authors.containsKey(key)) {
+			authors.put(key, author);
+		}
+		}
+
+		// REMOVE A AUTHOR FROM THE MAP
+		public void removeAuthor(String key) {
+			authors.remove(key);
+		}
+		
 }

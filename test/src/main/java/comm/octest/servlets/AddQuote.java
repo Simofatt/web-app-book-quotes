@@ -50,6 +50,7 @@ public class AddQuote extends HttpServlet {
 
 			AuthorFactory author = new AuthorFactory();
 			author.addAuthor(name_author);
+			
 
 			BookFactory book = new BookFactory();
 			book.addBook(name_author, book_type, name_book);

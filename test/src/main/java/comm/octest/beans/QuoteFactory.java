@@ -6,10 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import comm.octest.dao.quote.QuoteDAOImp;
-
 public class QuoteFactory implements I_Quote {
-	private Map<String, Flyweight> quotes = new HashMap<>();
+	private static   Map<String, Flyweight> quotes = new HashMap<>();
 	private Map<String, Integer> user_quotes = new HashMap<>();
 	private Flyweight quoteManager;
 	private List<Observer> observers;
@@ -31,15 +29,17 @@ public class QuoteFactory implements I_Quote {
 		// REMPLISSAGE DES MAPS AVEC LE CONTENUE DE LA BASE DE DONNEE
 		fetchQuotes(userId);
 		addUserIds();
-
+		
 		// SEARCHING FOR THE QUOTE IF IT EXISTS IN THE QUOTES MAP
-		quoteManager = (QuoteManager) quotes.get(key);
+		//quoteManager = (QuoteManager) quotes.get(key);
 		// IF NOT WE ADD IT AND WE INSERT IT IN THE DB
-		if (quoteManager == null) {
+		if (!quotes.containsKey(key)) {
 			quoteManager = new QuoteManager(name_book, quote_text, userId);
-			putQuote(key, quoteManager);
+			//putQuote(key, quoteManager);
 			int id_quote = quoteManager.insertQuote();
+			quoteManager.insertQuoteAuthorship();
 			QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
+			
 		}
 
 		// IN THE QUOTE AUTHORSHIP MAP IF DOSNT EXISTS WE ADD IT IN THE MAP AND WE
@@ -48,12 +48,13 @@ public class QuoteFactory implements I_Quote {
 			user_quotes.put(key2, userId);
 			// JUST TO CREATE THE OBJECT QUOTE ANYWAY AND TO NOTIFY THE OBSERVERS OF ANY
 			// CHANGES
-			if (quoteManager != null) {
+			if (quotes.containsKey(key)) {
 				quoteManager = new QuoteManager(name_book, quote_text, userId);
 				int id_quote = quoteManager.insertQuoteAuthorship();
+				getObservers();
 				QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
-			} else if (quoteManager == null) {
-				quoteManager.insertQuoteAuthorship();
+			} else if (!quotes.containsKey(key)) {
+				//quoteManager.insertQuoteAuthorship();
 			}
 
 		}
@@ -64,7 +65,6 @@ public class QuoteFactory implements I_Quote {
 	public void updateQuote(Flyweight quote) throws SQLException{
 		
 		String name_book = quote.getName_book();
-		String author_name = quote.getAuthor_name() ;
 		String quote_text = quote.getQuoteText();
 		int id_quote = quote.getId_quote();
 		int userId = quote.getUserId() ; 
@@ -74,15 +74,12 @@ public class QuoteFactory implements I_Quote {
 		
 		fetchQuotes(userId);
 		addUserIds();
-        quoteManager = (Flyweight) quotes.get(key);
+		System.out.println("*********** KEY    :  "+key);
 				
-        if (quoteManager == null) {
+        if (!quotes.containsKey(key)) {
 					quoteManager = new QuoteManager(name_book, quote_text, userId);
 					putQuote(key, quoteManager);
-					
-					QuoteDAOImp dao = new QuoteDAOImp() ;
-					dao.updateQuote2(quote);
-					
+					quoteManager.updateQuote(quote) ;
 					//int id_quote = quoteManager.insertQuote();
 					//QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
 					
@@ -95,13 +92,7 @@ public class QuoteFactory implements I_Quote {
 							 quoteManager.removeQuoteAuthorship(id_quote,userId) ;
 							//QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
 						} 
-				}
-         
-        AuthorFactory authorFactory = new AuthorFactory() ; 
-        BookFactory bookFactory = new BookFactory() ; 
-       // authorFactory.updateAuthor(quote);
-        //bookFactory.updateBook(quote);
-							
+				}							
 	}
 
 	public void addUserIds() throws SQLException {
@@ -119,20 +110,22 @@ public class QuoteFactory implements I_Quote {
 		List<QuoteManager> fetchedQuotes = quoteManager.fetchQuotes(user_id);
 	
 		for (QuoteManager q : fetchedQuotes) {
+	
 			String name_book = q.getName_book();
 			String quote_text = q.getQuoteText();
 			String key = name_book + quote_text;
-			putQuote(key, quoteManager);
-		
-
+			
+		    putQuote(key, quoteManager);
+		    System.out.println("*********** :  "+q.getName_book()+q.getQuoteText()) ;
 		}
 	}
 
 	
 	// ADD A QUOTE FROM THE MAP
 	public void putQuote(String key, Flyweight quote) {
+		if (!quotes.containsKey(key)) {
 		quotes.put(key, quote);
-
+	}
 	}
 
 	// REMOVE A QUOTE FROM THE MAP

@@ -78,7 +78,8 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 							data-id-quote="<%=id_quote%>"
 							data-id-author="<%=id_author%>"
 							data-id-book="<%=id_book%>"
-							data-type="<%=type%>"><i class="fas fa-edit"></i>
+							data-type="<%=type%>"
+							data-index ="<%=quotes.indexOf(q) %>"><i class="fas fa-edit"></i>
 							Edit</a>
 					</div>
 				</div>
@@ -116,9 +117,10 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 						</div>
 						<div class="form-group">
 							 <input type="hidden" class="form-control" id="idQuote" value="" name="id_quote">
-							 <input type="hidden" class="form-control" id="idAuthor" placeholder ="" name="id_author">
-							  <input type="hidden" class="form-control" id="idBook" placeholder ="" name="id_book">
-							  <input type="hidden" class="form-control" id="type" placeholder ="" name="type">
+							 <input type="hidden" class="form-control" id="idAuthor"  name="id_author">
+							  <input type="hidden" class="form-control" id="idBook"  name="id_book">
+							  <input type="hidden" class="form-control" id="type"  name="type">
+							   <input type="hidden" class="form-control" id="index" value="" name="index">
 						</div>
 					
 				</div>
@@ -154,6 +156,7 @@ editButtons.forEach(button => {
     const idQuote    = button.dataset.idQuote ; 
     const idAuthor    = button.dataset.idAuthor ; 
     const idBook    = button.dataset.idBook ; 
+    const index   = button.dataset.index ; 
     const type   = button.dataset.type;
     document.querySelector('#quoteText').placeholder = quoteText;
     document.querySelector('#bookTitle').placeholder = bookTitle;
@@ -162,6 +165,7 @@ editButtons.forEach(button => {
     document.querySelector('#idAuthor').value = idAuthor;
     document.querySelector('#idBook').value = idBook;
     document.querySelector('#type').value = type;
+    document.querySelector('#index').value = index;
   });
 });
 

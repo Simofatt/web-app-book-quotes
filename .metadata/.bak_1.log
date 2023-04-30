@@ -1,4 +1,4 @@
-!SESSION 2023-04-25 00:30:59.535 -----------------------------------------------
+!SESSION 2023-04-29 16:11:59.739 -----------------------------------------------
 eclipse.buildId=4.26.0.20221201-1200
 java.version=17.0.5
 java.vendor=Eclipse Adoptium
@@ -7,9 +7,9 @@ Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
 This is a continuation of log file C:\Users\Simofatt\workspace3\.metadata\.bak_0.log
-Created Time: 2023-04-25 01:15:20.205
+Created Time: 2023-04-29 16:28:27.745
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:20.206
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:27.745
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -57,7 +57,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:20.221
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:27.766
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -105,7 +105,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:20.238
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.487
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -153,7 +153,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:20.253
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.495
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -201,7 +201,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:20.287
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.502
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -249,7 +249,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:20.322
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.509
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -297,7 +297,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:20.338
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.515
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -345,7 +345,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:24.939
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.522
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -393,7 +393,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:24.959
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.529
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -441,7 +441,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:24.963
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.536
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -489,7 +489,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:24.979
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.543
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -537,7 +537,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:24.996
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.549
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -585,7 +585,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:25.012
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.558
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -633,7 +633,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:25.030
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.564
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -681,7 +681,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:25.048
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.570
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -729,7 +729,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:25.065
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.584
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -777,7 +777,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:25.082
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.762
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -825,7 +825,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:25.099
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.769
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -873,7 +873,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:15:25.117
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.776
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -921,7 +921,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.253
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.782
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -969,7 +969,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.270
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.790
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1017,7 +1017,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.288
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.795
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1065,7 +1065,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.306
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.802
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1113,7 +1113,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.322
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.811
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1161,7 +1161,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.339
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:28:56.843
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1209,7 +1209,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.357
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.064
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1257,7 +1257,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.374
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.071
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1305,7 +1305,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:16:58.391
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.079
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1353,7 +1353,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.566
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.085
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1401,7 +1401,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.585
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.092
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1449,7 +1449,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.602
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.099
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1497,7 +1497,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.619
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.106
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1545,7 +1545,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.635
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.113
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1593,7 +1593,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.652
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.120
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1641,7 +1641,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.668
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.127
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1689,7 +1689,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.685
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.141
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1737,7 +1737,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.702
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.153
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1785,7 +1785,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.719
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.161
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1833,7 +1833,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.723
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.174
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1881,7 +1881,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.738
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.180
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1929,7 +1929,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.753
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.194
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -1977,7 +1977,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.768
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.201
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2025,7 +2025,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.785
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.215
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2073,7 +2073,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.803
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.228
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2121,7 +2121,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.819
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.241
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2169,7 +2169,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.834
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.248
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2217,7 +2217,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:04.900
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.263
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2265,7 +2265,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.070
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.269
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2313,7 +2313,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.087
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.276
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2361,7 +2361,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.103
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.283
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2409,7 +2409,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.120
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.290
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2457,7 +2457,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.138
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.303
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2505,7 +2505,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.154
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.318
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2553,7 +2553,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.172
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:01.345
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2601,7 +2601,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.188
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.663
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2649,7 +2649,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.205
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.670
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2697,7 +2697,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.227
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.677
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2745,7 +2745,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.245
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.686
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2793,7 +2793,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.263
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.692
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2841,7 +2841,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.286
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.699
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2889,7 +2889,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.305
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.705
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2937,7 +2937,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.325
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.711
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -2985,7 +2985,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.347
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.719
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3033,7 +3033,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.365
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.725
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3081,7 +3081,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.382
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.733
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3129,7 +3129,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.430
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.739
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3177,7 +3177,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.448
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.753
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3225,7 +3225,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.464
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.773
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3273,7 +3273,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.481
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:35.807
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3321,7 +3321,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.499
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.065
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3369,7 +3369,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:05.516
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.072
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3417,7 +3417,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.689
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.077
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3465,7 +3465,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.705
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.085
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3513,7 +3513,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.722
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.091
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3561,7 +3561,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.740
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.098
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3609,7 +3609,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.758
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.105
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3657,7 +3657,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.776
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.113
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3705,7 +3705,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.793
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.121
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3753,7 +3753,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.811
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.127
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3801,7 +3801,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.829
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.134
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3849,7 +3849,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.845
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.139
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3897,7 +3897,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.862
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.147
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3945,7 +3945,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.878
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.153
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -3993,7 +3993,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:09.893
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.160
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4041,7 +4041,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.259
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.167
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4089,7 +4089,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.277
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.174
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4137,7 +4137,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.294
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.181
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4185,7 +4185,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.312
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.190
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4233,7 +4233,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.330
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.195
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4281,7 +4281,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.346
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.209
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4329,7 +4329,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.365
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:37.215
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4377,7 +4377,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.382
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.149
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4425,7 +4425,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.386
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.156
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4473,7 +4473,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.408
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.163
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4521,7 +4521,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.427
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.172
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4569,7 +4569,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.445
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.178
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4617,7 +4617,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.463
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.183
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4665,7 +4665,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.488
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.191
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4713,7 +4713,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.506
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.197
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4761,7 +4761,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.524
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.204
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4809,7 +4809,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.542
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.210
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4857,7 +4857,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.622
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.217
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4905,7 +4905,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.639
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.224
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -4953,7 +4953,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.657
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.234
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5001,7 +5001,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.676
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.239
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5049,7 +5049,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.692
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.244
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5097,7 +5097,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:29.711
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.251
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5145,7 +5145,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:30.003
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.258
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5193,7 +5193,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:30.032
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.265
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5241,7 +5241,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:30.120
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.272
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5289,7 +5289,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.403
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.279
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5337,7 +5337,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.431
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.286
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5385,7 +5385,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.451
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.293
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5433,7 +5433,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.468
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.300
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5481,7 +5481,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.485
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.306
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5529,7 +5529,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.501
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.313
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5577,7 +5577,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.518
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.326
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5625,7 +5625,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.534
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.332
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5673,7 +5673,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.553
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.353
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5721,7 +5721,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.557
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.382
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5769,7 +5769,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.575
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.401
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5817,7 +5817,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.593
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.416
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5865,7 +5865,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.611
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.436
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5913,7 +5913,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.628
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.450
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -5961,7 +5961,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.645
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.464
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6009,7 +6009,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.662
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.491
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6057,7 +6057,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.679
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.559
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6105,7 +6105,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.700
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.689
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6153,7 +6153,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.704
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.703
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6201,7 +6201,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.723
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.711
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6249,7 +6249,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.740
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.716
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6297,7 +6297,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.762
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.723
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6345,7 +6345,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.780
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.731
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6393,7 +6393,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.799
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.736
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6441,7 +6441,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:31.817
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.743
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6489,7 +6489,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.060
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.751
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6537,7 +6537,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.076
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.757
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6585,7 +6585,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.094
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.763
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6633,7 +6633,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.112
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.770
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6681,7 +6681,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.129
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.778
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6729,7 +6729,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.146
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.785
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6777,7 +6777,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.164
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.791
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6825,7 +6825,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.181
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.800
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6873,7 +6873,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.198
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.805
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6921,7 +6921,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.217
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.811
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -6969,7 +6969,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:32.251
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.818
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7017,7 +7017,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.206
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.826
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7065,7 +7065,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.221
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.833
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7113,7 +7113,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.236
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.839
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7161,7 +7161,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.240
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.846
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7209,7 +7209,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.261
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.854
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7257,7 +7257,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.276
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.860
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7305,7 +7305,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.280
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.866
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7353,7 +7353,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.295
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.873
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7401,7 +7401,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.312
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.880
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7449,7 +7449,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.329
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.887
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7497,7 +7497,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.346
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.901
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7545,7 +7545,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.364
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.915
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7593,7 +7593,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.382
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:48.934
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7641,7 +7641,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.398
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.154
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7689,7 +7689,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.415
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.162
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7737,7 +7737,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.431
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.170
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7785,7 +7785,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.448
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.176
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7833,7 +7833,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.464
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.182
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7881,7 +7881,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.480
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.189
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7929,7 +7929,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.496
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.195
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -7977,7 +7977,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:44.511
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.203
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8025,7 +8025,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.757
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.209
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8073,7 +8073,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.774
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.216
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8121,7 +8121,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.790
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.223
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8169,7 +8169,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.806
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.236
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8217,7 +8217,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.824
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.244
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8265,7 +8265,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.840
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.277
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8313,7 +8313,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.857
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.477
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8361,7 +8361,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.880
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.485
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8409,7 +8409,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.900
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.491
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8457,7 +8457,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.917
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.498
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8505,7 +8505,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.934
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.504
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8553,7 +8553,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.957
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.511
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8601,7 +8601,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:49.975
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.518
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8649,7 +8649,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.027
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.525
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8697,7 +8697,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.042
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.532
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8745,7 +8745,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.326
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.539
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8793,7 +8793,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.342
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.548
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8841,7 +8841,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.358
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.558
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8889,7 +8889,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.376
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.586
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8937,7 +8937,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.393
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.600
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -8985,7 +8985,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.410
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.810
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9033,7 +9033,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.413
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.817
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9081,7 +9081,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.438
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.823
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9129,7 +9129,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.455
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.830
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9177,7 +9177,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.473
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.838
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9225,7 +9225,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.489
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.844
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9273,7 +9273,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.512
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.851
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9321,7 +9321,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.530
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.859
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9369,7 +9369,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.550
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.865
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9417,7 +9417,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.572
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.871
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9465,7 +9465,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.636
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.878
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9513,7 +9513,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.652
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:49.885
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9561,7 +9561,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.668
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.479
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9609,7 +9609,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.684
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.500
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9657,7 +9657,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.701
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.527
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9705,7 +9705,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.704
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.562
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9753,7 +9753,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.739
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.815
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9801,7 +9801,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.756
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.822
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9849,7 +9849,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.773
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.828
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9897,7 +9897,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.794
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.835
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9945,7 +9945,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.812
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.841
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -9993,7 +9993,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.830
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.848
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10041,7 +10041,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.849
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.856
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10089,7 +10089,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:50.870
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.862
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10137,7 +10137,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:55.607
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:50.869
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10185,7 +10185,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:55.624
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.477
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10233,7 +10233,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:55.642
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.503
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10281,7 +10281,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:55.661
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.508
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10329,7 +10329,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:55.678
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.532
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10377,7 +10377,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:17:55.694
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.546
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10425,7 +10425,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.530
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.563
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10473,7 +10473,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.551
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.576
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10521,7 +10521,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.555
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.591
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10569,7 +10569,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.572
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.606
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10617,7 +10617,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.589
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.624
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10665,7 +10665,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.612
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.635
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10713,7 +10713,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.630
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.655
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10761,7 +10761,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.669
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.670
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10809,7 +10809,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.691
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.677
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10857,7 +10857,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.708
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.685
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10905,7 +10905,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.726
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.690
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -10953,7 +10953,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.747
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.697
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11001,7 +11001,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:18:59.764
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.704
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11049,7 +11049,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.530
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.711
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11097,7 +11097,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.549
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.727
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11145,7 +11145,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.571
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.759
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11193,7 +11193,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.589
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.766
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11241,7 +11241,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.605
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.787
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11289,7 +11289,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.624
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.793
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11337,7 +11337,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.642
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.818
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11385,7 +11385,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.665
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.826
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11433,7 +11433,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.682
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.849
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11481,7 +11481,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.707
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:54.856
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11529,7 +11529,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.724
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.217
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11577,7 +11577,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.741
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.225
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11625,7 +11625,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.758
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.232
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11673,7 +11673,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.775
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.239
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11721,7 +11721,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.793
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.245
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11769,7 +11769,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.796
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.252
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11817,7 +11817,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.819
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.260
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11865,7 +11865,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.846
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.266
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11913,7 +11913,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.863
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.272
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -11961,7 +11961,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.883
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.280
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12009,7 +12009,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.899
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.299
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12057,7 +12057,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.921
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.326
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12105,7 +12105,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.944
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:29:58.395
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12153,7 +12153,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:00.959
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.050
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12201,7 +12201,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:01.012
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.060
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12249,7 +12249,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:01.028
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.062
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12297,7 +12297,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:01.042
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.464
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12345,7 +12345,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:01.058
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.471
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12393,7 +12393,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:01.074
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.477
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12441,7 +12441,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:01.092
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.485
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12489,7 +12489,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.843
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.492
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12537,7 +12537,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.861
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.500
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12585,7 +12585,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.878
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.505
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12633,7 +12633,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.895
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.512
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12681,7 +12681,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.913
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.518
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12729,7 +12729,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.930
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.525
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12777,7 +12777,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.947
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.532
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12825,7 +12825,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.965
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.539
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12873,7 +12873,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:29.982
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.546
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12921,7 +12921,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:30.000
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.552
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -12969,7 +12969,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:30.018
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.561
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13017,7 +13017,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:30.095
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.567
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13065,7 +13065,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.205
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.579
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13113,7 +13113,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.223
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.906
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13161,7 +13161,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.239
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.912
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13209,7 +13209,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.256
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.919
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13257,7 +13257,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.273
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.926
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13305,7 +13305,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.289
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.934
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13353,7 +13353,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.306
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.939
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13401,7 +13401,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:50.325
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.946
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13449,7 +13449,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:57.575
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.954
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13497,7 +13497,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:57.591
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.960
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null
@@ -13545,7 +13545,7 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2023-04-25 01:19:57.608
+!ENTRY org.eclipse.ui 4 0 2023-04-29 16:56:21.966
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" is null

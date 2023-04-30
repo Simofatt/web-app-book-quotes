@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import comm.octest.beans.Message;
 import comm.octest.beans.Observer;
 import comm.octest.beans.User;
 import comm.octest.dao.UserDAO;
@@ -372,7 +373,60 @@ public void updateUserInfo(Observer user) throws SQLException {
 			preparedStatement5.executeUpdate();
 
 		}
+		
+		//GET MESSAGE WITH USER :
 
+		public ArrayList<Message> getMessagesWithUser (String withClientId,String email) throws Exception{
+			ArrayList<Message> messages = new ArrayList<Message>();
+		      driver() ;
+				PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM messages WHERE (id_sender=? AND id_receiver=?) OR (id_sender=? AND id_receiver=?) ");
+				preparedStatement.setString(1, email);
+				preparedStatement.setString(2, withClientId);
+				preparedStatement.setString(3, withClientId);
+				preparedStatement.setString(4, email);
+				ResultSet res = preparedStatement.executeQuery();
+				while (res.next()) {
+					Message msg = new Message(res.getString("id_sender"),res.getString("id_receiver"),res.getString("message"),res.getString("type_message"));
+					messages.add(msg);
+				}
+
+			
+				
+			return messages;
+		}
+		
+	
+		
+		
+		public void removeMsg (String withClientId,String email) throws Exception{
+                driver() ;
+			
+			
+				PreparedStatement preparedStatement = connexion.prepareStatement("DELETE FROM messages WHERE id_receiver=? AND id_sender=?");
+				preparedStatement.setString(1, email);
+				preparedStatement.setString(2, withClientId);
+				preparedStatement.executeUpdate();
+
+			}
 		
 
-}
+		public void insertMsg (String to, String from, String msg, String type) throws Exception{
+
+			    driver() ;
+				
+				PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO messages (id_sender,id_receiver,message,type_message) values(?,?,?,?)");
+				preparedStatement.setString(1, from);
+				preparedStatement.setString(2, to);
+				if(type.equals("text")) {
+					preparedStatement.setString(3, msg);
+				}
+				else {
+					preparedStatement.setString(3, msg);
+				}
+				preparedStatement.setString(4, type);
+				preparedStatement.executeUpdate();
+
+			}
+		}
+		
+

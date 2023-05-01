@@ -3,6 +3,7 @@
     <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="comm.octest.beans.Flyweight" %>
+<%@ page import="comm.octest.beans.Message" %>
 <%@ page import="comm.octest.beans.QuoteManager" %>
 <!DOCTYPE html>
 <html>
@@ -16,9 +17,15 @@ int user_id = (int) session.getAttribute("user_id");
 Flyweight quoteNotification = new QuoteManager();
 List<Flyweight> notifications = quoteNotification.getNotification(user_id);  
 int countNotif = notifications.size() ;
-%>
+String emailNavBar= (String ) session.getAttribute("email") ;
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+Message message = new Message() ; 
+List<Message> msgNotification = message.notification(emailNavBar) ;
+int countMsgNotif = msgNotification.size() ;
+
+%>
+ <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
+  <nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand" href="index.html">Book Quotes</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,13 +81,11 @@ int countNotif = notifications.size() ;
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifDropdown">
                    
                     <%for (Flyweight notifs : notifications ) { 
-                    	int id_quote = notifs.getId_quote() ;
-                    	 
+                    	int id_quote = notifs.getId_quote() ; 
                      %>
                 
                
                  <a class="dropdown-item" href="sharedQuotes?id_quote=<%=id_quote%>">New Quote added!</a>
-                 
 
                    
     <%} %>
@@ -95,12 +100,35 @@ int countNotif = notifications.size() ;
 
 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="far fa-envelope"></i>
-                        <span class="badge badge-danger">1</span>
+                          <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                         <i class="far fa-envelope"></i>
+                        <span class="badge badge-warning"><%=countMsgNotif %></span>
                     </a>
-                </li>
+                  
+                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifDropdown">
+                   
+                    <%for (Message msgNotif : msgNotification ) { 
+                    	String id_from = msgNotif.getFrom() ; 
+                    	Message msg = new Message() ;
+                    	String  from_name = msg.getName(id_from) ; 
+                    	String msgs= msgNotif.getMsg() ;
+                     %>
+                
+               
+                 <a class="dropdown-item" href="chat?withClientId=<%=id_from%>"> <%=from_name %> : "<%=msgs %>" </a>
+
+                   
+    <%} %>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">View All Messages</a>
+    
+   </div>
+
+    
+
+</li>
 
             </ul>
         </div>

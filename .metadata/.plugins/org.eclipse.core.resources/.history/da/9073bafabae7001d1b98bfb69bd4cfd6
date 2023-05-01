@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Book Quotes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="/WEB-INF/ressources/css/index.css">
+</head>
+
+<%
+ArrayList<QuoteManager> quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
+String email_session = (String) session.getAttribute("email");
+%>
+
+<body>
+
+  <%@include file="navBar.jsp"%>
+
+  <div class="container my-4">
+
+    <% for (QuoteManager q : quotes ) { 
+          String author_name =q.getAuthor_name() ; 
+          String quote= q.getQuote();
+          %>
+            <div class="card my-3">
+    <div class="card-header">
+      <h5 class="mb-0"><%= author_name %></h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= quote %></p>
+    </div>
+  </div>
+
+<% } %>
+          <% } %>
+  </div>
+<%@include file="footer.jsp"%>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -28,10 +28,8 @@ String email_session = (String) session.getAttribute("email");
 %>
 
 <body>
-
 <%@include file="navBar.jsp"%>
  <%
- 
    for (QuoteManager q : quotes ) { 
                   	
                   	String author_name =q.getAuthor_name() ; 
@@ -45,16 +43,9 @@ String email_session = (String) session.getAttribute("email");
                   	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
                   	String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
                   	String email = q.getEmail() ;
-                  	if(!email_session.equals(email)) {
+    	if(!email_session.equals(email)) {
  %>
-                    		  
-                    	  
-
-               
-                	
-                
     <div class="container my-4">
-    
         <div class="card mb-4">
             <div class="row no-gutters">
                 <div class="col-md-4">
@@ -65,31 +56,27 @@ String email_session = (String) session.getAttribute("email");
                 <div class="col-md-8">
                     <div class="card-body">
                     <form id="form_<%=quote_id%>" action="sharedQuotes" method="post" >
-                        <h5 class="card-title"><%=book_name %></h5>
-                        <p class="card-text">"<%=quote_text %>"</p>
+                     <h5 class="card-title"  id="quote">"<%=quote_text %>"</h5>
+                    
+                       <p class="card-text"><small class="text-muted">Book name :   <%=book_name %></small></p>
                         <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
                         <p class="card-text"><small class="text-muted">Added By: <a href="profile?email=<%=email %>"><%=user_name %></a></small></p>
-                          <input type="hidden" name="quoteId" value="<%=quote_id%>">      
+                          <input type="hidden" name="quoteId" value="<%=quote_id%>">  
+                          
                         <a href="#" class="card-link favorite "  style="color:<%= like_color %>;"onclick="submitForm(<%=quote_id%>)"><i class="fas fa-heart"></i> Love</a>
                         </form>
                     </div>
-                </div>
-               
+                </div>          
   <script>
-    function submitForm(quoteId) {
-        document.getElementById("form_" + quoteId).submit();
-    }
-</script>
-                
-            
+		    function submitForm(quoteId) {
+		        document.getElementById("form_" + quoteId).submit();
+		    }
+</script>  
             </div>
-             
         </div>
-
 </div>
-  <%
-                  	}  }%>
+  <%} }%>
       
       
       
@@ -102,21 +89,18 @@ String email_session = (String) session.getAttribute("email");
       
       
       
-      <% if (request.getParameter("id_quote") != null) { %>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var div = document.getElementById("form_<%=request.getParameter("id_quote")%>");
-      if (div) {
-        div.scrollIntoView();
-      }
-    });
-  </script>
-<% } %>
+  <% if (request.getParameter("id_quote") != null) { %>
+		  <script>
+		    document.addEventListener("DOMContentLoaded", function() {
+		      var div = document.getElementById("form_<%=request.getParameter("id_quote")%>");
+		      if (div) {
+		        div.scrollIntoView();
+		      }
+		    });
+		  </script>
+   <% } %>
 
 <!-- Display all the quotes normally -->
-      
-      
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -124,9 +108,12 @@ String email_session = (String) session.getAttribute("email");
         $('.favorite').on('click', function () {
             $(this).toggleClass('active');
         });
-        
-      
     </script>
+    <footer class="bg-dark text-light py-3">
+  <div class="container text-center">
+    <p>Copyright &copy; 2023, MOHAMED ALHABIB FATEHI</p>
+  </div>
+</footer>
 </body>
 
 </html>

@@ -22,12 +22,15 @@
             <% 
             String email =  (String) session.getAttribute("email");
             String withClientId = (String) request.getParameter("withClientId");
+      
+            
             UserDAOImp user = new UserDAOImp();
+            
               ArrayList<Message> my_messages = new ArrayList<Message>();
-              try {
-                  my_messages = (ArrayList<Message>) user.getMessagesWithUser(withClientId,email);
-              } catch (Exception e) {
-              }
+              my_messages = (ArrayList<Message>) request.getAttribute("my_messages") ; 
+              String  withClientName = (String) request.getAttribute("withClientName") ;
+     
+              
               try {
                   user.removeMsg(withClientId,email);
               } catch (Exception e) {
@@ -139,15 +142,16 @@
     <div class="wrapper">
         <section class="chat-area">
             <header>
-                <a href="ContactsServlet" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+                <a href="people" class="back-icon"><i class="fas fa-arrow-left"></i></a>
                 <img src="imageProfileServlet" alt="">
                 <div class="details">
-                    <span><%=withClientId%></span>
+                    <span><%=withClientName%></span>
                     <p>status</p>
                 </div>
             </header>
             <div id="discussion" class="chat-box">
-  <% for (Message msg: my_messages) {
+  <% if (my_messages != null ) {
+  for (Message msg: my_messages) {
                         String position = "";
                         if (msg.from.equals(email)){
                             position = "outgoing";
@@ -161,6 +165,8 @@
                     else { %>
                     <div class="chat <%=position%>"> <div class="details"> <a href="http://localhost/php/chatApp-ressources/<%=msg.msg%>"> Telecharger Piéce jointe </a></div> </div>
                     <% }
+                        }
+  
                     } %>
             </div>
               <div class="typing-area">
@@ -172,7 +178,19 @@
                 </div>
         </section>
     </div>
-
+</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script>
+		$('.favorite').on('click', function() {
+			$(this).toggleClass('active');
+		});
+		// Get a reference to the edit button
+		// Add a click event listener to the "Edit" button
+	</script>
     </body>
    
 </html>

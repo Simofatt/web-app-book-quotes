@@ -1,0 +1,44 @@
+/* Center the quotes container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Add a background color to the quotes container */
+.card {
+  background-color: #f5f5f5;
+}
+
+/* Style the book title */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the quote text */
+.card-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Style the author and added by text */
+.text-muted {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the love icon */
+.fa-heart {
+  color: #dc3545;
+}
+
+/* Style the active love icon */
+.favorite.active .fa-heart {
+  color: #f8c7c9;
+}
+
+/* Add a margin to the love link */
+.card-link.favorite {
+  margin-right: 1rem;
+}

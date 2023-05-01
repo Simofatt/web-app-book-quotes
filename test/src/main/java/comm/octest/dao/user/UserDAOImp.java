@@ -379,7 +379,7 @@ public void updateUserInfo(Observer user) throws SQLException {
 		public ArrayList<Message> getMessagesWithUser (String withClientId,String email) throws Exception{
 			ArrayList<Message> messages = new ArrayList<Message>();
 		      driver() ;
-				PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM messages WHERE (id_sender=? AND id_receiver=?) OR (id_sender=? AND id_receiver=?) ");
+				PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM messages  WHERE (id_sender=? AND id_receiver=?) OR (id_sender=? AND id_receiver=?) ");
 				preparedStatement.setString(1, email);
 				preparedStatement.setString(2, withClientId);
 				preparedStatement.setString(3, withClientId);
@@ -413,7 +413,6 @@ public void updateUserInfo(Observer user) throws SQLException {
 		public void insertMsg (String to, String from, String msg, String type) throws Exception{
 
 			    driver() ;
-				
 				PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO messages (id_sender,id_receiver,message,type_message) values(?,?,?,?)");
 				preparedStatement.setString(1, from);
 				preparedStatement.setString(2, to);
@@ -423,10 +422,50 @@ public void updateUserInfo(Observer user) throws SQLException {
 				else {
 					preparedStatement.setString(3, msg);
 				}
-				preparedStatement.setString(4, type);
-				preparedStatement.executeUpdate();
+				
+					preparedStatement.setString(4, type);
+					preparedStatement.executeUpdate();
 
 			}
+		
+		public List<Message> notification(String email) throws Exception { 
+			       List<Message> notifs = new ArrayList<>() ;
+		           driver() ;
+			
+					PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM messages WHERE id_receiver = ?");
+					preparedStatement.setString(1, email);
+					ResultSet res = preparedStatement.executeQuery();
+					while (res.next()) {
+						String id_sender = res.getString("id_sender");  
+						String message = res.getString("message") ;
+							Message msg = new Message(id_sender ,message) ; 
+							notifs.add(msg) ;
+						 						
+						}
+						
+					return notifs ; 
+					
+			
 		}
+		
+public String getName(String email) throws Exception{ 
+	  driver() ;
+		
+		PreparedStatement preparedStatement = connexion.prepareStatement("SELECT full_name FROM users WHERE email = ?");
+		preparedStatement.setString(1, email);
+		ResultSet res = preparedStatement.executeQuery();
+		if(res.next()) {
+			 String full_name = res.getString("full_name");
+			
+			return full_name ;
+		}
+		 
+		 
+
+
+return "null";
+}
+}
+
 		
 

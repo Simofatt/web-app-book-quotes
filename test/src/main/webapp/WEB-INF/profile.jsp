@@ -87,13 +87,13 @@ for(User user : userInfo){
                                 <input type="hidden" name="emailFriend" value="<%=emailProfile%>"> 
                                     <button type="submit" class="btn btn-primary add-friend-btn"  name ="addFriend" value="<%=id_user%>">Add as a
                                         Friend</button>
-                                       
+                                           </form>
                                        <% }  else { %> 
-                                       <button  class="btn btn-primary send-message">Send a message</button>
+                                   <a href="chat?withClientId=<%=email%>" class="btn btn-primary send-message">Send a message</a>
                                     <%} %>
                                        
                                     
-                                </form>
+                            
                                 <%} %>
                 </div>
             </div>

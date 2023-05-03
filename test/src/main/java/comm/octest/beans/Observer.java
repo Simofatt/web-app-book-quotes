@@ -1,10 +1,38 @@
 package comm.octest.beans;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
 
 public interface Observer {
 	void update(int id_quote) throws SQLException;
+
+	boolean authentification();
+
+	List<User> getInfo(String email, int idUserConnected) throws SQLException;
+
+	boolean updateUserInfo(Observer user, String email_session) throws SQLException;
+
+	void likedQuote(Observer user) throws SQLException;
+
+	public boolean equals(Object o);
+
+	List<Observer> getUsers(int idUserConnected) throws SQLException;
+
+	void removeLikedQuote(Observer user) throws SQLException;
+
+	void registration(Observer user) throws SQLException;
+
+	boolean validEmail(String email, String currentEmail) throws SQLException;
+
+	String hashPassword(String password) throws NoSuchAlgorithmException;
+
+	boolean validerInput(String name, String email, String password, String passwordc)
+			throws SQLException, ClassNotFoundException;
+
+	void addFriend(int idUser1, int idUser2) throws SQLException;
+
+	public int hashCode();
 
 	String getEmail();
 
@@ -13,10 +41,6 @@ public interface Observer {
 	void setPassword(String password);
 
 	String getPassword();
-
-	boolean authentification();
-
-	List<User> getInfo(String email, int idUserConnected) throws SQLException;
 
 	void setCity(String city);
 
@@ -30,29 +54,17 @@ public interface Observer {
 
 	void setCountry(String country);
 
-	boolean updateUserInfo(Observer user, String email_session) throws SQLException;
-
 	String getCountry();
 
 	int getId_user();
 
 	void setId_quote(int quote_id);
 
-	void likedQuote(Observer user) throws SQLException;
-
 	int getId_quote();
-
-	public boolean equals(Object o);
-
-	public int hashCode();
 
 	void setNbreQuoteAdded(int nbreQuoteAdded);
 
 	int getNbreQuoteAdded();
-
-	List<Observer> getUsers(int idUserConnected) throws SQLException;
-
-	void addFriend(int idUser1, int idUser2) throws SQLException;
 
 	void setFriends(boolean isFriends);
 
@@ -63,11 +75,9 @@ public interface Observer {
 	int getNbreFriends();
 
 	void setNbreLikes(int nbreLikes);
-	 int getIdUser(String email) throws SQLException;
+
+	int getIdUser(String email) throws SQLException;
 
 	int getNbreLikes();
-	void removeLikedQuote(Observer user) throws SQLException;
-	void registration(Observer user) throws SQLException ;
-	boolean validEmail(String email, String currentEmail) throws SQLException;
-	boolean validerInput(String name, String email, String password, String passwordc) throws SQLException, ClassNotFoundException;
+
 }

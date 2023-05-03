@@ -7,6 +7,8 @@ import comm.octest.beans.Flyweight;
 import comm.octest.beans.QuoteManager;
 
 public interface QuoteDAO{
+	
+	void driver();
 	List<QuoteManager> fetchQuotes(int user_id) throws SQLException;
 	List<QuoteManager> fetchUserQuotes(int user_id,int id_user_session) throws SQLException;
 	List<QuoteManager> fetchMyQuotes(String email) throws SQLException;

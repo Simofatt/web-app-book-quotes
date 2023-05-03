@@ -11,17 +11,18 @@ import comm.octest.dao.quote.QuoteDAOImp;
 public class QuoteManager implements Flyweight {
 	private String name_book;
 	private String quote_text;  
-	private int user_id;  //
+	private int user_id;  
 	private Timestamp created_at;  
 	private String author_name; 
-	private String user_name;   //
-	private String like_color;  //
+	private String user_name;   
+	private String like_color;  
 	private QuoteDAOImp quoteDAO;  
 	private int id_quote;     
-	private String email;   //
+	private String email;   
 	private int author_id ; 
 	private int book_id ; 
 	private String type ;
+	private int id_type;  
 	private List<String> likedUsers = new ArrayList<>();
 
 	public QuoteManager() {
@@ -285,5 +286,12 @@ public class QuoteManager implements Flyweight {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+	public int getId_type() {
+		return id_type;
+	}
+
+	public void setId_type(int id_type) {
+		this.id_type = id_type;
 	}
 }

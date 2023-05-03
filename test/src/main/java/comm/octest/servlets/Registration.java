@@ -1,6 +1,7 @@
 package comm.octest.servlets;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -29,18 +30,25 @@ public class Registration extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		Observer user = new User();
 		String name = request.getParameter("full_name");
 		String email = request.getParameter("email");
 		String city = request.getParameter("city");
 		String password = request.getParameter("password");
 		String passwordc = request.getParameter("passwordc");
+		try {
+			String hashPassword = user.hashPassword(password);
 
-		Observer user = new User();
+			user.setEmail(email);
+			user.setPassword(hashPassword);
+			user.setCity(city);
+			user.setName(name);
 
-		user.setEmail(email);
-		user.setPassword(password);
-		user.setCity(city);
-		user.setName(name);
+		} catch (NoSuchAlgorithmException e1) {
+			
+			e1.printStackTrace();
+		}
+		
 
 	
 

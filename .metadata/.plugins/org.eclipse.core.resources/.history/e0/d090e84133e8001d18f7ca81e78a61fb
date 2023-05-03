@@ -1,0 +1,93 @@
+   /* Set font family and background color for the body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #85929E;
+        }
+
+        /* Set font color for links */
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #2C3E50;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .nav-link:hover {
+            color: #F1C40F !important;
+        }
+
+        /* Form styles */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: white;
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 0;
+            border: none;
+            background-color: #F1C40F;
+            color: #2C3E50;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #F1C40F;
+        }
+
+        .btn-primary {
+            background-color: #2C3E50;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #F1C40F;
+        }
+
+        .btn-secondary {
+            background-color: #85929E;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #F1C40F;
+        }
+
+        /* Quote styles */
+        .card {
+            background-color: #F1C40F;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .card p {
+            font-size: 1.2rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        #quote {
+            margin-left: -5px;
+            font-family: 'Libre Baskerville', serif;
+        }

@@ -235,6 +235,7 @@ public void updateUserInfo(Observer user) throws SQLException {
 	public void addLikedQuote(Observer user) throws SQLException {
 		int user_id = user.getId_user();
 		int quote_id = user.getId_quote();
+		
 		driver();
 		PreparedStatement preparedStatement2 = connexion
 				.prepareStatement("SELECT * FROM like_quote WHERE id_user=? AND id_quote=?");

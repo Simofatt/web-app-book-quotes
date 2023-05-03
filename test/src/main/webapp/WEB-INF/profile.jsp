@@ -68,11 +68,11 @@ for(User user : userInfo){
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                    aria-controls="home" aria-selected="true">About</a>
+                                    aria-controls="home" aria-selected="true" style = "color:gray;">About</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                    aria-controls="profile" aria-selected="false">Quotes</a>
+                                    aria-controls="profile" aria-selected="false"  style = "color:gray;">Quotes</a>
                             </li>
                         </ul>
                     </div>
@@ -199,17 +199,19 @@ for(User user : userInfo){
 				<div class="col-md-8">
 					<div class="card-body">
 					<% if(emailOwnerOfTheQuote.equals(email)) { %> 
-						<h5 class="card-title"><%=book_name%></h5>
-						<p class="card-text">"<%=quote_text%>"</p>
-						<p class="card-text"><small class="text-muted">Published: <%=formattedDate%></small></p>
-						<p class="card-text"><small class="text-muted">Author : <%=author_name%></small></p>
+					 <h5 class="card-title"  id="quote">"<%=quote_text %>"</h5>
+                    
+                       <p class="card-text"><small class="text-muted">Book name :   <%=book_name %></small></p>
+                        <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
+                        <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
 						<p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name%></a></small></p>
 						<%} else{  %>
 						
 					
 					     <form id="form_<%=id_quote%>" action="profile" method="post" >
-                        <h5 class="card-title"><%=book_name %></h5>
-                        <p class="card-text">"<%=quote_text %>"</p>
+                         <h5 class="card-title"  id="quote">"<%=quote_text %>"</h5>
+                    
+                       <p class="card-text"><small class="text-muted">Book name :   <%=book_name %></small></p>
                         <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
                         <p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name %></a></small></p>

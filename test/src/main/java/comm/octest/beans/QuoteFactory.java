@@ -122,7 +122,7 @@ public class QuoteFactory implements I_Quote {
 
 	
 	// ADD A QUOTE FROM THE MAP
-	public void putQuote(String key, Flyweight quote) {
+	public  void putQuote(String key, Flyweight quote) {
 		if (!quotes.containsKey(key)) {
 		quotes.put(key, quote);
 	}

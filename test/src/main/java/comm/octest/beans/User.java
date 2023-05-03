@@ -22,7 +22,7 @@ public class User implements Observer {
 	private String password;
 	private Timestamp created_at;
 	private String profile_img;
-	private Flyweight quoteManager ;
+	private QuoteFlyweight quoteManager ;
 	private String city;  
 	private int nbreQuoteAdded; 
 	private boolean isFriends; // check is two users are friends

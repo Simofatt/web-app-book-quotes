@@ -11,7 +11,10 @@
     <style>   <%@include file="/WEB-INF/ressources/css/addQuote.css"%> </style>
 </head>
 
-<%  String success =  (String)request.getParameter("success") ; %>
+<%
+
+  String success =  (String)request.getParameter("success");
+%>
 
 
 <body>

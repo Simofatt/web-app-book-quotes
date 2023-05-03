@@ -8,7 +8,7 @@ import java.util.List;
 import comm.octest.dao.quote.QuoteDAOImp;
 
 //QUOTE == STACK GRABBER IMPLEMENTS SUBJECT == REMOVE ADD NOTIFY OBSERVERS 
-public class QuoteManager implements Flyweight {
+public class QuoteManager implements QuoteFlyweight {
 	private String name_book;
 	private String quote_text;  
 	private int user_id;  
@@ -134,15 +134,15 @@ public class QuoteManager implements Flyweight {
 	}
 
 	// UPDATE A QUOTE
-	public void updateQuote(Flyweight quote) throws SQLException {
+	public void updateQuote(QuoteFlyweight quote) throws SQLException {
 		quoteDAO.updateQuote(quote);
 
 	}
 	
 	
 	// GET NOTIFICATIONS :
-	public List<Flyweight> getNotification(int id_user) throws SQLException {
-		List<Flyweight> notifications = new ArrayList<>();
+	public List<QuoteFlyweight> getNotification(int id_user) throws SQLException {
+		List<QuoteFlyweight> notifications = new ArrayList<>();
 		notifications = quoteDAO.getNotification(id_user);
 		return notifications;
 	}

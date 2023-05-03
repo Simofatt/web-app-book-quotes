@@ -22,6 +22,7 @@
 
 <%
 
+
 ArrayList<QuoteManager> quotes = new ArrayList<>() ;
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 String email_session = (String) session.getAttribute("email");

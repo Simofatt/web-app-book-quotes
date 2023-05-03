@@ -6,14 +6,14 @@ import java.util.List;
 import comm.octest.dao.BookAuthorDAO;
 import comm.octest.dao.BookAuthor.AuthorDAO;
 
-public class Author implements I_Author {
+public class Author implements AuthorFlyweight {
 
 	private String author_name;
 	private int id_book;
 	private int id_author;
 	private int id_type;
 	private int id_quote ;
-	private BookAuthorDAO<I_Author> authorDAO;
+	private BookAuthorDAO<AuthorFlyweight> authorDAO;
 
 	public Author(String author_name) {
 		this.author_name = author_name;
@@ -24,32 +24,32 @@ public class Author implements I_Author {
 		authorDAO= new AuthorDAO() ; 
 	}
 
-	public void save(I_Author author) throws SQLException {
+	public void save(AuthorFlyweight author) throws SQLException {
 	
 		authorDAO.insert(author);
 		System.out.println("Author bien saisie ! " + author_name);
 	}
 
-	public List<I_Author> fetchAuthors() throws SQLException {
+	public List<AuthorFlyweight> fetchAuthors() throws SQLException {
 		
-		List<I_Author> authorsList = authorDAO.fetch();
+		List<AuthorFlyweight> authorsList = authorDAO.fetch();
 		return authorsList;
 	}
 	
 	//UPDATE THE AUTHOR
 
-	public void updateAuthor(I_Author author) throws SQLException 
+	public void updateAuthor(AuthorFlyweight author) throws SQLException 
 	{ 
 		authorDAO.update(author) ; 
 	}
 	
 	//REMOVE AUTHOR 
-	public void removeAuthor(I_Author author) throws SQLException 
+	public void removeAuthor(AuthorFlyweight author) throws SQLException 
 	{ 
 		authorDAO.remove(author) ; 
 	}
 	//UPDATE ID AUTHOR IN BOOK TABLE 
-	public void updateId(I_Author author) throws SQLException { 
+	public void updateId(AuthorFlyweight author) throws SQLException { 
 		authorDAO.updateId(author);
 	}
 	

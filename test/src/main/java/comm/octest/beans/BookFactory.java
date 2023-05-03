@@ -7,13 +7,13 @@ import java.util.Map;
 
 public class BookFactory {
 
-	private static  Map<String, I_Book> books = new HashMap<>();
+	private static  Map<String, BookFlyweight> books = new HashMap<>();
 
-	public I_Book addBook(String author_name, String type, String book_name) throws SQLException {
+	public BookFlyweight addBook(String author_name, String type, String book_name) throws SQLException {
 		// CREATE THE KEY
 		String key = author_name + type + book_name;
 		fetchBooks();
-		I_Book book = (Book) books.get(key);
+		BookFlyweight book = (Book) books.get(key);
 		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
 		if (book == null) {
 			book = new Book(book_name, type, author_name);
@@ -23,7 +23,7 @@ public class BookFactory {
 		return book;
 	}
 	
-	public void updateBook(Flyweight quote) throws SQLException {
+	public void updateBook(QuoteFlyweight quote) throws SQLException {
 		
 		String author_name = quote.getAuthor_name() ; 
 		String book_name = quote.getName_book();
@@ -35,9 +35,9 @@ public class BookFactory {
 		fetchBooks();
 		
 		if (!books.containsKey(key)) {
-				I_Book book = new Book(book_name, type, author_name);
+				BookFlyweight book = new Book(book_name, type, author_name);
 				books.put(key, book);
-				I_Book book2= new Book() ; 
+				BookFlyweight book2= new Book() ; 
 				book2.setName_book(book_name);
 				book2.setId_book(id_book);
 				
@@ -45,7 +45,7 @@ public class BookFactory {
 		    
 	   } else { 
 	
-				I_Book book2= new Book() ; 
+				BookFlyweight book2= new Book() ; 
 				book2.setId_quote(id_quote);
 				book2.setId_book(id_book);
 				
@@ -56,9 +56,9 @@ public class BookFactory {
 	}
 
 	public void fetchBooks() throws SQLException {
-		I_Book book = new Book();
-		List<I_Book> booksList = book.fetchBooks();
-		for (I_Book b : booksList) {
+		BookFlyweight book = new Book();
+		List<BookFlyweight> booksList = book.fetchBooks();
+		for (BookFlyweight b : booksList) {
 			
 			String book_name = b.getName_book();
 			String type_name = b.getType();
@@ -73,7 +73,7 @@ public class BookFactory {
 
 	
 	// ADD A BOOK TO THE MAP
-	public void putBook(String key, I_Book book) {
+	public void putBook(String key, BookFlyweight book) {
 		if (!books.containsKey(key)) {
 		books.put(key, book);
 	}

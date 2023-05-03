@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import comm.octest.beans.Author;
-import comm.octest.beans.I_Author;
+import comm.octest.beans.AuthorFlyweight;
 import comm.octest.dao.BookAuthorDAO;
 
-public class AuthorDAO implements BookAuthorDAO<I_Author> {
+public class AuthorDAO implements BookAuthorDAO<AuthorFlyweight> {
 	Connection connexion = null;
 	Statement statement = null;
 	ResultSet resultat = null;
@@ -31,8 +31,8 @@ public class AuthorDAO implements BookAuthorDAO<I_Author> {
 	}
 	
 	//FETCH ALL THE AUTHORS : 
-		public List<I_Author> fetch() throws SQLException {
-			List<I_Author> authors = new ArrayList<>();
+		public List<AuthorFlyweight> fetch() throws SQLException {
+			List<AuthorFlyweight> authors = new ArrayList<>();
 			
 			driver();
 			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT name FROM authors");
@@ -46,7 +46,7 @@ public class AuthorDAO implements BookAuthorDAO<I_Author> {
 		}
 
 	//INSERT THE AUTHOR (FLYWEIGHT) 
-		public void insert(I_Author author) throws SQLException {
+		public void insert(AuthorFlyweight author) throws SQLException {
 			
 			String author_name = author.getAuthor_name();
 			driver();
@@ -58,7 +58,7 @@ public class AuthorDAO implements BookAuthorDAO<I_Author> {
 		
 		//UPDATE AUTHOR(FLYWEIGHT)
 		
-		public void update(I_Author author) throws SQLException { 
+		public void update(AuthorFlyweight author) throws SQLException { 
 				String author_name = author.getAuthor_name();
 				int id_author = author.getId_author() ;
 				
@@ -71,7 +71,7 @@ public class AuthorDAO implements BookAuthorDAO<I_Author> {
 				
 	
 		//REMOVE A AUTHOR WHEN UPDATE (FLYWEIGHT)
-		public void remove(I_Author author) throws SQLException {
+		public void remove(AuthorFlyweight author) throws SQLException {
 			int id_author = author.getId_author();
 			
 			 driver();
@@ -81,7 +81,7 @@ public class AuthorDAO implements BookAuthorDAO<I_Author> {
 		}
 		
 		// TO UPDATE THE ID AUTHOR IN BOOKS TABLE 
-		public void updateId(I_Author author) throws SQLException {
+		public void updateId(AuthorFlyweight author) throws SQLException {
 			 int id_author = author.getId_author(); 
 			 int id_book = author.getId_book() ;
 			 driver();

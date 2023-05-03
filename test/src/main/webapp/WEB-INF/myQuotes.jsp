@@ -22,16 +22,12 @@
 <%
 ArrayList<QuoteManager> quotes = new ArrayList<>();
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
+String email = (String) session.getAttribute("email");
 %>
 <body>
 
 
 	<%@include file="navBar.jsp"%>
-	
-
- 
-
-
 
 	<%
 	for (QuoteManager q : quotes) {
@@ -58,19 +54,12 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
-						<h5 class="card-title"><%=book_name%></h5>
-						<p class="card-text">
-							"<%=quote_text%>"
-						</p>
-						<p class="card-text">
-							<small class="text-muted">Published: <%=formattedDate%></small>
-						</p>
-						<p class="card-text">
-							<small class="text-muted">Author : <%=author_name%></small>
-						</p>
-						<p class="card-text">
-							<small class="text-muted">Added By: <a href="#"><%=user_name%></a></small>
-						</p>
+					    <h5 class="card-title"  id="quote">"<%=quote_text %>"</h5>
+                    
+                       <p class="card-text"><small class="text-muted">Book name :   <%=book_name %></small></p>
+                        <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
+                        <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
+                        <p class="card-text"><small class="text-muted">Added By: <a href="profile?email=<%=email %>"><%=user_name %></a></small></p>
 						<a href="#" class="card-link edit-quote" data-toggle="modal"
 							data-target="#editQuoteModal" data-quote-text="<%=quote_text%>"
 							data-book-title="<%=book_name%>"
@@ -82,13 +71,19 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 							data-index ="<%=quotes.indexOf(q) %>"><i class="fas fa-edit"></i>
 							Edit</a>
 					</div>
+					
 				</div>
+
+	
 			</div>
+	
 		</div>
+	
 	</div>
-	<%
+						<%
 	}
-	%>
+	%>	
+
 	<div class="modal fade" id="editQuoteModal" tabindex="-1" role="dialog"
 		aria-labelledby="editQuoteModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -144,7 +139,7 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
         <%} %>
     </div>
 </div>
-
+	
 	
 <script>
 const editButtons = document.querySelectorAll('.edit-quote');
@@ -182,5 +177,10 @@ editButtons.forEach(button => {
 		// Get a reference to the edit button
 		// Add a click event listener to the "Edit" button
 	</script>
+	   <footer class="bg-dark text-light py-3">
+  <div class="container text-center">
+    <p>Copyright &copy; 2023, MOHAMED ALHABIB FATEHI</p>
+  </div>
+</footer>
 </body>
 </html>

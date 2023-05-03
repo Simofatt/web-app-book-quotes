@@ -8,7 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import comm.octest.beans.Flyweight;
 import comm.octest.beans.QuoteManager;
@@ -36,44 +38,49 @@ public class QuoteDAOImp implements QuoteDAO {
 
 
 	//FETCH ALL THE QUOTES && CHECK IF THE USER LIKED THE QUOTE OR NOT 
-		public List<QuoteManager> fetchQuotes(int user_id) throws SQLException {
-			List<QuoteManager> quotes = new ArrayList<>();
-			String color;
-			driver();
+	public List<QuoteManager> fetchQuotes(int user_id) throws SQLException {
+	    List<QuoteManager> quotes = new ArrayList<>();
+	    String color;
+	    driver();
+	    Set<String> displayedQuotes = new HashSet<>(); // create a HashSet to keep track of displayed quote_text
 
-			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user  ");
-			ResultSet resultat = preparedStatement.executeQuery();
+	    PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user   ");
+	    ResultSet resultat = preparedStatement.executeQuery();
 
-			while (resultat.next()) {
-				String quote_text = resultat.getString("quote_text");
-				String book_name = resultat.getString("book_name");
-				Timestamp created_at = resultat.getTimestamp("created_at");
-				String user_name = resultat.getString("user_name");
-				String author_name = resultat.getString("author_name");
-				int id_quote = resultat.getInt("id_quote");
-				String emailOfTheProfile = resultat.getString("email") ;
-				System.out.println("email of the owner of the quote is " +emailOfTheProfile) ;
-				
-	
+	    while (resultat.next()) {
+	        String quote_text = resultat.getString("quote_text");
+	        if (displayedQuotes.contains(quote_text)) { // check if quote_text is already displayed
+	            continue; // skip this iteration
+	        }
+	        displayedQuotes.add(quote_text); // add quote_text to the HashSet
 
-				PreparedStatement preparedStatement2 = connexion
-						.prepareStatement("SELECT * from like_quote WHERE id_user =? AND id_quote=?");
-				preparedStatement2.setInt(1, user_id);
-				preparedStatement2.setInt(2, id_quote);
-				ResultSet resultat2 = preparedStatement2.executeQuery();
-				if (resultat2.next()) {
-					color = "red";
+	        String book_name = resultat.getString("book_name");
+	        Timestamp created_at = resultat.getTimestamp("created_at");
+	        String user_name = resultat.getString("user_name");
+	        String author_name = resultat.getString("author_name");
+	        int id_quote = resultat.getInt("id_quote");
+	        String emailOfTheProfile = resultat.getString("email");
+	        System.out.println("email of the owner of the quote is " + emailOfTheProfile);
 
-				} else {
-					color = "blue";
-				}
+	        PreparedStatement preparedStatement2 = connexion
+	                .prepareStatement("SELECT * from like_quote WHERE id_user =? AND id_quote=?");
+	        preparedStatement2.setInt(1, user_id);
+	        preparedStatement2.setInt(2, id_quote);
+	        ResultSet resultat2 = preparedStatement2.executeQuery();
+	        if (resultat2.next()) {
+	            color = "red";
 
-				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,
-						color,emailOfTheProfile);
-				quotes.add(quote);
-			}
-			return quotes;
-		}
+	        } else {
+	            color = "blue";
+	        }
+
+	        QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,
+	                color, emailOfTheProfile);
+	        quotes.add(quote);
+	    }
+	    return quotes;
+	}
+
 		
 		
 		

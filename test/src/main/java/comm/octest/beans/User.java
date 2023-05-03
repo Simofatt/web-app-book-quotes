@@ -1,8 +1,12 @@
 package comm.octest.beans;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,19 +22,17 @@ public class User implements Observer {
 	private String password;
 	private Timestamp created_at;
 	private String profile_img;
-	private int id_type;
-	private int id_quote;
-	private String city;
-	private int nbreQuoteAdded;
+	private Flyweight quoteManager ;
+	private String city;  
+	private int nbreQuoteAdded; 
 	private boolean isFriends; // check is two users are friends
 	private int nbreFriends; // check nbre Of friends that the user have
 	private int nbreLikes;
-
-	// private I_Quote quoteFactory = QuoteFactorySingleton.getInstance();
 	private UserDAOImp userDAO;
 
 	public User() {
 		userDAO = new UserDAOImp();
+		quoteManager = new QuoteManager() ;
 	}
 
 	// CONTRUCTOR TO ADD A OBSERVER
@@ -140,6 +142,14 @@ public class User implements Observer {
 		return userId ; 
 	}
 	
+	public String hashPassword(String password) throws NoSuchAlgorithmException {
+	    MessageDigest md = MessageDigest.getInstance("SHA-256");
+	    byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+	    String encodedPassword = Base64.getEncoder().encodeToString(hashedPassword);
+	    return encodedPassword;
+	}
+
+	
 	
 	
 	// MEHTODES TO KNOW IF THERE IS AN INSTANCE OF THE USER IN THE LIST OF OBSERVERS
@@ -219,21 +229,24 @@ public class User implements Observer {
 	}
 
 	public int getId_type() {
-		return id_type;
-	}
+		return quoteManager.getId_type() ; 
+		}
 
 	public void setId_type(int id_type) {
-		this.id_type = id_type;
+	 quoteManager.setId_type(id_type);
 	}
 
 	public int getId_quote() {
-		return id_quote;
+		
+		return quoteManager.getId_quote();
 	}
 
 	public void setId_quote(int id_quote) {
-		this.id_quote = id_quote;
-	}
 
+		quoteManager.setId_quote(id_quote);
+		//this.id_quote = id_quote;
+	}
+ 
 	public String getName() {
 		return full_name;
 	}

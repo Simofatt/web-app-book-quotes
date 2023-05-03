@@ -1,6 +1,7 @@
 package comm.octest.servlets;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -95,7 +96,14 @@ public class Settings extends HttpServlet {
 				user.setCountry(userInfo.get(0).getCountry());
 			}
 			if (password != null && !password.isEmpty()) {
-				user.setPassword(password);
+				
+				try {
+					String hashPassword = user.hashPassword(password);
+					user.setPassword(hashPassword);
+				} catch (NoSuchAlgorithmException e) {
+				  	e.printStackTrace();
+				}
+			
 			} else {
 				user.setPassword(userInfo.get(0).getPassword());
 			}

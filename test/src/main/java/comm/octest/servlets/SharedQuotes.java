@@ -77,7 +77,7 @@ public class SharedQuotes extends HttpServlet {
 
 			Observer user = new User();
 			user.setId_quote(quote_id);
-			user.setId_user(user_id);
+ 			user.setId_user(user_id);
 			user.likedQuote(user);
 
 		} catch (SQLException e) {

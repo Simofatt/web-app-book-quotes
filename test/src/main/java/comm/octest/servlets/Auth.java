@@ -1,6 +1,7 @@
 package comm.octest.servlets;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -33,14 +34,21 @@ public class Auth extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-
 		// INITIALISE THE ARRAY LIST , AND CREATE A USER TO ADD HIM INTO THAT ARRAYLIST
 		Observer user = new User();
-		user.setEmail(email);
-		user.setPassword(password);
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		try {
+			String hashPassword = user.hashPassword(password);
+			user.setEmail(email);
+			user.setPassword(hashPassword);
+		} catch (NoSuchAlgorithmException e1) {
+			
+			e1.printStackTrace();
+		}
+
+		
+	
 
 		// AUTHENTIFICATION
 

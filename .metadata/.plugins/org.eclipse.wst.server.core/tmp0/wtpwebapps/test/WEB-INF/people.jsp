@@ -34,7 +34,7 @@ ArrayList<Observer> users = new ArrayList<>();
 
     <div class="container">
         <br>
-        <h2 class="mb-4">Most Popular People</h2>
+        <h2  style ="position : relative ; top : 20px; left :200px;">Most Popular People</h2>
         <br>
         <div class="card card-default" id="card_contacts">
 

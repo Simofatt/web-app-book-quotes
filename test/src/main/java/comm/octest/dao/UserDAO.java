@@ -8,8 +8,9 @@ import comm.octest.beans.Message;
 import comm.octest.beans.Observer;
 import comm.octest.beans.User;
 
-public interface UserDAO {
+public interface UserDAO { 
 	
+	void driver();
 	 boolean validerInput(String name, String email, String password, String passwordc) throws SQLException, ClassNotFoundException;
 	 boolean validEmail(String email, String currentEmail) throws SQLException;
 	 void registration(Observer user);

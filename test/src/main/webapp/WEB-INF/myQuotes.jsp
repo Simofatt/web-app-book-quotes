@@ -20,6 +20,8 @@
 <%@ include file="/WEB-INF/ressources/css/myQuotes.css"%></style>
 </head>
 <%
+
+
 ArrayList<QuoteManager> quotes = new ArrayList<>();
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 String email = (String) session.getAttribute("email");

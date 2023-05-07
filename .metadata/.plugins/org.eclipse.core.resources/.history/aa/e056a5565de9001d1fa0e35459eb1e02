@@ -1,0 +1,14 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public interface BookFlyweight {
+
+	  BookFlyweight addBook(String author_name, String type, String book_name) throws SQLException;
+	    void updateBook(Flyweight quote) throws SQLException;
+	    void fetchBooks() throws SQLException;
+	    void putBook(String key, BookFlyweight book);
+	    void removeBook(String key);
+
+}

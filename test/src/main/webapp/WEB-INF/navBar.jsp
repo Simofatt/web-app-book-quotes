@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="comm.octest.beans.Flyweight" %>
+<%@ page import="comm.octest.beans.QuoteFlyweight" %>
 <%@ page import="comm.octest.beans.Message" %>
 <%@ page import="comm.octest.beans.QuoteManager" %>
 <!DOCTYPE html>
@@ -13,16 +13,17 @@
 </head>
 <body>
 <%
+
+
 int user_id = (int) session.getAttribute("user_id");
-Flyweight quoteNotification = new QuoteManager();
-List<Flyweight> notifications = quoteNotification.getNotification(user_id);  
+QuoteFlyweight quoteNotification = new QuoteManager();
+List<QuoteFlyweight> notifications = quoteNotification.getNotification(user_id);  
 int countNotif = notifications.size() ;
 String emailNavBar= (String ) session.getAttribute("email") ;
 
 Message message = new Message() ; 
 List<Message> msgNotification = message.notification(emailNavBar) ;
 int countMsgNotif = msgNotification.size() ;
-
 %>
  <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
   <nav class="navbar navbar-expand-lg">
@@ -80,9 +81,11 @@ int countMsgNotif = msgNotification.size() ;
                   
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifDropdown">
                    
-                    <%for (Flyweight notifs : notifications ) { 
-                    	int id_quote = notifs.getId_quote() ; 
-                     %>
+                    <%
+                                       
+                                       for (QuoteFlyweight notifs : notifications ) { 
+                                                           	int id_quote = notifs.getId_quote() ;
+                                       %>
                 
                
                  <a class="dropdown-item" href="sharedQuotes?id_quote=<%=id_quote%>">New Quote added!</a>

@@ -6,57 +6,62 @@ import java.util.List;
 import comm.octest.dao.BookAuthorDAO;
 import comm.octest.dao.BookAuthor.BookDAO;
 
-public class Book implements I_Book {
+public class Book implements BookFlyweight {
 	private int id_book;
 	private String name_book;
 	private String book_img;
-
-
-	private String author;
+	//private String author; // 
+	private AuthorFlyweight author;   // association  avec linterface author
 	private String type;
-	private int id_quote;
-	private BookAuthorDAO<I_Book>  bookDAO;
+	private QuoteFlyweight quote;     // composition avec linterface quote
+	//private int id_quote;
+	private BookAuthorDAO<BookFlyweight>  bookDAO;
 
 	
-	public Book(String name_book, String type, String author) {
+	public Book(String name_book, String type, String authorName) {
+		quote = new QuoteManager() ;
+		author = new Author() ;
+		bookDAO = new BookDAO() ;
 		this.name_book = name_book;
 		this.type = type;
-		this.author = author;
-		bookDAO = new BookDAO() ;
+		setAuthor(authorName);
+	
 	}
 
+	
 	public Book() {
+		
 		bookDAO = new BookDAO() ;
 	}
 
 	
 	//GET BOOKS
-	public List<I_Book> fetchBooks() throws SQLException {
+	public List<BookFlyweight> fetchBooks() throws SQLException {
 		
-		List<I_Book> books = bookDAO.fetch();
+		List<BookFlyweight> books = bookDAO.fetch();
 		return books;
 	}
 
 	//INSERT BOOK
-	public void save(I_Book book) throws SQLException {
+	public void save(BookFlyweight book) throws SQLException {
 	
 		bookDAO.insert(book);
 		System.out.println("Book bien saisie ! " + name_book);
 	}
 	
 	//UPDATE BOOK 
-	public void updateBook(I_Book book2) throws SQLException { 
+	public void updateBook(BookFlyweight book2) throws SQLException { 
 		bookDAO.update(book2);
 	}
 
 	
 	//REMOVE BOOK 
-	public void removeBook(I_Book book) throws SQLException { 
+	public void removeBook(BookFlyweight book) throws SQLException { 
 		bookDAO.remove(book);
 	}
 	
 	//UPDATE ID_BOOK IN THE QUOTE TABLE
-	public void updateId(I_Book book) throws SQLException { 
+	public void updateId(BookFlyweight book) throws SQLException { 
 		bookDAO.updateId(book);
 	}
 	
@@ -99,11 +104,12 @@ public class Book implements I_Book {
 	}
 
 	public String getAuthor() {
-		return author;
+		return author.getAuthor_name();
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setAuthor(String authorName) {
+		author.setAuthor_name(authorName) ;
+		//this.author = author;
 	}
 
 	public String getType() {
@@ -114,11 +120,11 @@ public class Book implements I_Book {
 		this.type = type;
 	}
 	public int getId_quote() {
-		return id_quote;
+		return quote.getAuthor_id();
 	}
 
 	public void setId_quote(int id_quote) {
-		this.id_quote = id_quote;
+		quote.setAuthor_id(id_quote);
 	}
 
 

@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 public class AuthorFactory {
-	private static  Map<String, I_Author> authors = new HashMap<>();
+	private static  Map<String, AuthorFlyweight> authors = new HashMap<>();
 
-	public I_Author addAuthor(String author_name) throws SQLException {
+	public AuthorFlyweight addAuthor(String author_name) throws SQLException {
 		// CREATE THE KEY
 		String key = author_name;
 		fetchAuthors();
-		I_Author author = (I_Author) authors.get(key);
+		AuthorFlyweight author = (AuthorFlyweight) authors.get(key);
 		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
 		if (author == null) {
 			author = new Author(author_name);
@@ -22,20 +22,20 @@ public class AuthorFactory {
 
 		return author;
 	}
-	public void updateAuthor(Flyweight quote) throws SQLException {
+	public void updateAuthor(QuoteFlyweight quote) throws SQLException {
 		// CREATE THE KEY
 		String author_name = quote.getAuthor_name() ; 
 	    int id_author = quote.getAuthor_id() ; 
 	    int id_book =quote.getBook_id();
 		String key = author_name;
 		fetchAuthors();
-		I_Author author = (I_Author) authors.get(key);
+		AuthorFlyweight author = (AuthorFlyweight) authors.get(key);
 
 		// IF IT DOESN'T EXIST, CREATE A NEW ONE IN THE MAP
 		if (author == null) {
 			author = new Author(author_name);
 			putAuthor(key, author);
-			I_Author author2 = new Author() ; 
+			AuthorFlyweight author2 = new Author() ; 
 			author2.setAuthor_name(author_name);
 			author2.setId_author(id_author);
 			
@@ -43,7 +43,7 @@ public class AuthorFactory {
 			
 		}else { 
 			
-			I_Author author2 = new Author() ; 
+			AuthorFlyweight author2 = new Author() ; 
 			author2.setId_author(id_author);
 			author2.setId_book(id_book);
 			
@@ -54,9 +54,9 @@ public class AuthorFactory {
 	
 
 	public void fetchAuthors() throws SQLException {
-		I_Author author = new Author();
-		List<I_Author> authorsList = author.fetchAuthors();
-		for (I_Author a : authorsList) {
+		AuthorFlyweight author = new Author();
+		List<AuthorFlyweight> authorsList = author.fetchAuthors();
+		for (AuthorFlyweight a : authorsList) {
 			String key = a.getAuthor_name();
 			if (!authors.containsKey(key)) {
 				authors.put(key, a);
@@ -67,7 +67,7 @@ public class AuthorFactory {
 	}
 
 	// ADD A AUTHOR FROM THE MAP
-		public void putAuthor(String key, I_Author author) {
+		public void putAuthor(String key, AuthorFlyweight author) {
 			if (!authors.containsKey(key)) {
 			authors.put(key, author);
 		}

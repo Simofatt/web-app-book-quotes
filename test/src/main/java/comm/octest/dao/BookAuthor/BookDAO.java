@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import comm.octest.beans.Book;
-import comm.octest.beans.I_Book;
+import comm.octest.beans.BookFlyweight;
 import comm.octest.dao.BookAuthorDAO;
 
-public class BookDAO implements BookAuthorDAO<I_Book>{
+public class BookDAO implements BookAuthorDAO<BookFlyweight>{
 
 	Connection connexion = null;
 	Statement statement = null;
@@ -34,8 +34,8 @@ public class BookDAO implements BookAuthorDAO<I_Book>{
 	
 	
 	    //FETCH BOOKS
-		public List<I_Book> fetch() throws SQLException {
-			List<I_Book> books = new ArrayList<>();
+		public List<BookFlyweight> fetch() throws SQLException {
+			List<BookFlyweight> books = new ArrayList<>();
 
 			driver();
 			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT b.*,t.name AS type_name, a.name AS author_name FROM books b INNER JOIN types t ON b.id_type = t.id_type INNER JOIN authors a ON b.id_author = a.id_author");
@@ -53,7 +53,7 @@ public class BookDAO implements BookAuthorDAO<I_Book>{
 		}
 
 	    //INSERT BOOK (FLYWEIGHT) 
-		public void insert(I_Book book) throws SQLException {
+		public void insert(BookFlyweight book) throws SQLException {
 			String book_name = book.getName_book() ; 
 			String type_name = book.getType();
 			String author_name = book.getAuthor();
@@ -83,7 +83,7 @@ public class BookDAO implements BookAuthorDAO<I_Book>{
 
 		
 	    //UPDATE AUTHOR(FLYWEIGHT)
-		public void update(I_Book book) throws SQLException { 
+		public void update(BookFlyweight book) throws SQLException { 
 			    String book_name = book.getName_book();
 			    int id_book = book.getId_book() ;
 			
@@ -98,7 +98,7 @@ public class BookDAO implements BookAuthorDAO<I_Book>{
 		
 		
 		//REMOVE BOOK 
-		public void remove(I_Book book) throws SQLException {
+		public void remove(BookFlyweight book) throws SQLException {
 			int id_book = book.getId_book();
 			driver();
 			System.out.println("DELETE BOOK") ;
@@ -110,7 +110,7 @@ public class BookDAO implements BookAuthorDAO<I_Book>{
 		
 		
 		//UPDATE ID BOOK IN QUOTES TABLE WHEN UPDATE (FLYWEIGHT)
-		public void updateId(I_Book book) throws SQLException {
+		public void updateId(BookFlyweight book) throws SQLException {
 			int id_quote = book.getId_quote();
 			int id_book = book.getId_book() ;
 			 

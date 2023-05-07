@@ -5,15 +5,15 @@ import java.sql.SQLException;
 //QUOTE == OBSERVABLE
 public interface I_Quote {
 
-	Flyweight addQuote(String name_book, String quote_text, int user_id) throws SQLException;
+	QuoteFlyweight addQuote(String name_book, String quote_text, int user_id) throws SQLException;
 
-	void updateQuote(Flyweight quote) throws SQLException;
+	void updateQuote(QuoteFlyweight quote) throws SQLException;
 
 	void addUserIds() throws SQLException;
 
 	void fetchQuotes(int user_id) throws SQLException;
 
- void putQuote(String key, Flyweight quote) ;
+ void putQuote(String key, QuoteFlyweight quote) ;
 
 	void removeQuote(String key, QuoteManager quote);
 

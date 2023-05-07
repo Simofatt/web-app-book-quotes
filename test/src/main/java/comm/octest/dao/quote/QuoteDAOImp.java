@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import comm.octest.beans.Flyweight;
+import comm.octest.beans.QuoteFlyweight;
 import comm.octest.beans.QuoteManager;
 import comm.octest.dao.QuoteDAO;
 
@@ -259,7 +259,7 @@ public class QuoteDAOImp implements QuoteDAO {
 		
 	
 		
-		public void updateQuote(Flyweight quote) throws SQLException {
+		public void updateQuote(QuoteFlyweight quote) throws SQLException {
 			String quote_text = quote.getQuoteText();
 			int id_quote = quote.getId_quote();
 		
@@ -292,8 +292,8 @@ public class QuoteDAOImp implements QuoteDAO {
 	
 		
 		// TO GET NOTIFICATIONS:
-		public List<Flyweight> getNotification(int id_user) throws SQLException {
-			List<Flyweight> notifications = new ArrayList<>();
+		public List<QuoteFlyweight> getNotification(int id_user) throws SQLException {
+			List<QuoteFlyweight> notifications = new ArrayList<>();
 			
 			driver();
 			PreparedStatement preparedStatement2 = connexion.prepareStatement("SELECT nq.id_quote FROM notification_quotes nq WHERE nq.id_user=?");
@@ -301,7 +301,7 @@ public class QuoteDAOImp implements QuoteDAO {
 			ResultSet resultat2 = preparedStatement2.executeQuery();
 			while (resultat2.next()) {
 				int id_quote = resultat2.getInt("id_quote");
-				Flyweight quoteNotification = new QuoteManager();
+				QuoteFlyweight quoteNotification = new QuoteManager();
 				quoteNotification.setId_quote(id_quote);
 				System.out.print(id_quote);
 				notifications.add(quoteNotification);

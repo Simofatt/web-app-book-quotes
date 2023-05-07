@@ -21,6 +21,7 @@
     <style><%@include file="/WEB-INF/ressources/css/profile.css"%> </style>
 </head>
 <%
+
 ArrayList<QuoteManager> quotes = new ArrayList<>();
 ArrayList<User> userInfo = new ArrayList<>();
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");

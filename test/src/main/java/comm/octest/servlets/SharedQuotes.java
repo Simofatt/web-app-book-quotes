@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import comm.octest.beans.Flyweight;
+import comm.octest.beans.QuoteFlyweight;
 import comm.octest.beans.Observer;
 import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
@@ -39,7 +39,7 @@ public class SharedQuotes extends HttpServlet {
 				if (id_quote != null) {
 
 					int idQuote = Integer.parseInt(id_quote);
-					Flyweight quoteManager = new QuoteManager();
+					QuoteFlyweight quoteManager = new QuoteManager();
 					List<QuoteManager> quotes = quoteManager.fetchQuotes(user_id);
 					request.setAttribute("quotes", quotes);
 					
@@ -51,7 +51,7 @@ public class SharedQuotes extends HttpServlet {
 
 				} else {
 
-					Flyweight quoteManager = new QuoteManager();
+					QuoteFlyweight quoteManager = new QuoteManager();
 					List<QuoteManager> quotes = quoteManager.fetchQuotes(user_id);
 					request.setAttribute("quotes", quotes);
 

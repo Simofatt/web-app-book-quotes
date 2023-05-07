@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import comm.octest.beans.Flyweight;
+import comm.octest.beans.QuoteFlyweight;
 import comm.octest.beans.Observer;
 import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
@@ -34,7 +34,7 @@ public class FavQuotes extends HttpServlet {
 			if (email != null) {
 				int user_id = (int) session.getAttribute("user_id");
 
-				Flyweight quoteManager = new QuoteManager();
+				QuoteFlyweight quoteManager = new QuoteManager();
 				List<QuoteManager> favQuotes = quoteManager.fetchFavQuotes(user_id);
 				request.setAttribute("favQuotes", favQuotes);
 

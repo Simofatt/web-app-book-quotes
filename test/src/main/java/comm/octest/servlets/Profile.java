@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import comm.octest.beans.Flyweight;
+import comm.octest.beans.QuoteFlyweight;
 import comm.octest.beans.Observer;
 import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
@@ -43,7 +43,7 @@ public class Profile extends HttpServlet {
 		if (email != null) {
 			int id_user_session = (Integer) session.getAttribute("user_id");
 			Observer user = new User();
-			Flyweight quoteManager = new QuoteManager();
+			QuoteFlyweight quoteManager = new QuoteManager();
 			
           //IF IT EXISTS WE FETCH THE QUOTE OF THE EMAIL == THE USER THAT VISIT HIS PROFILE
 				if (emailVisitProfile == null) {

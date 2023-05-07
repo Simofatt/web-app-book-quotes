@@ -1,0 +1,24 @@
+# use glob syntax.
+syntax: glob
+*.class
+*~
+*.bak
+*.off
+*.old
+*.java.orig
+.DS_Store
+
+# building
+/target
+.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# IDEA
+*.iml
+*.ipr
+*.iws
+/.idea/

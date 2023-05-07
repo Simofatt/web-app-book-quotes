@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import comm.octest.beans.QuoteFlyweight;
+import comm.octest.beans.Flyweight;
 import comm.octest.beans.QuoteManager;
 import comm.octest.dao.QuoteDAO;
 
@@ -44,7 +44,7 @@ public class QuoteDAOImp implements QuoteDAO {
 	    driver();
 	    Set<String> displayedQuotes = new HashSet<>(); // create a HashSet to keep track of displayed quote_text
 
-	    PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user   ");
+	    PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name,b.book_img as book_img ,a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user   ");
 	    ResultSet resultat = preparedStatement.executeQuery();
 
 	    while (resultat.next()) {
@@ -60,6 +60,7 @@ public class QuoteDAOImp implements QuoteDAO {
 	        String author_name = resultat.getString("author_name");
 	        int id_quote = resultat.getInt("id_quote");
 	        String emailOfTheProfile = resultat.getString("email");
+	        String book_img = resultat.getString("book_img");
 	        System.out.println("email of the owner of the quote is " + emailOfTheProfile);
 
 	        PreparedStatement preparedStatement2 = connexion
@@ -75,7 +76,7 @@ public class QuoteDAOImp implements QuoteDAO {
 	        }
 
 	        QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,
-	                color, emailOfTheProfile);
+	                color, emailOfTheProfile,book_img);
 	        quotes.add(quote);
 	    }
 	    return quotes;
@@ -84,14 +85,14 @@ public class QuoteDAOImp implements QuoteDAO {
 		
 		
 		
-		//
+		// FETCH THE QUOTES OF ANOTHER USER SO WE CAN DISPLAY IN HIS PROFILE
 		public List<QuoteManager> fetchUserQuotes(int user_id,int id_user_session) throws SQLException {
 			List<QuoteManager> quotes = new ArrayList<>();
 			String color;
 			driver();
 
 			PreparedStatement preparedStatement = connexion.prepareStatement(
-					"SELECT q.*, b.name AS book_name,a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user  WHERE u.id_user =? ");
+					"SELECT q.*, b.name AS book_name,b.book_img as book_img, a.name AS author_name, uq.id_user,u.full_name AS user_name, u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user  WHERE u.id_user =? ");
 			preparedStatement.setInt(1, user_id);
 			ResultSet resultat = preparedStatement.executeQuery();
 
@@ -103,6 +104,7 @@ public class QuoteDAOImp implements QuoteDAO {
 				String author_name = resultat.getString("author_name");
 				int id_quote = resultat.getInt("id_quote");
 				String emailOfTheProfile = resultat.getString("email") ;
+				  String book_img = resultat.getString("book_img");
 			
 
 				PreparedStatement preparedStatement2 = connexion
@@ -118,7 +120,7 @@ public class QuoteDAOImp implements QuoteDAO {
 				}
 
 				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,
-						color,emailOfTheProfile);
+						color,emailOfTheProfile,book_img);
 				quotes.add(quote);
 			}
 			return quotes;
@@ -132,7 +134,7 @@ public class QuoteDAOImp implements QuoteDAO {
 			driver();
 
 			System.out.println("Affichage des quote de user : " + email);
-			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name, b.id_book as id_book ,a.name AS author_name, a.id_author as id_author ,t.name as type ,uq.id_user,u.full_name AS user_name FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN types t ON b.id_type = t.id_type  INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE u.email =? ");
+			PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name,b.book_img as book_img, b.id_book as id_book ,a.name AS author_name, a.id_author as id_author ,t.name as type ,uq.id_user,u.full_name AS user_name FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN types t ON b.id_type = t.id_type  INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE u.email =? ");
 			preparedStatement.setString(1, email);
 			ResultSet resultat = preparedStatement.executeQuery();
 
@@ -146,8 +148,9 @@ public class QuoteDAOImp implements QuoteDAO {
 				int id_author =  resultat.getInt("id_author");
 				int id_book = resultat.getInt("id_book");
 				String type = resultat.getString("type");
+				  String book_img = resultat.getString("book_img");
 
-				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,email,id_author,id_book,type);
+				QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name, id_quote,email,id_author,id_book,type,book_img);
 				quotes.add(quote);
 			}
 			return quotes;
@@ -166,7 +169,7 @@ public class QuoteDAOImp implements QuoteDAO {
 			while (resultat2.next()) {
 				int quote_id = resultat2.getInt("id_quote");
 				System.out.print("next1: " + quote_id);
-				PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name, a.name AS author_name, u.full_name AS user_name ,u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE q.id_quote=? LIMIT 1 ");
+				PreparedStatement preparedStatement = connexion.prepareStatement("SELECT q.*, b.name AS book_name,b.book_img as book_img, a.name AS author_name, u.full_name AS user_name ,u.email as email FROM quotes q INNER JOIN books b ON q.id_book = b.id_book INNER JOIN authors a ON b.id_author = a.id_author INNER JOIN user_quote uq ON q.id_quote = uq.id_quote INNER JOIN users u ON uq.id_user= u.id_user WHERE q.id_quote=? LIMIT 1 ");
 				preparedStatement.setInt(1, quote_id);
 				ResultSet resultat = preparedStatement.executeQuery();
 
@@ -179,9 +182,10 @@ public class QuoteDAOImp implements QuoteDAO {
 					String author_name = resultat.getString("author_name");
 					String email = resultat.getString("email") ;
 					String color = "red";
+					  String book_img = resultat.getString("book_img");
 
 					QuoteManager quote = new QuoteManager(book_name, quote_text, author_name, created_at, user_name,
-							quote_id, color,email);
+							quote_id, color,email,book_img);
 					favQuotes.add(quote);
 				}
 			}
@@ -259,7 +263,7 @@ public class QuoteDAOImp implements QuoteDAO {
 		
 	
 		
-		public void updateQuote(QuoteFlyweight quote) throws SQLException {
+		public void updateQuote(Flyweight quote) throws SQLException {
 			String quote_text = quote.getQuoteText();
 			int id_quote = quote.getId_quote();
 		
@@ -292,8 +296,8 @@ public class QuoteDAOImp implements QuoteDAO {
 	
 		
 		// TO GET NOTIFICATIONS:
-		public List<QuoteFlyweight> getNotification(int id_user) throws SQLException {
-			List<QuoteFlyweight> notifications = new ArrayList<>();
+		public List<Flyweight> getNotification(int id_user) throws SQLException {
+			List<Flyweight> notifications = new ArrayList<>();
 			
 			driver();
 			PreparedStatement preparedStatement2 = connexion.prepareStatement("SELECT nq.id_quote FROM notification_quotes nq WHERE nq.id_user=?");
@@ -301,7 +305,7 @@ public class QuoteDAOImp implements QuoteDAO {
 			ResultSet resultat2 = preparedStatement2.executeQuery();
 			while (resultat2.next()) {
 				int id_quote = resultat2.getInt("id_quote");
-				QuoteFlyweight quoteNotification = new QuoteManager();
+				Flyweight quoteNotification = new QuoteManager();
 				quoteNotification.setId_quote(id_quote);
 				System.out.print(id_quote);
 				notifications.add(quoteNotification);

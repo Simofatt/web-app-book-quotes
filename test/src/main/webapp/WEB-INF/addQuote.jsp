@@ -13,6 +13,8 @@
 
 <%
 
+
+
   String success =  (String)request.getParameter("success");
 %>
 
@@ -41,10 +43,20 @@
 				                <label for="bookName">Book Name:</label>
 				                <input type="text" class="form-control" id="bookName" name="name_book">
 				            </div>
-				              <div class="form-group">
-				                <label for="bookName">Type:</label>
-				                <input type="text" class="form-control" name="book_type">
-				            </div>
+				             <div class="form-group">
+							    <label for="bookType">Type:</label>
+								    <select class="form-control" name="book_type" id="bookType" style="width:350px;">
+								        <option value="fiction"></option>
+								        <option value="fiction">Novel</option>
+								        <option value="fiction">Romance</option>
+								        <option value="fiction">Fiction</option>
+								        <option value="fiction">Short story</option>
+								         <option value="poetry">Fantasy</option>
+								        <option value="non-fiction">Horror</option>
+								        <option value="poetry">Poetry</option>
+								    </select>
+							</div>
+
 				            <div class="form-group">
 				                <label for="authorName">Author Name:</label>
 				                <input type="text" class="form-control" id="authorName" name="name_author">

@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 public class QuoteFactory implements I_Quote {
-	private static   Map<String, QuoteFlyweight> quotes = new HashMap<>();
+	private static   Map<String, Flyweight> quotes = new HashMap<>();
 	private Map<String, Integer> user_quotes = new HashMap<>();
-	private QuoteFlyweight quoteManager;
+	private Flyweight quoteManager;
 	private List<Observer> observers;
 
 	public QuoteFactory() {
@@ -21,7 +21,7 @@ public class QuoteFactory implements I_Quote {
 		quoteManager = new QuoteManager();
 	}
 
-	public QuoteFlyweight addQuote(String name_book, String quote_text, int userId) throws SQLException {
+	public Flyweight addQuote(String name_book, String quote_text, int userId) throws SQLException {
 		// CREATE THE KEYS
 		String key = name_book + quote_text;
 		String key2 = quote_text + userId;
@@ -62,7 +62,7 @@ public class QuoteFactory implements I_Quote {
 		return quoteManager;
 	}
 	
-	public void updateQuote(QuoteFlyweight quote) throws SQLException{
+	public void updateQuote(Flyweight quote) throws SQLException{
 		
 		String name_book = quote.getName_book();
 		String quote_text = quote.getQuoteText();
@@ -122,7 +122,7 @@ public class QuoteFactory implements I_Quote {
 
 	
 	// ADD A QUOTE FROM THE MAP
-	public  void putQuote(String key, QuoteFlyweight quote) {
+	public  void putQuote(String key, Flyweight quote) {
 		if (!quotes.containsKey(key)) {
 		quotes.put(key, quote);
 	}

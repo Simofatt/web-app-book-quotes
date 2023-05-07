@@ -15,9 +15,11 @@
     <title>Book Quotes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-       <style>   <%@include file="/WEB-INF/ressources/css/addQuote.css"%> </style>
+       <style>   <%@include file="/WEB-INF/ressources/css/myQuotes.css"%> </style>
 </head>
 <%
+
+
 
 ArrayList<QuoteManager>  favQuotes = (ArrayList<QuoteManager>) request.getAttribute("favQuotes");
 %>
@@ -39,24 +41,27 @@ ArrayList<QuoteManager>  favQuotes = (ArrayList<QuoteManager>) request.getAttrib
 		String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
 		int quote_id = q.getId_quote() ;
     	String like_color = q.getLike_color();
+    	String book_img = q.getBook_img() ;
+     	String email = q.getEmail() ;
 	%>
 	
 		<div class="card mb-4">
 			<div class="row no-gutters">
 				<div class="col-md-4">
-					<img
-						src="https://images.pexels.com/photos/156917/pexels-photo-156917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-						class="card-img" alt="The Hobbit">
+					<img src="<%=book_img %>"
+                        class="card-img" alt="<%=book_name%>">
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
 						 <form id="form_<%=quote_id%>" action="favQuotes" method="post" >
-                        <h5 class="card-title"><%=book_name %></h5>
-                        <p class="card-text">"<%=quote_text %>"</p>
+                    <h5 class="card-title"  id="quote">"<%=quote_text %>"</h5>
+                    <br>
+                       <p class="card-text"><small class="text-muted">Book name :   <%=book_name %></small></p>
                         <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
-                        <p class="card-text"><small class="text-muted">Added By: <a href="#"><%=user_name %></a></small></p>
-                          <input type="hidden" name="quoteId" value="<%=quote_id%>">                          
+                        <p class="card-text"><small class="text-muted">Added By: <a href="profile?email=<%=email %>"><%=user_name %></a></small></p>
+                          <input type="hidden" name="quoteId" value="<%=quote_id%>">    
+                          <br>                    
                         <a href="#" class="card-link favorite "  style="color:<%= like_color %>;" onclick="submitForm(<%=quote_id%>)"><i class="fas fa-heart"></i> Love</a>
                         </form>
 					</div>

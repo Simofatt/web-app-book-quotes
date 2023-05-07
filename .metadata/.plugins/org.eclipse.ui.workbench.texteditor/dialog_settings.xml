@@ -8,14 +8,14 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="Flyweight"/>
+			<item value="flyweight"/>
+			<item value="time"/>
 			<item value="limit"/>
 			<item value="addLike"/>
 			<item value="id_quote"/>
 			<item value="about"/>
 			<item value="span"/>
-			<item value="back"/>
-			<item value="color"/>
-			<item value="nav"/>
 		</list>
 		<list key="replacehistory">
 		</list>

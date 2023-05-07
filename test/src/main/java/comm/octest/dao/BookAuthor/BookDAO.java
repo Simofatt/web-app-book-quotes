@@ -45,7 +45,8 @@ public class BookDAO implements BookAuthorDAO<BookFlyweight>{
 				String book_name = resultat.getString("name");
 				String type_name = resultat.getString("type_name");
 				String author_name = resultat.getString("author_name");
-				Book book = new Book(book_name, type_name, author_name);
+				String img_book = resultat.getString("book_img");
+				Book book = new Book(book_name, type_name, author_name,img_book);
 				
 				books.add(book);
 			}
@@ -57,9 +58,10 @@ public class BookDAO implements BookAuthorDAO<BookFlyweight>{
 			String book_name = book.getName_book() ; 
 			String type_name = book.getType();
 			String author_name = book.getAuthor();
+			String img_book = book.getBook_img() ;
 
 			driver();
-			System.out.println("book bien saisie ! " + book_name);
+			
 			PreparedStatement preparedStatement2 = connexion.prepareStatement("SELECT id_type FROM types WHERE name =?");
 			preparedStatement2.setString(1, type_name);
 			ResultSet resultat2 = preparedStatement2.executeQuery();
@@ -72,12 +74,16 @@ public class BookDAO implements BookAuthorDAO<BookFlyweight>{
 
 				if (resultat3.next()) {
 					int id_author = resultat3.getInt("id_author");
-					PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO books(name,id_type,id_author) VALUES (?,?,?)");
+					PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO books(name,book_img,id_type,id_author) VALUES (?,?,?,?)");
 					preparedStatement.setString(1, book_name);
-					preparedStatement.setInt(2, id_type);
-					preparedStatement.setInt(3, id_author);
+					preparedStatement.setString(2, img_book);
+					preparedStatement.setInt(3, id_type);
+					
+					preparedStatement.setInt(4, id_author);
 					preparedStatement.executeUpdate();
+					System.out.println("book bien saisie ! " + book_name);
 				}
+				
 			}
 		}
 

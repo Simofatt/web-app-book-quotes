@@ -1,0 +1,41 @@
+package comm.octest.beans;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.List;
+
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.services.books.Books;
+import com.google.api.services.books.BooksRequestInitializer;
+import com.google.api.services.books.model.Volume;
+
+public class BookImageFetcher {
+
+	public static String getImageUrl(String query) throws IOException, GeneralSecurityException {
+
+	    HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+	    @SuppressWarnings("deprecation")
+		JsonFactory jsonFactory = com.google.api.client.json.jackson2.JacksonFactory.getDefaultInstance();
+
+	    // Création d'une instance du client Google Books
+	    Books books = new Books.Builder(httpTransport, jsonFactory, new HttpRequestInitializer() {
+	        public void initialize(HttpRequest request) throws IOException {
+	        }
+	    }).setApplicationName("MyLibrary").setGoogleClientRequestInitializer(new BooksRequestInitializer("YOUR_API_KEY_HERE")).build();
+
+	    // Création d'une requête de recherche pour le titre de livre spécifié
+	    List<Volume> volumesList = books.volumes().list(query).setFilter("images").execute().getItems();
+
+	    // Récupération de l'image du premier livre de la liste
+	    if (!volumesList.isEmpty()) {
+	        Volume volume = volumesList.get(0);
+	        String imageUrl = volume.getVolumeInfo().getImageLinks().getThumbnail();
+	        return imageUrl;
+	    }
+
+	    return null;
+	}
+}

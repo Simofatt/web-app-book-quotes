@@ -1,0 +1,52 @@
+package comm.octest.beans;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.List;
+
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+//import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.books.Books;
+import com.google.api.services.books.BooksRequestInitializer;
+import com.google.api.services.books.model.Volume;
+import com.google.api.services.books.model.Volumes;
+
+@SuppressWarnings("deprecation")
+public class BookImageFetcher {
+
+	public static String getImageUrl(String query) throws IOException, GeneralSecurityException {
+
+	    HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+	    @SuppressWarnings("deprecation")
+		JsonFactory jsonFactory = new JacksonFactory();
+
+	    // Création d'une instance du client Google Books
+	    Books books = new Books.Builder(httpTransport, jsonFactory, new HttpRequestInitializer() {
+	        public void initialize(HttpRequest request) throws IOException {
+	        }
+	    }).setApplicationName("MyLibrary").setGoogleClientRequestInitializer(new BooksRequestInitializer("YOUR_API_KEY_HERE")).build();
+
+	    // Création d'une requête de recherche pour le titre de livre spécifié
+	    List volumesList = (List) books.volumes().list(query);
+	    ((com.google.api.services.books.Books.Volumes.List) volumesList).setFilter("images");
+
+	    // Exécution de la requête et récupération des résultats
+	    AbstractGoogleClientRequest<Volumes> abstractGoogleClientRequest = (AbstractGoogleClientRequest<Volumes>) volumesList;
+		Volumes volumes = abstractGoogleClientRequest.execute();
+	    List<Volume> volumeList = volumes.getItems();
+
+	    // Récupération de l'image du premier livre de la liste
+	    if (!volumeList.isEmpty()) {
+	        Volume volume = volumeList.get(0);
+	        String imageUrl = volume.getVolumeInfo().getImageLinks().getThumbnail();
+	        return imageUrl;
+	    }
+
+	    return null;
+	}
+}

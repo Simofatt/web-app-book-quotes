@@ -13,17 +13,18 @@ public class Book implements BookFlyweight {
 	//private String author; // 
 	private AuthorFlyweight author;   // association  avec linterface author
 	private String type;
-	private QuoteFlyweight quote;     // composition avec linterface quote
+	private Flyweight quote;     // composition avec linterface quote
 	//private int id_quote;
 	private BookAuthorDAO<BookFlyweight>  bookDAO;
 
 	
-	public Book(String name_book, String type, String authorName) {
+	public Book(String name_book, String type, String authorName,String book_img) {
 		quote = new QuoteManager() ;
 		author = new Author() ;
 		bookDAO = new BookDAO() ;
 		this.name_book = name_book;
 		this.type = type;
+		this.book_img = book_img;
 		setAuthor(authorName);
 	
 	}

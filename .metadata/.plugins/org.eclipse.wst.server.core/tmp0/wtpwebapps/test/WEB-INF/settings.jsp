@@ -60,6 +60,7 @@ for(User user : userInfo){
   
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <form>
                     <img class="rounded-circle mt-5" width="150px"
                         src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                     <span class="font-weight-bold"> <%=name %></span>
@@ -68,6 +69,7 @@ for(User user : userInfo){
                     <div class="mt-3">
                         <input type="file" name="profile_picture" accept="image/*">
                     </div>
+                   </form> 
                 </div>
             </div>
  

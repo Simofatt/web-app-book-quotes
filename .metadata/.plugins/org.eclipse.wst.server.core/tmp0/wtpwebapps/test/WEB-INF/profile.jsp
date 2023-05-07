@@ -22,6 +22,8 @@
 </head>
 <%
 
+
+
 ArrayList<QuoteManager> quotes = new ArrayList<>();
 ArrayList<User> userInfo = new ArrayList<>();
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
@@ -90,7 +92,7 @@ for(User user : userInfo){
                                         Friend</button>
                                            </form>
                                        <% }  else { %> 
-                                   <a href="chat?withClientId=<%=email%>" class="btn btn-primary send-message">Send a message</a>
+                                   <a href="chat?withClientId=<%=emailProfile%>" class="btn btn-primary send-message">Send a message</a>
                                     <%} %>
                                        
                                     
@@ -188,14 +190,14 @@ for(User user : userInfo){
 		int id_quote = q.getId_quote() ;
 		String like_color = q.getLike_color();
 		String emailOwnerOfTheQuote = q.getEmail() ;
+		String book_img = q.getBook_img() ;
 		
 	%>    
             <div class="card mb-4">
 			<div class="row no-gutters">
 				<div class="col-md-4">
-					<img
-						src="https://images.pexels.com/photos/156917/pexels-photo-156917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-						class="card-img" alt="The Hobbit">
+					 <img src="<%=book_img %>"
+                        class="card-img" alt="<%=book_name%>">
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">

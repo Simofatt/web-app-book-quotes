@@ -1,0 +1,25 @@
+package comm.octest.beans;
+
+public class QuoteFactoryThreaded implements I_Quote {
+    private QuoteFactory quoteFactory;
+
+    public QuoteFactoryThreaded() {
+        quoteFactory = new QuoteFactory();
+    }
+
+    @Override
+    public void addQuote(String name_book, String quote_text, int userId) throws SQLException {
+        // create a new thread to handle the database insertion
+        Thread insertionThread = new Thread(new QuoteFactoryRunnable(name_book, quote_text, userId, quoteFactory));
+
+        // start the thread
+        insertionThread.start();
+
+        try {
+            // wait for the thread to finish before continuing
+            insertionThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="comm.octest.beans.QuoteFlyweight" %>
+<%@ page import="comm.octest.beans.Flyweight" %>
 <%@ page import="comm.octest.beans.Message" %>
 <%@ page import="comm.octest.beans.QuoteManager" %>
 <!DOCTYPE html>
@@ -15,9 +15,11 @@
 <%
 
 
+
+
 int user_id = (int) session.getAttribute("user_id");
-QuoteFlyweight quoteNotification = new QuoteManager();
-List<QuoteFlyweight> notifications = quoteNotification.getNotification(user_id);  
+Flyweight quoteNotification = new QuoteManager();
+List<Flyweight> notifications = quoteNotification.getNotification(user_id);  
 int countNotif = notifications.size() ;
 String emailNavBar= (String ) session.getAttribute("email") ;
 
@@ -76,15 +78,16 @@ int countMsgNotif = msgNotification.size() ;
                     <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning"><%=countNotif %></span>
+                        <span class="badge badge-warning"><%=(countNotif)%></span>
                     </a>
                   
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifDropdown">
                    
                     <%
                                        
-                                       for (QuoteFlyweight notifs : notifications ) { 
-                                                           	int id_quote = notifs.getId_quote() ;
+                                                                              
+                                                                              for (Flyweight notifs : notifications ) { 
+                                                                                                  	int id_quote = notifs.getId_quote() ;
                                        %>
                 
                

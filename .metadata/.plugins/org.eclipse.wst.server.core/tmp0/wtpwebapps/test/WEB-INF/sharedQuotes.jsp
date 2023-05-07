@@ -23,6 +23,8 @@
 <%
 
 
+
+
 ArrayList<QuoteManager> quotes = new ArrayList<>() ;
 quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 String email_session = (String) session.getAttribute("email");
@@ -44,6 +46,7 @@ String email_session = (String) session.getAttribute("email");
                   	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // create a formatter
                   	String formattedDate = localDateTime.format(formatter); // format the LocalDateTime object
                   	String email = q.getEmail() ;
+                  	String book_img = q.getBook_img() ;
     	if(!email_session.equals(email)) {
  %>
     <div class="container my-4">
@@ -51,8 +54,8 @@ String email_session = (String) session.getAttribute("email");
             <div class="row no-gutters">
                 <div class="col-md-4">
                
-                    <img src="https://images.pexels.com/photos/156917/pexels-photo-156917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                        class="card-img" alt="The Hobbit">
+                    <img src="<%=book_img %>"
+                        class="card-img" alt="<%=book_name%>">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -64,7 +67,7 @@ String email_session = (String) session.getAttribute("email");
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
                         <p class="card-text"><small class="text-muted">Added By: <a href="profile?email=<%=email %>"><%=user_name %></a></small></p>
                           <input type="hidden" name="quoteId" value="<%=quote_id%>">  
-                          
+                          <br>
                         <a href="#" class="card-link favorite "  style="color:<%= like_color %>;"onclick="submitForm(<%=quote_id%>)"><i class="fas fa-heart"></i> Love</a>
                         </form>
                     </div>

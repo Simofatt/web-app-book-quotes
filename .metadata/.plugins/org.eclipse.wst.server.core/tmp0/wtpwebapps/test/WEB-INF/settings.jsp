@@ -45,9 +45,7 @@ String error =  (String)request.getParameter("error") ;
 <body>
    <%@include file="navBar.jsp"%>
    
-   
     <div class="container rounded bg-white mt-5 mb-5">
-
         <div class="row">
                 <%
 for(User user : userInfo){
@@ -55,21 +53,24 @@ for(User user : userInfo){
 	String country = user.getCountry() ; 
 	String city = user.getCity() ;
     Timestamp created_at = user.getCreated_at() ; 
-
 %>
   
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <form>
                     <img class="rounded-circle mt-5" width="150px"
-                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                        src="profilePicture">
                     <span class="font-weight-bold"> <%=name %></span>
                     <span class="text-black-50"> <%=email%></span>
                     <span> </span>
+                    <form action ="settings" method="post" enctype="multipart/form-data">
                     <div class="mt-3">
-                        <input type="file" name="profile_picture" accept="image/*">
+                        <input type="file" name="picture">
+                        
+                        
                     </div>
-                   </form> 
+                    <br> <br> <br>
+                       <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                    </form>
                 </div>
             </div>
  

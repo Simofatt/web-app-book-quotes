@@ -1,0 +1,37 @@
+package comm.octest.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet(name = "ProfilePicture", value = "/profilePicture")
+public class ProfilePicture extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String email = (String) session.getAttribute("email");
+		int id_user = (Integer) session.getAttribute("user_id");
+		
+		int idPeople = (int) request.getAttribute("id_user");
+		
+		if(idPeople ==0) { 
+		this.getServletContext().getRequestDispatcher("/WEB-INF/ressources/uploads/"+id_user).forward(request,
+				response);
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+}

@@ -33,6 +33,8 @@
                                                       ArrayList<Message> my_messages = new ArrayList<Message>();
                                                       my_messages = (ArrayList<Message>) request.getAttribute("my_messages") ; 
                                                       String  withClientName = (String) request.getAttribute("withClientName") ;
+                                                      int idUser =  user.getId(withClientId) ; 
+                                                     
                                              
                                                       
                                                       try {
@@ -145,7 +147,7 @@
         <section class="chat-area">
             <header>
                 <a href="people" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                <img src="imageProfileServlet" alt="">
+                <img src="peopleProfilePicture?id_user=<%=idUser %>" alt="">
                 <div class="details">
                     <span><%=withClientName%></span>
                     <p>status</p>

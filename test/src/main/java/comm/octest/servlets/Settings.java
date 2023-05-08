@@ -1,21 +1,26 @@
 package comm.octest.servlets;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import comm.octest.beans.Observer;
 import comm.octest.beans.User;
 
 @WebServlet(name = "Settings", value = "/settings")
+@MultipartConfig
 public class Settings extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -54,6 +59,7 @@ public class Settings extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String email_session = (String) session.getAttribute("email");
+		int id_user2 = (Integer) session.getAttribute("user_id");
 		
 		String full_name = request.getParameter("full_name");
 		String email = request.getParameter("email");
@@ -61,7 +67,43 @@ public class Settings extends HttpServlet {
 		String country = request.getParameter("country");
 		String password = request.getParameter("password");
 		int idUserConnected = (Integer) session.getAttribute("user_id");
+		
+	Part filePart = request.getPart("picture");// "profile_picture" is the name of the input file element in the HTML form
+		
+	try {
+	if(filePart != null) {
+			System.out.println("££££" +filePart) ;
+			
+		//InputStream fileContent = filePart.getInputStream();
+		
+		
+		String fileName = filePart.getSubmittedFileName(); // get the filename from the submitted file part
+		String extension = "";
 
+	
+
+	    String uploadPath = "C:/Users/Simofatt/workspace3/test/src/main/webapp/WEB-INF/ressources/uploads/"+id_user2;
+		 
+		//String filePath = request.getServletContext().getRealPath("/") + "WEB-INF\\ressources\\uploads\\" + fileName;
+// construct the file path using the web app root path and the "uploads" folder
+//String filePath = "/test/src/main/webapp/WEB-INF/ressources/uploads"+fileName ;
+		//System.out.println("££££" +filePath) ;
+		//Files.copy(fileContent, Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING); // save the file to disk
+	    
+	    FileOutputStream fos = new FileOutputStream(uploadPath);
+	    InputStream is = filePart.getInputStream() ;
+	    byte[] data = new byte[is.available()] ;
+	    is.read(data);
+	    fos.write(data);
+	    fos.close();
+	    
+	}
+	}catch (Exception e) { 
+		e.printStackTrace() ;
+	}
+
+
+//String filePath = request.getServletContext().getRealPath("/") + "uploads/" + fileName; 
 		try {
 
 			Observer user = new User();

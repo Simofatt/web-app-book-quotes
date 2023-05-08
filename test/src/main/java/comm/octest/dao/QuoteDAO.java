@@ -3,7 +3,7 @@ package comm.octest.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import comm.octest.beans.QuoteFlyweight;
+import comm.octest.beans.Flyweight;
 import comm.octest.beans.QuoteManager;
 
 public interface QuoteDAO{
@@ -16,8 +16,8 @@ public interface QuoteDAO{
 	List<QuoteManager>fetchQuoteAuthorship() throws SQLException;
 	int insertQuoteAuthorship(String quote_text, int user_id) throws SQLException ;
 	int insertQuote(String book_name, String quote_text) throws SQLException;
-	void updateQuote(QuoteFlyweight quote) throws SQLException;
-	List<QuoteFlyweight> getNotification(int id_user) throws SQLException ;
+	void updateQuote(Flyweight quote) throws SQLException;
+	List<Flyweight> getNotification(int id_user) throws SQLException ;
 	void removeNotification(int id_quote, int id_user) throws SQLException;
 
 }

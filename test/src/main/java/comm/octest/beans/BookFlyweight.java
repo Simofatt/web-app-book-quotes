@@ -38,6 +38,9 @@ public interface BookFlyweight {
 	void updateId(BookFlyweight book) throws SQLException;
 
 	void removeBook(BookFlyweight book) throws SQLException;
+	
+    
+
 
 
 }

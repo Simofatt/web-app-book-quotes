@@ -45,14 +45,14 @@ String email = (String) session.getAttribute("email");
 		String type = q.getType();
 		int id_author = q.getAuthor_id(); 
 		int id_book = q.getBook_id() ;
+		String book_img = q.getBook_img() ;
 	%>
 	<div class="container my-4">
 		<div class="card mb-4">
 			<div class="row no-gutters">
 				<div class="col-md-4">
-					<img
-						src="https://images.pexels.com/photos/156917/pexels-photo-156917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-						class="card-img" alt="The Hobbit">
+					 <img src="<%=book_img %>"
+                        class="card-img" alt="<%=book_name%>">
 				</div>
 				<div class="col-md-8">
 					<div class="card-body">
@@ -62,7 +62,7 @@ String email = (String) session.getAttribute("email");
                         <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
                         <p class="card-text"><small class="text-muted">Added By: <a href="profile?email=<%=email %>"><%=user_name %></a></small></p>
-						<a href="#" class="card-link edit-quote" data-toggle="modal"
+						<br><a href="#" class="card-link edit-quote" data-toggle="modal"
 							data-target="#editQuoteModal" data-quote-text="<%=quote_text%>"
 							data-book-title="<%=book_name%>"
 							data-author-name="<%=author_name%>"

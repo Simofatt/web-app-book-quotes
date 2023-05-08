@@ -25,7 +25,6 @@
     <fullyQualifiedTypeName name="comm.octest.beans.Quote"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.security.Timestamp"/>
-    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="comm.octest.beans.I_Quote"/>
     <fullyQualifiedTypeName name="comm.octest.beans.QuoteFactorySingleton"/>
     <fullyQualifiedTypeName name="comm.octest.beans.QuoteManager"/>
@@ -41,4 +40,7 @@
     <fullyQualifiedTypeName name="java.security.MessageDigest"/>
     <fullyQualifiedTypeName name="java.util.Base64"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="comm.octest.beans.BookImageFetcher"/>
+    <fullyQualifiedTypeName name="com.google.api.client.json.jackson2.JacksonFactory"/>
 </qualifiedTypeNameHistroy>

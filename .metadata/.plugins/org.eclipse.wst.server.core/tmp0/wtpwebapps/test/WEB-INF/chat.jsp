@@ -21,23 +21,25 @@
         
             <%
                     
-                     
-                                String email =  (String) session.getAttribute("email");
-                                String withClientId = (String) request.getParameter("withClientId");
-                          
-                                
-                                UserDAOImp user = new UserDAOImp();
-                                
-                                  ArrayList<Message> my_messages = new ArrayList<Message>();
-                                  my_messages = (ArrayList<Message>) request.getAttribute("my_messages") ; 
-                                  String  withClientName = (String) request.getAttribute("withClientName") ;
-                         
-                                  
-                                  try {
-                                      user.removeMsg(withClientId,email);
-                                  } catch (Exception e) {
 
-                                  }
+                                        
+                                         
+                                                    String email =  (String) session.getAttribute("email");
+                                                    String withClientId = (String) request.getParameter("withClientId");
+                                              
+                                                    
+                                                    UserDAOImp user = new UserDAOImp();
+                                                    
+                                                      ArrayList<Message> my_messages = new ArrayList<Message>();
+                                                      my_messages = (ArrayList<Message>) request.getAttribute("my_messages") ; 
+                                                      String  withClientName = (String) request.getAttribute("withClientName") ;
+                                             
+                                                      
+                                                      try {
+                                                          user.removeMsg(withClientId,email);
+                                                      } catch (Exception e) {
+
+                                                      }
                     %>
            <style><%@include file="/WEB-INF/ressources/css/chat.css"%> </style>
            
@@ -45,8 +47,8 @@
 
  
       window.addEventListener("load", function (event) {
-    	  let pseudo = "<%=email%>";
-          let withClientId = "<%=withClientId%>";
+    	  let pseudo = "<%=(email)%>";
+          let withClientId = "<%=(withClientId)%>";
         let ws = new WebSocket("ws://localhost:8085/test/chatroom/" + pseudo);
         let txtHistory = document.getElementById("discussion");
         let txtMessage = document.getElementById("txtMessage");

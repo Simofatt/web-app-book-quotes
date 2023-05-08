@@ -1,0 +1,33 @@
+package comm.octest.beans;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+public class BookImageFetcher {
+
+    public static String getImageUrl(String bookName) throws IOException {
+        String url = "https://www.googleapis.com/books/v1/volumes?q=" + bookName.replace(" ", "+") + "&fields=items(volumeInfo/imageLinks/thumbnail)";
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setRequestMethod("GET");
+
+        InputStream response = connection.getInputStream();
+        Scanner scanner = new Scanner(response).useDelimiter("\\A");
+        String responseBody = scanner.hasNext() ? scanner.next() : "";
+        scanner.close();
+
+        String imageUrl = "";
+        int startIndex = responseBody.indexOf("\"thumbnail\"");
+        if (startIndex >= 0) {
+            int start = startIndex + 14;
+            int end = responseBody.indexOf("\",", start);
+            imageUrl = responseBody.substring(start, end);
+        }
+
+        return imageUrl;
+    }
+
+ 
+
+}

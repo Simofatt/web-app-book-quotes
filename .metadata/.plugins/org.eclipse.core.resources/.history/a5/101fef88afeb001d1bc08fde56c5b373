@@ -1,0 +1,90 @@
+package comm.octest.beans;
+
+import java.sql.SQLException;
+
+public class QuoteFactoryThreaded implements I_Quote {
+    private QuoteFactory quoteFactory;
+
+    public QuoteFactoryThreaded() {
+        quoteFactory = new QuoteFactory();
+    }
+
+    @Override
+    public void addQuote(String name_book, String quote_text, int userId) throws SQLException {
+        // create a new thread to handle the database insertion
+        Thread insertionThread = new Thread(new QuoteFactoryRunnable(name_book, quote_text, userId, quoteFactory));
+
+        // start the thread
+        insertionThread.start();
+
+        try {
+            // wait for the thread to finish before continuing
+            insertionThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	@Override
+	public void updateQuote(QuoteFlyweight quote) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addUserIds() throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fetchQuotes(int user_id) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void putQuote(String key, QuoteFlyweight quote) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeQuote(String key, QuoteManager quote) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addObservers(Observer user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getObservers() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifyObservers(int id_quote) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+}

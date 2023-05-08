@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import comm.octest.beans.AuthorFactory;
 import comm.octest.beans.BookFactory;
-import comm.octest.beans.QuoteFlyweight;
+import comm.octest.beans.Flyweight;
 import comm.octest.beans.QuoteFactory;
 import comm.octest.beans.QuoteManager;
 
@@ -33,7 +33,7 @@ public class MyQuotes extends HttpServlet {
 
 		if (email != null) {
 
-			QuoteFlyweight quoteManager = new QuoteManager();
+			Flyweight quoteManager = new QuoteManager();
 			try {
 				List<QuoteManager> quotes = quoteManager.fetchMyQuotes(email);
 				request.setAttribute("quotes", quotes);
@@ -64,7 +64,7 @@ public class MyQuotes extends HttpServlet {
 		String type= request.getParameter("type");
 		String email = (String) session.getAttribute("email");
 
-		QuoteFlyweight quoteManager2 = new QuoteManager(name_book, quote_text, author_name, id_quote,id_user,id_author,id_book,type);
+		Flyweight quoteManager2 = new QuoteManager(name_book, quote_text, author_name, id_quote,id_user,id_author,id_book,type);
 		List<QuoteManager> quotes = quoteManager2.fetchMyQuotes(email); 
 		
 		

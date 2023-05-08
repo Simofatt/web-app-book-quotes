@@ -23,6 +23,8 @@
 <%
 
 
+
+
 ArrayList<Observer> users = new ArrayList<>();
  users = (ArrayList<Observer>) request.getAttribute("users") ;
  int id_user_session = (Integer) session.getAttribute("user_id");

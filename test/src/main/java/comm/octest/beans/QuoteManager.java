@@ -8,7 +8,7 @@ import java.util.List;
 import comm.octest.dao.quote.QuoteDAOImp;
 
 //QUOTE == STACK GRABBER IMPLEMENTS SUBJECT == REMOVE ADD NOTIFY OBSERVERS 
-public class QuoteManager implements QuoteFlyweight {
+public class QuoteManager implements Flyweight {
 	private String name_book;
 	private String quote_text;  
 	private int user_id;  
@@ -23,6 +23,7 @@ public class QuoteManager implements QuoteFlyweight {
 	private int book_id ; 
 	private String type ;
 	private int id_type;  
+	private String book_img ; 
 	private List<String> likedUsers = new ArrayList<>();
 
 	public QuoteManager() {
@@ -46,7 +47,7 @@ public class QuoteManager implements QuoteFlyweight {
 	
 	
 	// FETCH THE QUOTES
-	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote, String like_color,String email) {
+	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote, String like_color,String email,String book_img) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
@@ -55,12 +56,13 @@ public class QuoteManager implements QuoteFlyweight {
 		this.id_quote = id_quote;
 		this.like_color = like_color;
 		this.email = email ;
+		this.book_img = book_img;
 	}
 
 	
 
 	// FETCH MY QUOTES
-	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote,String email,int author_id,int book_id,String type) {
+	public QuoteManager(String name_book, String quoteText, String author_name, Timestamp created_at, String user_name,int id_quote,String email,int author_id,int book_id,String type,String book_img) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
 		this.author_name = author_name;
@@ -71,6 +73,7 @@ public class QuoteManager implements QuoteFlyweight {
 		this.book_id = book_id;
 		this.email = email; 
 		this.type = type ;
+		this.book_img = book_img ;
 
 	}
 
@@ -134,15 +137,15 @@ public class QuoteManager implements QuoteFlyweight {
 	}
 
 	// UPDATE A QUOTE
-	public void updateQuote(QuoteFlyweight quote) throws SQLException {
+	public void updateQuote(Flyweight quote) throws SQLException {
 		quoteDAO.updateQuote(quote);
 
 	}
 	
 	
 	// GET NOTIFICATIONS :
-	public List<QuoteFlyweight> getNotification(int id_user) throws SQLException {
-		List<QuoteFlyweight> notifications = new ArrayList<>();
+	public List<Flyweight> getNotification(int id_user) throws SQLException {
+		List<Flyweight> notifications = new ArrayList<>();
 		notifications = quoteDAO.getNotification(id_user);
 		return notifications;
 	}
@@ -294,4 +297,14 @@ public class QuoteManager implements QuoteFlyweight {
 	public void setId_type(int id_type) {
 		this.id_type = id_type;
 	}
+
+	public String getBook_img() {
+		return book_img;
+	}
+
+	public void setBook_img(String book_img) {
+		this.book_img = book_img;
+	}
+
+
 }

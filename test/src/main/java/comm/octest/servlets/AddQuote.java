@@ -11,8 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import comm.octest.beans.AuthorFactory;
 import comm.octest.beans.BookFactory;
-import comm.octest.beans.I_Quote;
-import comm.octest.beans.QuoteFactory;
+import comm.octest.beans.BookImageFetcher;
+import comm.octest.beans.QuoteFactoryThreaded;
 
 @WebServlet(name = "AddQuote", value = "/addQuote")
 public class AddQuote extends HttpServlet {
@@ -48,22 +48,28 @@ public class AddQuote extends HttpServlet {
 		int user_id = (int) session.getAttribute("user_id");
 		try {
 
+			
 			AuthorFactory author = new AuthorFactory();
 			author.addAuthor(name_author);
 			
-
+			if(name_book !=null && name_author != null && quote_text !=null && book_type !=null) { 
+			String imageUrl = BookImageFetcher.getImageUrl(name_book,name_author);
+			System.out.print("ya salam : "+imageUrl) ;
+			System.out.print("Added") ;
+			
+			
 			BookFactory book = new BookFactory();
-			book.addBook(name_author, book_type, name_book);
-
-			System.out.println("User :" + user_id);
-			I_Quote quoteFactory = new QuoteFactory(1);
+			book.addBook(name_author, book_type, name_book,imageUrl);
+			
+			QuoteFactoryThreaded quoteThread = new QuoteFactoryThreaded() ;
 
 			if (user_id > 0) {
-				quoteFactory.addQuote(name_book, quote_text, user_id);
+				quoteThread.addQuote(name_book, quote_text, user_id) ;
+				//quoteFactory.addQuote(name_book, quote_text, user_id);
 			} else {
 				System.out.print("User not found");
 			}
-
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

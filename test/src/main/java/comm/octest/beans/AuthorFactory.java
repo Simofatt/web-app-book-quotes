@@ -22,7 +22,7 @@ public class AuthorFactory {
 
 		return author;
 	}
-	public void updateAuthor(QuoteFlyweight quote) throws SQLException {
+	public void updateAuthor(Flyweight quote) throws SQLException {
 		// CREATE THE KEY
 		String author_name = quote.getAuthor_name() ; 
 	    int id_author = quote.getAuthor_id() ; 

@@ -39,6 +39,10 @@ public interface Observer {
 	void setEmail(String string);
 
 	void setPassword(String password);
+	
+	void setProfile_img(String profile_img);
+	
+	String getProfile_img() ;
 
 	String getPassword();
 

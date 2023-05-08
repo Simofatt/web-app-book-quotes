@@ -51,12 +51,16 @@ for(User user : userInfo){
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-                            alt="" />
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file" />
-                        </div>
+                    <% if(emailProfile.equals(email)) { %> 
+                        <img src="profilePicture"
+                            alt="picture" />
+                            <%} else {%>
+                              <img src="peopleProfilePicture?id_user=<%=id_user %>"
+                            alt="picture" />
+                            <%} %>
+                            
+                            
+                      
                     </div>
                 </div>
                 <div class="col-md-6">

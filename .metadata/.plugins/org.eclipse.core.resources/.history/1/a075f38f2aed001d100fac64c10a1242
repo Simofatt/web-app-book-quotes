@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <context-param>
+    <param-name>upload.location</param-name>
+    <param-value>/WEB-INF/resources/uploads</param-value>
+  </context-param>
+  
+  <servlet>
+ 
+  <servlet-name>Test</servlet-name>
+    <servlet-class>comm.octest.servlets.Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+ 
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+ 
+   
+   <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
+    
+    
+    
+    <servlet>
+    <servlet-name>Settings</servlet-name>
+    <servlet-class>comm.octest.servlets.Settings</servlet-class>
+    <multipart-config>
+      
+        <max-file-size>20848820</max-file-size>
+        <max-request-size>418018841</max-request-size>
+        <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
+</servlet>
+
+    
+
+    
+</web-app>
+

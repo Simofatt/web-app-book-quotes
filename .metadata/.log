@@ -1024,3 +1024,9 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchPage.get
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2023-05-08 02:44:12.530
+!MESSAGE Several ports (8005, 8085) required by Tomcat v8.5 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.core.resources 4 376 2023-05-08 05:39:18.110
+!MESSAGE Marker id 19306 not found.

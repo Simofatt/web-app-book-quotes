@@ -11,10 +11,7 @@
     <url-pattern>/test</url-pattern>
   </servlet-mapping>
   
-  
  
-   
-   
    
    <jsp-config>
         <jsp-property-group>
@@ -22,6 +19,20 @@
             <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
+    
+    
+    
+    <servlet>
+    <servlet-name>Settings</servlet-name>
+    <servlet-class>comm.octest.servlets.Settings</servlet-class>
+    <multipart-config>
+       
+        <max-file-size>20848820</max-file-size>
+        <max-request-size>418018841</max-request-size>
+        <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
+</servlet>
+
     
 
     

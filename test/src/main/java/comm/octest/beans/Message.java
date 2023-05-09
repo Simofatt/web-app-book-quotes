@@ -11,6 +11,7 @@ public class Message {
     public String to;
     public String msg;
     public String type;
+    public String fromName;
     
     private UserDAO dao;
 
@@ -21,9 +22,10 @@ public class Message {
         this.type = type;
         dao = new UserDAOImp() ;
     }
-    public Message(String from, String msg) {
+    public Message(String from, String msg,String fromName) {
         this.from = from;
         this.msg = msg;
+        this.fromName = fromName;
         dao = new UserDAOImp() ;
       
     }

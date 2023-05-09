@@ -30,7 +30,7 @@ public class QuoteDAOImp implements QuoteDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/goodQuotes", "root", "");
-			System.out.println("Connexion reussite ");
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

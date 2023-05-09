@@ -51,13 +51,11 @@ for(User user : userInfo){
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
-                    <% if(emailProfile.equals(email)) { %> 
-                        <img src="profilePicture"
+                   
+                        <img src="peopleProfilePicture?id_user=<%=id_user %>"
                             alt="picture" />
-                            <%} else {%>
-                              <img src="peopleProfilePicture?id_user=<%=id_user %>"
-                            alt="picture" />
-                            <%} %>
+                           
+                        
                             
                             
                       

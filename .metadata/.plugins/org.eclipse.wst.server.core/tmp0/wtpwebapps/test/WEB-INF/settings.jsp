@@ -53,12 +53,13 @@ for(User user : userInfo){
 	String country = user.getCountry() ; 
 	String city = user.getCity() ;
     Timestamp created_at = user.getCreated_at() ; 
+    int id_user = user.getId_user();
 %>
   
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                     <img class="rounded-circle mt-5" width="150px"
-                        src="profilePicture">
+                        src="peopleProfilePicture?id_user=<%=id_user %>">
                     <span class="font-weight-bold"> <%=name %></span>
                     <span class="text-black-50"> <%=email%></span>
                     <span> </span>

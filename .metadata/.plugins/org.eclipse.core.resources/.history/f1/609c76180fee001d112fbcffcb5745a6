@@ -1,0 +1,110 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="comm.octest.beans.Flyweight" %>
+<%@ page import="comm.octest.beans.Message" %>
+<%@ page import="comm.octest.beans.QuoteManager" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function updateNotifications() {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange = function() {
+	    if (xhr.readyState == 4 && xhr.status == 200) {
+	      var notifications = JSON.parse(xhr.responseText);
+	      var list = document.getElementById("notifications-list");
+	      list.innerHTML = "";
+	      for (var i = 0; i < notifications.length; i++) {
+	        var notification = notifications[i];
+	        // create a new list item element and set its HTML to the notification message with the quote link
+	        var listItem = document.createElement("li");
+	        var link = document.createElement("a");
+	        link.classList.add("dropdown-item");
+	        link.setAttribute("href", "sharedQuotes?id_quote=" + notification.id_quote);
+	        link.innerText = "New quote added: ";
+	        listItem.appendChild(link);
+	        list.appendChild(listItem);
+	      }
+	      
+	      // display the count of notifications in the navbar
+	      var countNotif = notifications.length;
+	      var badge = document.getElementById("notif-badge");
+	      badge.innerHTML = countNotif;
+	    }
+	  };
+	  xhr.open("GET", "navBar", true);
+	  xhr.send();
+	}
+
+	// Call updateNotifications() every 5 seconds
+	setInterval(function() {
+	  updateNotifications();
+	}, 2000);
+
+	
+	//THE MESSAGE NOTIF :
+	function updateMessageNotifications() {
+		  var xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange = function() {
+		    if (xhr.readyState == 4 && xhr.status == 200) {
+		      var notifications = JSON.parse(xhr.responseText);
+		      var list = document.getElementById("notifications-list");
+		      list.innerHTML = "";
+		      for (var i = 0; i < notifications.length; i++) {
+		        var notification = notifications[i];
+		        // create a new list item element and set its HTML to the notification message with the quote link
+		        var listItem = document.createElement("li");
+		        var link = document.createElement("a");
+		        link.classList.add("dropdown-item");
+		        link.setAttribute("href", " chat?withClientId=" + notification.from);
+		        
+		       
+		        link.innerText =  notification.from ":" notification.msg ;
+		    
+		        listItem.appendChild(link);
+		        list.appendChild(listItem);
+		      }
+		      
+		      // display the count of notifications in the navbar
+		      var countNotif = notifications.length;
+		      var badge = document.getElementById("notif-badge");
+		      badge.innerHTML = countNotif;
+		    }
+		  };
+		  xhr.open("GET", "navBar", true);
+		  xhr.send();
+		}
+
+		// Call updateNotifications() every 5 seconds
+		setInterval(function() {
+		  updateMesssageNotifications();
+		}, 2000);
+
+</script>
+
+
+
+	<%
+int user_id = (int) session.getAttribute("user_id");
+Flyweight quoteNotification = new QuoteManager();
+List<Flyweight> notifications = quoteNotification.getNotification(user_id);  
+int countNotif = notifications.size() ;
+String emailNavBar= (String ) session.getAttribute("email") ;
+
+Message message = new Message() ; 
+List<Message> msgNotification = message.notification(emailNavBar) ;
+int countMsgNotif = msgNotification.size() ;
+%>
+
+
+	
+		</div>
+	</nav>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

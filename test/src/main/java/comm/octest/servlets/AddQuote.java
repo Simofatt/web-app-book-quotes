@@ -54,8 +54,8 @@ public class AddQuote extends HttpServlet {
 			
 			if(name_book !=null && name_author != null && quote_text !=null && book_type !=null) { 
 			String imageUrl = BookImageFetcher.getImageUrl(name_book,name_author);
-			System.out.print("ya salam : "+imageUrl) ;
-			System.out.print("Added") ;
+			
+			
 			
 			
 			BookFactory book = new BookFactory();

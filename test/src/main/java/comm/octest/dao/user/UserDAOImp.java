@@ -26,7 +26,7 @@ public class UserDAOImp  implements UserDAO{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/goodQuotes", "root", "");
-			System.out.println("Connexion reussite ");
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -432,6 +432,7 @@ public void updateUserInfo(Observer user) throws SQLException {
 		public List<Message> notification(String email) throws Exception { 
 			       List<Message> notifs = new ArrayList<>() ;
 		           driver() ;
+		           
 			
 					PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM messages WHERE id_receiver = ?");
 					preparedStatement.setString(1, email);
@@ -439,8 +440,23 @@ public void updateUserInfo(Observer user) throws SQLException {
 					while (res.next()) {
 						String id_sender = res.getString("id_sender");  
 						String message = res.getString("message") ;
-							Message msg = new Message(id_sender ,message) ; 
+						
+						
+
+						PreparedStatement preparedStatement2 = connexion.prepareStatement("SELECT full_name FROM users WHERE email= ?");
+						preparedStatement2.setString(1, id_sender);
+						ResultSet res2 = preparedStatement2.executeQuery();
+						
+						if(res2.next()) { 
+							String full_name = res2.getString("full_name");
+							Message msg = new Message(id_sender ,message,full_name) ; 
+							
 							notifs.add(msg) ;
+						}
+						
+						
+						
+						;
 						 						
 						}
 						

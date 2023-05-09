@@ -27,7 +27,18 @@ quotes = (ArrayList<QuoteManager>) request.getAttribute("quotes");
 String email = (String) session.getAttribute("email");
 %>
 <body>
-
+ <% if(quotes.isEmpty() ){ %>
+	<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="text-center">
+       
+            <div class="alert alert-primary center" role="alert">
+                <p> You don't have any quotes! </p>
+                <a href="addQuote">add a quote</a>
+            </div>    
+        <%} %>
+    </div>
+</div>
+	
 
 	<%@include file="navBar.jsp"%>
 
@@ -58,7 +69,7 @@ String email = (String) session.getAttribute("email");
 					<div class="card-body">
 					    <h5 class="card-title"  id="quote">"<%=quote_text %>"</h5>
                     
-                       <p class="card-text"><small class="text-muted">Book name :   <%=book_name %></small></p>
+                        <p class="card-text"><small class="text-muted">Book name :   <%=book_name %></small></p>
                         <p class="card-text"><small class="text-muted">Published: <%=formattedDate %></small></p>
                         <p class="card-text"><small class="text-muted">Author : <%=author_name %></small></p>
                         <p class="card-text"><small class="text-muted">Added By: <a href="profile?email=<%=email %>"><%=user_name %></a></small></p>
@@ -131,17 +142,7 @@ String email = (String) session.getAttribute("email");
 		</div>
 		
 	</div>
-	<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <div class="text-center">
-        <% if(quotes.isEmpty() ){ %>
-            <div class="alert alert-primary center" role="alert">
-                <p> You don't have any quotes! </p>
-                <a href="addQuote">add a quote</a>
-            </div>    
-        <%} %>
-    </div>
-</div>
-	
+
 	
 <script>
 const editButtons = document.querySelectorAll('.edit-quote');

@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "PeopleProfilePicture", value = "/peopleProfilePicture")
 public class PeopleProfilePicture extends HttpServlet {
@@ -18,43 +17,26 @@ public class PeopleProfilePicture extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
 		
-		
-		
-	
+
 		int idPeople = Integer.parseInt(request.getParameter("id_user"));
 
+		String filePath = "/WEB-INF/ressources/uploads/" + idPeople;
+
+		// Create a File object with the file path
+		File file = new File(getServletContext().getRealPath(filePath));
+	
+
+		if (file.exists()) {
 		
 
+			this.getServletContext().getRequestDispatcher(filePath).forward(request, response);
 
-			//this.getServletContext().getRequestDispatcher("/WEB-INF/ressources/uploads/"+idPeople).forward(request,
-					//response);
-		
-	
-	
-
-	String filePath = "/WEB-INF/ressources/uploads/" + idPeople;
-
-	// Create a File object with the file path
-	File file = new File(getServletContext().getRealPath(filePath));
-
-	if (file.exists()) {
-	    // File exists, serve it to the client
-
-		this.getServletContext().getRequestDispatcher(filePath).forward(request,response);
-	   
-	} else {
-		this.getServletContext().getRequestDispatcher("/WEB-INF/ressources/uploads/profile.png").forward(request,response);
+		} else {
+			this.getServletContext().getRequestDispatcher("/WEB-INF/ressources/uploads/profile.png").forward(request,
+					response);
+		}
 	}
-	}
-	
-
-
-
-
-
-
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

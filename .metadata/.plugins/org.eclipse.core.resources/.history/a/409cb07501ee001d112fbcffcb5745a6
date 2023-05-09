@@ -1,0 +1,65 @@
+package comm.octest.servlets;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+
+import comm.octest.beans.Flyweight;
+import comm.octest.beans.QuoteManager;
+
+@WebServlet(name = "ContactsServlet", value = "/ContactsServlet")
+public class navBar extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		HttpSession session = request.getSession();
+		String email = (String) session.getAttribute("email");
+
+Flyweight quoteManager = new QuoteManager() ;
+
+int userId = Integer.parseInt(request.getParameter("user_id")); // get the user_id parameter from the request
+List<Flyweight> notifications;
+try {
+	notifications = quoteManager.getNotification(userId);
+} catch (SQLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+} // retrieve the notifications data using QuoteManager
+String json = new Gson().toJson(notifications); // convert the notifications data to JSON
+response.setContentType("application/json");
+response.setCharacterEncoding("UTF-8");
+response.getWriter().write(json); // write the JSON response back to the client
+
+
+		this.getServletContext().getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+
+}
+
+
+
+
+
+
+
+

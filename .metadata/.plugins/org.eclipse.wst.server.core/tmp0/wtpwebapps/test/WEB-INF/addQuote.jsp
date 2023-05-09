@@ -8,6 +8,7 @@
     <title>Book Quotes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>   <%@include file="/WEB-INF/ressources/css/addQuote.css"%> </style>
 </head>
 
@@ -28,10 +29,21 @@
         <%
         if (success != null) {
 	 %>
-     <p> Quote bien ajoute </p>
+           <script> 
+                            Swal.fire({
+                            icon: 'success',
+                            title: 'Success...',
+                            text: 'Quote bien saisie!',
+                            confirmButtonText: 'OK',
+                            allowOutsideClick: false // disable clicking outside of the alert to close it
+                            }).then((result) => {
+                          
+                            });
+                        </script>
+                    
     <% 
-}
-        
+
+        }    
   %>
  
 		<div class="card mb-4">
@@ -46,14 +58,14 @@
 				             <div class="form-group">
 							    <label for="bookType">Type:</label>
 								    <select class="form-control" name="book_type" id="bookType" style="width:350px;">
-								        <option value="fiction"></option>
-								        <option value="fiction">Novel</option>
-								        <option value="fiction">Romance</option>
-								        <option value="fiction">Fiction</option>
-								        <option value="fiction">Short story</option>
-								         <option value="poetry">Fantasy</option>
-								        <option value="non-fiction">Horror</option>
-								        <option value="poetry">Poetry</option>
+								        <option value=""></option>
+								        <option value="Novel">Novel</option>
+								        <option value="Romance">Romance</option>
+								        <option value="Fiction">Fiction</option>
+								        <option value="Short story">Short story</option>
+								         <option value="Fantasy">Fantasy</option>
+								        <option value="Horror">Horror</option>
+								        <option value="Poetry">Poetry</option>
 								    </select>
 							</div>
 

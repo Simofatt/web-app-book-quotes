@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>   <%@include file="/WEB-INF/ressources/css/registration.css"%> </style>
     
 </head>
@@ -28,19 +29,56 @@ if (error != null) {
     <% 
 }
   %>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="padding: 10px;">
+        <a class="navbar-brand" href="#" style="margin-right: 50px;">Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="margin-left: auto;">
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="#home" style="color: black; font-family: Arial, sans-serif;">Home</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="registration" style="color: black; font-family: Arial, sans-serif;">Sign in</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="registration" style="color: black; font-family: Arial, sans-serif;">Sign up</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="#about_us" style="color: black; font-family: Arial, sans-serif;">About us</a>
+                </li>
+                <li class="nav-item dropdown" style="margin-right: 20px;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black; font-family: Arial, sans-serif;">
+                        Pages
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="addQuote" style="font-family: Arial, sans-serif;">Add quotes</a>
+                        <a class="dropdown-item" href="sharedQuotes" style="font-family: Arial, sans-serif;">See quotes</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+		
     <div class="container" id="container">
         <div class="form-container sign-up-container" id ="SignIn">
             <form action="registration" method="post">
                 <h1>Create Account</h1>
 
                 <span>use your email for registration</span>
+                <br><br><br>
                 <input type="text" placeholder="Full name" name="full_name" required />
                 <input type="email" placeholder="Email" name="email" required />
                  <input type="text" placeholder="City/Region" name="city" required />
                
                 <input type="password" placeholder="Password"  name="password" required/>
                 <input type="password" placeholder="Re-Password"  name="passwordc" required/>
-
+<br><br><br>
                 <button type="submit">Sign Up</button>
             </form>
         </div>

@@ -482,6 +482,31 @@ public String getName(String email) throws Exception{
 
 return "null";
 }
+
+// FETCH USERS TO DISPLAY THEM :
+public List<Observer> getAllUsers() throws SQLException {
+	List<Observer> users = new ArrayList<>();
+	driver();
+	PreparedStatement preparedStatement2 = connexion.prepareStatement("SELECT email FROM users");
+
+	ResultSet resultat2 = preparedStatement2.executeQuery();
+	while (resultat2.next()) {
+	
+		String email = resultat2.getString("email");
+
+
+	
+		
+		Observer user = new User();
+
+	
+		user.setEmail(email);
+		users.add(user);
+
+	}
+
+	return users;
+}
 }
 
 		

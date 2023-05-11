@@ -18,7 +18,7 @@ public class ProfilePicture extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("****************************  ") ;
+		
 		HttpSession session = request.getSession();
 		int id_user = (Integer) session.getAttribute("user_id");
 		String filePath = "/WEB-INF/ressources/uploads/" + id_user;
@@ -29,7 +29,7 @@ public class ProfilePicture extends HttpServlet {
 		if (file.exists()) {
 		    // File exists, serve it to the client
 		
-			System.out.println("file Path:  EXISTS ") ;
+			
 
 			this.getServletContext().getRequestDispatcher("/WEB-INF/ressources/uploads/"+id_user).forward(request,
 					response);

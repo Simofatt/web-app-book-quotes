@@ -1,0 +1,35 @@
+package comm.octest.servlets;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import comm.octest.beans.Access;
+import comm.octest.beans.User;
+
+public class ProxyAccess implements I_Access {
+
+	
+	   private static final List<String> registeredUsernames = new ArrayList();
+	   private final Access access= new Access() ;
+	   
+	   
+
+	    public void PageAccessProxy(User user ) {
+	    	String email = user.getEmail() ; 
+	    	
+	    	registeredUsernames.add(email) ;
+	    }
+	    
+	    public String grantAccess(User user, String pageName) {
+	        if (registeredUsernames.contains(user.getEmail())) {
+	        	
+	        	System.out.println("User " + user.getEmail() + " is registered. Access granted to page " + pageName);
+	        	String dispatcher = "this.getServletContext().getRequestDispatcher(\"/WEB-INF/"+pageName+".jsp\").forward(request, response)";
+
+	            return dispatcher;
+	        }
+	        String dispatcherLogin = "this.getServletContext().getRequestDispatcher(\"/WEB-INF/login.jsp\").forward(request, response)";
+	        return dispatcherLogin;
+	    }
+		
+}

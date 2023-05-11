@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import comm.octest.dao.BookAuthorDAO;
-import comm.octest.dao.BookAuthor.AuthorDAO;
+import comm.octest.dao.BookAuthor.AuthorDAOImp;
 
 public class Author implements AuthorFlyweight {
 
@@ -17,11 +17,11 @@ public class Author implements AuthorFlyweight {
 
 	public Author(String author_name) {
 		this.author_name = author_name;
-		authorDAO= new AuthorDAO() ; 
+		authorDAO= new AuthorDAOImp() ; 
 	}
 
 	public Author() {
-		authorDAO= new AuthorDAO() ; 
+		authorDAO= new AuthorDAOImp() ; 
 	}
 
 	public void save(AuthorFlyweight author) throws SQLException {

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import comm.octest.beans.Observer;
+import comm.octest.beans.ProxyAccess;
 import comm.octest.beans.User;
 
 @WebServlet(name = "Registration", value = "/registration")
@@ -36,6 +37,8 @@ public class Registration extends HttpServlet {
 		String city = request.getParameter("city");
 		String password = request.getParameter("password");
 		String passwordc = request.getParameter("passwordc");
+		
+		
 		try {
 			String hashPassword = user.hashPassword(password);
 
@@ -43,6 +46,9 @@ public class Registration extends HttpServlet {
 			user.setPassword(hashPassword);
 			user.setCity(city);
 			user.setName(name);
+			
+			ProxyAccess access = new ProxyAccess() ;
+			access.AddAccess(user) ;
 
 		} catch (NoSuchAlgorithmException e1) {
 			

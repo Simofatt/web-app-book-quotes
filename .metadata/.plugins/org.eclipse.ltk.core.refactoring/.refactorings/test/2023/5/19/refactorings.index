@@ -4,3 +4,9 @@
 1683605209670	Delete element
 1683605230419	Delete element
 1683609130983	Delete element
+1683667215374	Delete element
+1683676094861	Encapsulate field 'titile'
+1683682708138	Move compilation unit
+1683682739441	Move compilation unit
+1683732055775	Rename type 'BookDAO'
+1683732073843	Rename type 'AuthorDAO'

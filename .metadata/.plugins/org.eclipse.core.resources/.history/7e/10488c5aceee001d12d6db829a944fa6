@@ -1,0 +1,23 @@
+package comm.octest.beans;
+
+import comm.octest.servlets.I_Access;
+
+public class Access implements I_Access {
+
+	@Override
+	public String grantAccess(Observer user, String pageName) {
+		
+		 String dispatcherLogin = "response.sendRedirect(\"registration\");";
+	     return dispatcherLogin;
+		
+		
+	}
+
+}
+
+
+
+
+
+
+

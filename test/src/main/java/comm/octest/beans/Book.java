@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import comm.octest.dao.BookAuthorDAO;
-import comm.octest.dao.BookAuthor.BookDAO;
+import comm.octest.dao.BookAuthor.BookDAOImp;
 
 public class Book implements BookFlyweight {
 	private int id_book;
@@ -21,7 +21,7 @@ public class Book implements BookFlyweight {
 	public Book(String name_book, String type, String authorName,String book_img) {
 		quote = new QuoteManager() ;
 		author = new Author() ;
-		bookDAO = new BookDAO() ;
+		bookDAO = new BookDAOImp() ;
 		this.name_book = name_book;
 		this.type = type;
 		this.book_img = book_img;
@@ -32,7 +32,7 @@ public class Book implements BookFlyweight {
 	
 	public Book() {
 		
-		bookDAO = new BookDAO() ;
+		bookDAO = new BookDAOImp() ;
 	}
 
 	

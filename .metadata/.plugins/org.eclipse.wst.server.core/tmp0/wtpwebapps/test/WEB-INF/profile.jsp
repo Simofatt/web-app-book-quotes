@@ -41,7 +41,7 @@ for(User user : userInfo){
 	String city = user.getCity() ;
     Timestamp created_at = user.getCreated_at() ; 
     String emailProfile = user.getEmail() ;
-    int nbreQuotes = user.getNbreQuoteAdded()  ;
+    int nbreQuotes = user.getNbreQuoteAdded()   ;
     int id_user = user.getId_user();
     int nbre_friends = user.getNbreFriends() ; 
     int nbre_likes = user.getNbreLikes() ; 
@@ -107,7 +107,7 @@ for(User user : userInfo){
                     <div class="profile-work">
                         <p>Highlights</p>
                         <a href="" class=" text-muted small text-truncate"><i
-                                class="fas fa-quote-left fa-fw text-muted"></i> <%=nbreQuotes %> quotes</a><br>
+                                class="fas fa-quote-left fa-fw text-muted"></i> <%=nbreQuotes-1 %> quotes</a><br>
                         <a href="" class=" text-muted small text-truncate"><i
                                 class="fas fa-user-friends fa-fw text-muted"></i>  <%=nbre_friends %> friends</a><br>
                         <a class=" text-muted small text-truncate"><i class="fas fa-heart"></i>

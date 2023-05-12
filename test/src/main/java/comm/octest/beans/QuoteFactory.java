@@ -21,10 +21,13 @@ public class QuoteFactory implements I_Quote {
 		quoteManager = new QuoteManager();
 	}
 
-	public Flyweight addQuote(String name_book, String quote_text, int userId) throws SQLException {
+	public Flyweight addQuote(String name_book, String quote_text,String author_name, int userId) throws SQLException {
 		// CREATE THE KEYS
-		String key = name_book + quote_text;
+		String key = name_book + quote_text+author_name;
 		String key2 = quote_text + userId;
+		
+		System.out.println("*****************THE KEY FROM addQuote() : "+key) ;
+		System.out.println("*****************THE KEY2 FROM addQuote() : "+key2) ;
 
 		// REMPLISSAGE DES MAPS AVEC LE CONTENUE DE LA BASE DE DONNEE
 		fetchQuotes(userId);
@@ -34,10 +37,10 @@ public class QuoteFactory implements I_Quote {
 		//quoteManager = (QuoteManager) quotes.get(key);
 		// IF NOT WE ADD IT AND WE INSERT IT IN THE DB
 		if (!quotes.containsKey(key)) {
-			quoteManager = new QuoteManager(name_book, quote_text, userId);
-			//putQuote(key, quoteManager);
+			quoteManager = new QuoteManager(name_book, quote_text,author_name);
+			putQuote(key, quoteManager);
 			int id_quote = quoteManager.insertQuote();
-			quoteManager.insertQuoteAuthorship();
+			quoteManager.insertQuoteAuthorship(quote_text,userId);
 			QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
 			
 		}
@@ -49,12 +52,10 @@ public class QuoteFactory implements I_Quote {
 			// JUST TO CREATE THE OBJECT QUOTE ANYWAY AND TO NOTIFY THE OBSERVERS OF ANY
 			// CHANGES
 			if (quotes.containsKey(key)) {
-				quoteManager = new QuoteManager(name_book, quote_text, userId);
-				int id_quote = quoteManager.insertQuoteAuthorship();
+				quoteManager = new QuoteManager(name_book, quote_text,author_name);
+				int id_quote = quoteManager.insertQuoteAuthorship(quote_text,userId);
 				getObservers();
 				QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
-			} else if (!quotes.containsKey(key)) {
-				//quoteManager.insertQuoteAuthorship();
 			}
 
 		}
@@ -66,31 +67,32 @@ public class QuoteFactory implements I_Quote {
 		
 		String name_book = quote.getName_book();
 		String quote_text = quote.getQuoteText();
-		int id_quote = quote.getId_quote();
+		String author_name = quote.getAuthor_name() ; 
+ 		int id_quote = quote.getId_quote();
 		int userId = quote.getUserId() ; 
 		
-	    String key = name_book + quote_text;
+	    String key = name_book + quote_text+author_name;
 	    String key2 = quote_text + userId;
-		
+	    System.out.println("*****************THE KEY FROM updateQuote() : "+key) ;
+		System.out.println("*****************THE KEY2 FROM updatedQuote() : "+key2) ;
 		fetchQuotes(userId);
 		addUserIds();
-		System.out.println("*********** KEY    :  "+key);
+		//System.out.println("*********** KEY    :  "+key);
 				
         if (!quotes.containsKey(key)) {
-					quoteManager = new QuoteManager(name_book, quote_text, userId);
+					quoteManager = new QuoteManager(name_book, quote_text, author_name);
 					putQuote(key, quoteManager);
 					quoteManager.updateQuote(quote) ;
-					//int id_quote = quoteManager.insertQuote();
-					//QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
+					
 					
 		 }else  { 
 					if (!user_quotes.containsKey(key2)) {
 						user_quotes.put(key2, userId);
-							 quoteManager = new QuoteManager(name_book, quote_text, userId);
-							 quoteManager.insertQuoteAuthorship();
+							 quoteManager = new QuoteManager(name_book, quote_text,author_name);
+							 quoteManager.insertQuoteAuthorship(quote_text,userId);
 							 quoteManager.removeQuote(id_quote) ; 
 							 quoteManager.removeQuoteAuthorship(id_quote,userId) ;
-							//QuoteFactorySingleton.getInstance().notifyObservers(id_quote);
+						
 						} 
 				}							
 	}
@@ -101,6 +103,7 @@ public class QuoteFactory implements I_Quote {
 			String quote_text = userQuote.getQuoteText();
 			int user_id = userQuote.getUserId();
 			String key = quote_text + user_id;
+			System.out.println("*****************THE KEY2 FROM fetchQuoteAuthorship() : "+key) ;
 			user_quotes.put(key, user_id);
 		}
 
@@ -113,10 +116,11 @@ public class QuoteFactory implements I_Quote {
 	
 			String name_book = q.getName_book();
 			String quote_text = q.getQuoteText();
-			String key = name_book + quote_text;
+			String author_name = q.getAuthor_name();
+			String key = name_book + quote_text+author_name;
 			
 		    putQuote(key, quoteManager);
-		    System.out.println("*********** :  "+q.getName_book()+q.getQuoteText()) ;
+		    System.out.println("***********THE KEY FROM fetchQuotes  :  " +key) ;
 		}
 	}
 

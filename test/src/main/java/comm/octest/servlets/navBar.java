@@ -13,13 +13,16 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 
 import comm.octest.beans.Flyweight;
+import comm.octest.beans.I_Quote;
 import comm.octest.beans.Observer;
 import comm.octest.beans.ProxyAccess;
+import comm.octest.beans.QuoteFactorySingleton;
 import comm.octest.beans.QuoteManager;
 import comm.octest.beans.User;
 
 @WebServlet(name = "NavBar", value = "/navBar")
 public class navBar extends HttpServlet {
+	private I_Quote quoteFactory = QuoteFactorySingleton.getInstance();
 	/**
 	 * 
 	 */
@@ -70,6 +73,9 @@ try {
 		response.sendRedirect("registration");
 		
 		//REMOVING THE USER FROM THE OBSERVER LIST : 
+		quoteFactory.removeObserver( user);
+		
+		
 		
 
 	}

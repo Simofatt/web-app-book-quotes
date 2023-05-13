@@ -25,6 +25,7 @@ public class QuoteManager implements Flyweight {
 	private int id_type;  
 	private String book_img ; 
 	private List<String> likedUsers = new ArrayList<>();
+	
 
 	public QuoteManager() {
 		quoteDAO = new QuoteDAOImp();
@@ -32,10 +33,11 @@ public class QuoteManager implements Flyweight {
 	};
 
 	// CONSTRUCTOR TO ADD QUOTE IN QUOTE FACTORY
-	public QuoteManager(String name_book, String quoteText, int userId) {
+	public QuoteManager(String name_book, String quoteText, String author_name) {
 		this.name_book = name_book;
 		this.quote_text = quoteText;
-		this.user_id = userId;
+		//this.user_id = userId;
+		 this.author_name = author_name;
 		quoteDAO = new QuoteDAOImp();
 	}
 
@@ -129,11 +131,11 @@ public class QuoteManager implements Flyweight {
 	}
 
 	// INSERT QUOTE AUTHORSHIP
-	public int insertQuoteAuthorship() throws SQLException {
-		int id_quote = quoteDAO.insertQuoteAuthorship(quote_text, user_id);
+	public int insertQuoteAuthorship(String quote_text,int user_id) throws SQLException {
+		int id_quote =  quoteDAO.insertQuoteAuthorship(quote_text, user_id);
 		System.out.println("user_id : " + user_id + " SQUOTE ID " + quote_text);
-
-		return id_quote;
+return id_quote;
+	
 	}
 
 	// UPDATE A QUOTE

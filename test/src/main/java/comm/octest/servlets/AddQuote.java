@@ -69,7 +69,7 @@ public class AddQuote extends HttpServlet {
 			QuoteFactoryThreaded quoteThread = new QuoteFactoryThreaded() ;
 
 			if (user_id > 0) {
-				quoteThread.addQuote(name_book, quote_text, user_id) ;
+				quoteThread.addQuote(name_book, quote_text,name_author, user_id) ;
 				//quoteFactory.addQuote(name_book, quote_text, user_id);
 			} else {
 				System.out.print("User not found");

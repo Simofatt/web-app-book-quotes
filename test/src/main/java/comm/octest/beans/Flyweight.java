@@ -19,7 +19,7 @@ public interface Flyweight {
 	    
 	    public int insertQuote() throws SQLException;
 	    
-	    public int insertQuoteAuthorship() throws SQLException;
+	    public int insertQuoteAuthorship(String quote_text,int user_id) throws SQLException;
 	    
 	    public void updateQuote(Flyweight quote) throws SQLException;
 	    

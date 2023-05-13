@@ -1,0 +1,15 @@
+package comm.octest.beans;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class extrinsequeClass {
+	
+	int user_id ; 
+	
+	
+	private Map<String, Integer> user_quotes = new HashMap<>();
+	private List<Observer> observers;
+
+}

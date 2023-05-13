@@ -35,6 +35,7 @@ public class People extends HttpServlet {
 						int idUserConnected = (Integer) session.getAttribute("user_id");
 						List<Observer> users = user.getUsers(idUserConnected);
 						request.setAttribute("users", users);
+						
 					    this.getServletContext().getRequestDispatcher("/WEB-INF/people.jsp").forward(request, response);
 							        
 				} else {

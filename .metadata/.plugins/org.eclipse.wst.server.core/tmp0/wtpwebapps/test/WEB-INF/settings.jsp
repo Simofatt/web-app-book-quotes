@@ -83,7 +83,7 @@ for(User user : userInfo){
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
-                    <form action ="settings" method="post">
+                    <form action ="settingsServlet" method="post">
                     <div class="row">
                         <div class="col-md-12">
                             <label class="labels">Full Name</label>

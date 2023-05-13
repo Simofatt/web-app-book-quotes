@@ -136,7 +136,7 @@ public class UserDAOImp  implements UserDAO{
 
 			driver();
 			PreparedStatement preparedStatement3 = connexion.prepareStatement(
-					"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes, COUNT(CASE WHEN lk.id_quote IS NOT NULL THEN 1 ELSE 0 END)  as nbreOfLikes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user LEFT JOIN like_quote lk ON uq.id_quote = lk.id_quote  WHERE email =? GROUP BY u.id_user   ");
+					"SELECT u.*, COUNT(lk.id_quote)  as nbreOfLikes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user LEFT JOIN like_quote lk ON uq.id_quote = lk.id_quote  WHERE email =? GROUP BY u.id_user   ");
 			preparedStatement3.setString(1, email);
 
 			ResultSet resultat3 = preparedStatement3.executeQuery();
@@ -148,7 +148,7 @@ public class UserDAOImp  implements UserDAO{
 				String emailProfile = resultat3.getString("email");
 				String password = resultat3.getString("password");
 				Timestamp created_at = resultat3.getTimestamp("created_at");
-				int nbreQuotes = resultat3.getInt("nbreQuotes");
+				int nbreQuotes = 0;
 				int id_user = resultat3.getInt("id_user");
 				int nbre_likes = resultat3.getInt("nbreOfLikes");
 
@@ -185,7 +185,7 @@ public class UserDAOImp  implements UserDAO{
 					isFriends = false;
 
 				}
-				User user = new User(full_name, country, city, password, created_at, emailProfile, nbreQuotes, id_user,
+				User user = new User(full_name, country, city, password, created_at, emailProfile,  nbreQuotes,id_user,
 						nbreFriends, nbre_likes, isFriends);
 				userInfo.add(user);
 			}
@@ -305,7 +305,7 @@ public void updateUserInfo(Observer user) throws SQLException {
 			List<Observer> users = new ArrayList<>();
 			driver();
 			PreparedStatement preparedStatement2 = connexion.prepareStatement(
-					"SELECT u.*, COUNT(CASE WHEN uq.id_user IS NOT NULL THEN 1 ELSE 0 END) AS nbreQuotes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user GROUP BY u.id_user ORDER BY nbreQuotes DESC");
+					"SELECT u.*, COUNT(uq.id_quote) AS nbreQuotes FROM users u LEFT JOIN user_quote uq ON u.id_user = uq.id_user GROUP BY u.id_user ORDER BY nbreQuotes DESC");
 
 			ResultSet resultat2 = preparedStatement2.executeQuery();
 			while (resultat2.next()) {

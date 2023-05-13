@@ -35,13 +35,14 @@ String emailVistitedProfil = (String) request.getParameter("email");
    <%@include file="navBar.jsp"%>
     <div class="container emp-profile">
     <%
+    int nbreQuotes = quotes.size()  ;
 for(User user : userInfo){
 	String name = user.getName() ; 
 	String country = user.getCountry() ; 
 	String city = user.getCity() ;
     Timestamp created_at = user.getCreated_at() ; 
     String emailProfile = user.getEmail() ;
-    int nbreQuotes = user.getNbreQuoteAdded()  ;
+ 
     int id_user = user.getId_user();
     int nbre_friends = user.getNbreFriends() ; 
     int nbre_likes = user.getNbreLikes() ; 

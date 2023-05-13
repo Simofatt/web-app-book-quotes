@@ -1,0 +1,39 @@
+package comm.octest.servlets;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import comm.octest.beans.Access;
+import comm.octest.beans.Observer;
+
+public class ProxyAccess implements I_Access {
+
+	
+	   private static final List<String> registeredUsernames = new ArrayList<String>();
+	   private final Access access= new Access() ;
+	   
+	   
+	   user.getAllUsers() ;
+	    public void AddAccess(Observer user) throws SQLException {
+	      
+	    	String email = user.getEmail() ; 
+	    	registeredUsernames.add(email) ;
+	    }
+	    
+	    
+	    
+	    public String grantAccess(Observer user, String pageName) {
+	        if (registeredUsernames.contains(user.getEmail())) {
+	        	
+	        	System.out.println("User " + user.getEmail() + " is registered. Access granted to page " + pageName);
+	        	String dispatcher = "this.getServletContext().getRequestDispatcher(\"/WEB-INF/"+pageName+".jsp\").forward(request, response)";
+
+	            return dispatcher;
+	        }
+	        
+	           return  access.grantAccess(user, pageName);
+	   
+	    }
+		
+}

@@ -1,0 +1,7 @@
+package comm.octest.servlets;
+
+public interface  I_Access {
+	
+	
+
+}

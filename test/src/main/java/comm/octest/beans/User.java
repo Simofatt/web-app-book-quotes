@@ -150,7 +150,19 @@ public class User implements Observer {
 	}
 
 	
-	
+	public void getAllUsers() throws SQLException {
+		List<Observer> users = new ArrayList<>();
+		users = userDAO.getAllUsers();
+		
+		ProxyAccess access = new ProxyAccess() ;
+		for(Observer u : users) { 
+			
+			access.AddAccess(u) ;
+			
+			
+		}
+		
+	}
 	
 	// MEHTODES TO KNOW IF THERE IS AN INSTANCE OF THE USER IN THE LIST OF OBSERVERS
 	@Override

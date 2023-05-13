@@ -1,0 +1,27 @@
+package comm.octest.beans;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
+import comm.octest.servlets.I_Access;
+
+public class Access implements I_Access {
+
+	
+	
+	public void  grantAccess(Observer user, String pageName, HttpServletResponse response) throws IOException {
+	    String dispatcherLogin = "registration";
+	    response.sendRedirect(dispatcherLogin);
+	    
+	}
+
+
+}
+
+
+
+
+
+
+

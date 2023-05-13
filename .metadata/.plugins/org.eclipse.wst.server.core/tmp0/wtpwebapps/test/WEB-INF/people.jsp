@@ -66,6 +66,7 @@ for(Observer user : users){
 
                                 <img src="peopleProfilePicture?id_user=<%=id_user %>"
                                     alt="Mike Anamendolla" class="rounded-circle mx-auto d-block img-fluid">
+                                    
                             </div>
                             <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
                             

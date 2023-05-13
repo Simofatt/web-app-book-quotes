@@ -38,13 +38,24 @@ public class Auth extends HttpServlet {
 		Observer user = new User();
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		
+
+		
+		
+		
+	
+		
 		try {
+			user.getAllUsers();
 			String hashPassword = user.hashPassword(password);
 			user.setEmail(email);
 			user.setPassword(hashPassword);
 		} catch (NoSuchAlgorithmException e1) {
 			
 			e1.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		

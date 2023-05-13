@@ -12,7 +12,11 @@ import javax.servlet.http.HttpSession;
 import comm.octest.beans.AuthorFactory;
 import comm.octest.beans.BookFactory;
 import comm.octest.beans.BookImageFetcher;
+import comm.octest.beans.I_Access;
+import comm.octest.beans.Observer;
+import comm.octest.beans.ProxyAccess;
 import comm.octest.beans.QuoteFactoryThreaded;
+import comm.octest.beans.User;
 
 @WebServlet(name = "AddQuote", value = "/addQuote")
 public class AddQuote extends HttpServlet {
@@ -27,12 +31,13 @@ public class AddQuote extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
-		if (email != null) {
-
-			this.getServletContext().getRequestDispatcher("/WEB-INF/addQuote.jsp").forward(request, response);
-		} else {
-			response.sendRedirect("registration");
-		}
+		Observer user = new User() ; 
+		user.setEmail(email);
+		
+		//USING PROXY TO ADD QUOTE
+		I_Access access = new ProxyAccess() ;
+		access.grantAccess(user,"addQuote", response, request) ;
+	
 
 	}
 

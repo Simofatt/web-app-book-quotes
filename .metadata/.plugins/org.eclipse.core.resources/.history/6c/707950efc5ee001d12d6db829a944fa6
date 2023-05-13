@@ -1,0 +1,20 @@
+package comm.octest.beans;
+
+import comm.octest.servlets.I_Access;
+
+public class Access implements I_Access {
+
+	@Override
+	public String grantAccess(User user, String pageName) {
+		
+		return null;
+	}
+
+}
+
+
+
+
+
+
+

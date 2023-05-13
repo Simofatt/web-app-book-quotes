@@ -1,0 +1,13 @@
+package comm.octest.servlets;
+
+import java.util.List;
+
+public class ProxyAccess {
+
+	
+	   private  static final List<String> titile;
+
+	    public void PageAccessProxy(List<String> registeredUsernames) {
+	        //this.registeredUsernames = registeredUsernames;
+	    }
+}

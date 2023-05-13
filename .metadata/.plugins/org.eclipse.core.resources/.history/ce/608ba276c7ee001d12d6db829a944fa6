@@ -1,0 +1,6 @@
+package comm.octest.servlets;
+
+public interface  I_Access {
+	String grantAccess(Observer user, String pageName);
+	
+}

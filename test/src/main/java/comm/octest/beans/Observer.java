@@ -83,5 +83,6 @@ public interface Observer {
 	int getIdUser(String email) throws SQLException;
 
 	int getNbreLikes();
+	void getAllUsers() throws SQLException;
 
 }

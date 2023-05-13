@@ -90,12 +90,8 @@ function updateNotifications() {
 
 
 	<%
-int user_id = (int) session.getAttribute("user_id");
-Flyweight quoteNotification = new QuoteManager();
-List<Flyweight> notifications = quoteNotification.getNotification(user_id);  
-int countNotif = notifications.size() ;
-String emailNavBar= (String ) session.getAttribute("email") ;
 
+String email2 =(String) session.getAttribute("email") ;
 
 
 %>
@@ -140,7 +136,11 @@ String emailNavBar= (String ) session.getAttribute("email") ;
 							class="dropdown-item" href="favQuotes">Favorite Quotes</a> <a
 							class="dropdown-item" href="settings">Account Settings</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="registration">Sign Out</a>
+						
+						<form action ="navBar" method="post">
+						<input type ="hidden"  value="<%=email2 %>">
+						<button class="dropdown-item" type="submit">Sign Out</button>
+						</form>
 					</div></li>
 
 				<li class="nav-item dropdown"><a

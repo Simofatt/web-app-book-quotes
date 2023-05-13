@@ -2,7 +2,7 @@ package comm.octest.beans;
 
 import java.sql.SQLException;
 
-//QUOTE == OBSERVABLE
+//QUOTE == OBSERVABLE AND PROXY INTERFACE 
 public interface I_Quote {
 
 	Flyweight addQuote(String name_book, String quote_text, int user_id) throws SQLException;
